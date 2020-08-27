@@ -1,0 +1,3455 @@
+type Query {
+
+  assets(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetFilter
+    
+    ): [Asset]
+
+  containers(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ContainerSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ContainerFilter
+    
+    ): [Container]
+
+  ipAddrs(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrFilter
+    
+    ): [IpAddr]
+
+  unifiedUsers(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ UnifiedUserSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: UnifiedUserFilter
+    
+    ): [UnifiedUser]
+
+  users(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ UserSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: UserFilter
+    
+    ): [User]
+
+  unifiedAccounts(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ UnifiedAccountSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: UnifiedAccountFilter
+    
+    ): [UnifiedAccount]
+
+  accounts(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AccountSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AccountFilter
+    
+    ): [Account]
+
+  applications(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ApplicationSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ApplicationFilter
+    
+    ): [Application]
+
+  hostnames(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ HostnameSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: HostnameFilter
+    
+    ): [Hostname]
+
+  databases(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ DatabaseSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: DatabaseFilter
+    
+    ): [Database]
+
+  macAddrs(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ MacAddrSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: MacAddrFilter
+    
+    ): [MacAddr]
+
+  reports(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ReportSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ReportFilter
+    
+    ): [Report]
+
+  ports(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ PortSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: PortFilter
+    
+    ): [Port]
+
+  sources(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ SourceSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: SourceFilter
+    
+    ): [Source]
+
+  vulnerabilities(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ VulnerabilitySort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: VulnerabilityFilter
+    
+    ): [Vulnerability]
+
+  tags(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagFilter
+    
+    ): [Tag]
+
+  geolocations(
+    """
+    Specifies how many elements should be at most included in the result.
+    If no limit or filters are specified, limit defaults to 100.
+    """
+    limit: Int
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ GeolocationSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: GeolocationFilter
+    
+    ): [Geolocation]
+}
+
+scalar Date
+scalar JSON
+enum SortDirection { asc, desc }
+type Asset {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  name: String
+  business_value: Float
+  risk: Float
+  description: String
+  asset_type: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  vulnerabilityEdges(filter: AssetVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [AssetVulnerabilityEdgeSort]): [AssetVulnerabilityEdge]!
+  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+  ipAddrEdges(filter: AssetIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetIpAddrEdgeSort]): [AssetIpAddrEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  macAddrEdges(filter: AssetMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetMacAddrEdgeSort]): [AssetMacAddrEdge]!
+  macAddrs(filter: MacAddrFilter  limit: Int  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
+  hostnameEdges(filter: AssetHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AssetHostnameEdgeSort]): [AssetHostnameEdge]!
+  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+  accountEdges(filter: AssetAccountEdgeFilter  limit: Int  offset: Int  orderBy: [AssetAccountEdgeSort]): [AssetAccountEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  containerEdges(filter: AssetContainerEdgeFilter  limit: Int  offset: Int  orderBy: [AssetContainerEdgeSort]): [AssetContainerEdge]!
+  containers(filter: ContainerFilter  limit: Int  offset: Int  orderBy: [ContainerSort]): [Container]!
+  applicationEdges(filter: AssetApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetApplicationEdgeSort]): [AssetApplicationEdge]!
+  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
+  databaseEdges(filter: AssetDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AssetDatabaseEdgeSort]): [AssetDatabaseEdge]!
+  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
+  geolocationEdges(filter: AssetGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetGeolocationEdgeSort]): [AssetGeolocationEdge]!
+  geolocations(filter: GeolocationFilter  limit: Int  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+  tagEdges(filter: TagAssetEdgeFilter  limit: Int  offset: Int  orderBy: [TagAssetEdgeSort]): [TagAssetEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input AssetSort {
+_key: SortDirection
+name: SortDirection
+business_value: SortDirection
+risk: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Container {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  name: String
+  image: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  assetEdges(filter: AssetContainerEdgeFilter  limit: Int  offset: Int  orderBy: [AssetContainerEdgeSort]): [AssetContainerEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  ipAddrEdges(filter: IpAddrContainerEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrContainerEdgeSort]): [IpAddrContainerEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  tagEdges(filter: TagContainerEdgeFilter  limit: Int  offset: Int  orderBy: [TagContainerEdgeSort]): [TagContainerEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input ContainerSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type IpAddr {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  assetEdges(filter: AssetIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetIpAddrEdgeSort]): [AssetIpAddrEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  databaseEdges(filter: DatabaseIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
+  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
+  containerEdges(filter: IpAddrContainerEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrContainerEdgeSort]): [IpAddrContainerEdge]!
+  containers(filter: ContainerFilter  limit: Int  offset: Int  orderBy: [ContainerSort]): [Container]!
+  macAddrEdges(filter: IpAddrMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrMacAddrEdgeSort]): [IpAddrMacAddrEdge]!
+  macAddrs(filter: MacAddrFilter  limit: Int  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
+  hostnameEdges(filter: IpAddrHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrHostnameEdgeSort]): [IpAddrHostnameEdge]!
+  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+  vulnerabilityEdges(filter: IpAddrVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrVulnerabilityEdgeSort]): [IpAddrVulnerabilityEdge]!
+  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+  geolocationEdges(filter: IpAddrGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrGeolocationEdgeSort]): [IpAddrGeolocationEdge]!
+  geolocations(filter: GeolocationFilter  limit: Int  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+  portEdges(filter: IpAddrPortEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrPortEdgeSort]): [IpAddrPortEdge]!
+  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
+  accountEdges(filter: AccountIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AccountIpAddrEdgeSort]): [AccountIpAddrEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  tagEdges(filter: TagIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagIpAddrEdgeSort]): [TagIpAddrEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input IpAddrSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type UnifiedUser {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  userEdges(filter: UnifiedUserUserEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedUserUserEdgeSort]): [UnifiedUserUserEdge]!
+  users(filter: UserFilter  limit: Int  offset: Int  orderBy: [UserSort]): [User]!
+  tagEdges(filter: TagUnifiedUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedUserEdgeSort]): [TagUnifiedUserEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input UnifiedUserSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type User {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  external_id: String
+  username: String
+  fullname: String
+  job_title: String
+  email: String
+  description: String
+  role: String
+  family_name: String
+  given_name: String
+  upn: String
+  user_category: String
+  title: String
+  employee_id: String
+  active: Boolean
+  department: String
+  modified: Float
+  cumulative_score: Float
+  current_score: Float
+  critical: Float
+  high: Float
+  medium: Float
+  low: Float
+  first_occurrence: Float
+  last_occurrence: Float
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  source: String
+  accountEdges(filter: UserAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  unifiedUserEdges(filter: UnifiedUserUserEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedUserUserEdgeSort]): [UnifiedUserUserEdge]!
+  unifiedUsers(filter: UnifiedUserFilter  limit: Int  offset: Int  orderBy: [UnifiedUserSort]): [UnifiedUser]!
+  tagEdges(filter: TagUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUserEdgeSort]): [TagUserEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input UserSort {
+_key: SortDirection
+fullname: SortDirection
+job_title: SortDirection
+employee_id: SortDirection
+department: SortDirection
+cumulative_score: SortDirection
+current_score: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type UnifiedAccount {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  name: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  accountEdges(filter: UnifiedAccountAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountAccountEdgeSort]): [UnifiedAccountAccountEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  tagEdges(filter: TagUnifiedAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedAccountEdgeSort]): [TagUnifiedAccountEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input UnifiedAccountSort {
+_key: SortDirection
+name: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Account {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  name: String
+  created: Float
+  active: Boolean
+  compliance_status: Boolean
+  modified: Float
+  cumulative_score: Float
+  current_score: Float
+  critical: Float
+  high: Float
+  medium: Float
+  low: Float
+  first_occurrence: Float
+  last_occurrence: Float
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  assetEdges(filter: AssetAccountEdgeFilter  limit: Int  offset: Int  orderBy: [AssetAccountEdgeSort]): [AssetAccountEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  applicationEdges(filter: AccountApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AccountApplicationEdgeSort]): [AccountApplicationEdge]!
+  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
+  userEdges(filter: UserAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
+  users(filter: UserFilter  limit: Int  offset: Int  orderBy: [UserSort]): [User]!
+  databaseEdges(filter: AccountDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AccountDatabaseEdgeSort]): [AccountDatabaseEdge]!
+  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
+  hostnameEdges(filter: AccountHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AccountHostnameEdgeSort]): [AccountHostnameEdge]!
+  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+  ipAddrEdges(filter: AccountIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AccountIpAddrEdgeSort]): [AccountIpAddrEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  unifiedAccountEdges(filter: UnifiedAccountAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountAccountEdgeSort]): [UnifiedAccountAccountEdge]!
+  unifiedAccounts(filter: UnifiedAccountFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountSort]): [UnifiedAccount]!
+  tagEdges(filter: TagAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagAccountEdgeSort]): [TagAccountEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input AccountSort {
+_key: SortDirection
+name: SortDirection
+cumulative_score: SortDirection
+current_score: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Application {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  name: String
+  description: String
+  cpe: String
+  is_os: Boolean
+  owner: String
+  owner_code: String
+  last_access_time: Float
+  threat_score: Float
+  app_type: String
+  cumulative_score: Float
+  current_score: Float
+  critical: Float
+  high: Float
+  medium: Float
+  low: Float
+  first_occurrence: Float
+  last_occurrence: Float
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  assetEdges(filter: AssetApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetApplicationEdgeSort]): [AssetApplicationEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  portEdges(filter: ApplicationPortEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationPortEdgeSort]): [ApplicationPortEdge]!
+  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
+  accountEdges(filter: AccountApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AccountApplicationEdgeSort]): [AccountApplicationEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  databaseEdges(filter: ApplicationDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
+  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
+  vulnerabilityEdges(filter: ApplicationVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationVulnerabilityEdgeSort]): [ApplicationVulnerabilityEdge]!
+  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+  tagEdges(filter: TagApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [TagApplicationEdgeSort]): [TagApplicationEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input ApplicationSort {
+_key: SortDirection
+name: SortDirection
+last_access_time: SortDirection
+threat_score: SortDirection
+cumulative_score: SortDirection
+current_score: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Hostname {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  assetEdges(filter: AssetHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AssetHostnameEdgeSort]): [AssetHostnameEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  ipAddrEdges(filter: IpAddrHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrHostnameEdgeSort]): [IpAddrHostnameEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  accountEdges(filter: AccountHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AccountHostnameEdgeSort]): [AccountHostnameEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  tagEdges(filter: TagHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [TagHostnameEdgeSort]): [TagHostnameEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input HostnameSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Database {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  name: String
+  description: String
+  type: String
+  modified: Float
+  protocol: String
+  port: String
+  datasource_name: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  assetEdges(filter: AssetDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AssetDatabaseEdgeSort]): [AssetDatabaseEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  applicationEdges(filter: ApplicationDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
+  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
+  ipAddrEdges(filter: DatabaseIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  vulnerabilityEdges(filter: DatabaseVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseVulnerabilityEdgeSort]): [DatabaseVulnerabilityEdge]!
+  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+  accountEdges(filter: AccountDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AccountDatabaseEdgeSort]): [AccountDatabaseEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  tagEdges(filter: TagDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input DatabaseSort {
+_key: SortDirection
+name: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type MacAddr {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  interface: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  assetEdges(filter: AssetMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetMacAddrEdgeSort]): [AssetMacAddrEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  ipAddrEdges(filter: IpAddrMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrMacAddrEdgeSort]): [IpAddrMacAddrEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  tagEdges(filter: TagMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagMacAddrEdgeSort]): [TagMacAddrEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input MacAddrSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Report {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  type: String
+  parameters: String
+  value: String
+  modified: Date
+  description: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+}
+input ReportSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Port {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  port_number: Int
+  status: String
+  protocol: String
+  description: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  applicationEdges(filter: ApplicationPortEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationPortEdgeSort]): [ApplicationPortEdge]!
+  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
+  ipAddrEdges(filter: IpAddrPortEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrPortEdgeSort]): [IpAddrPortEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  vulnerabilityEdges(filter: PortVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [PortVulnerabilityEdgeSort]): [PortVulnerabilityEdge]!
+  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+  tagEdges(filter: TagPortEdgeFilter  limit: Int  offset: Int  orderBy: [TagPortEdgeSort]): [TagPortEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input PortSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Source {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  description: String
+  product_link: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+}
+input SourceSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Vulnerability {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  external_properties: Int
+  external_reference: String
+  name: String
+  base_score: Float
+  description: String
+  disclosed_on: Float
+  published_on: Float
+  updated_on: Float
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  assetEdges(filter: AssetVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [AssetVulnerabilityEdgeSort]): [AssetVulnerabilityEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  applicationEdges(filter: ApplicationVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationVulnerabilityEdgeSort]): [ApplicationVulnerabilityEdge]!
+  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
+  databaseEdges(filter: DatabaseVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseVulnerabilityEdgeSort]): [DatabaseVulnerabilityEdge]!
+  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
+  ipAddrEdges(filter: IpAddrVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrVulnerabilityEdgeSort]): [IpAddrVulnerabilityEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  portEdges(filter: PortVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [PortVulnerabilityEdgeSort]): [PortVulnerabilityEdge]!
+  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
+  tagEdges(filter: TagVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [TagVulnerabilityEdgeSort]): [TagVulnerabilityEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input VulnerabilitySort {
+_key: SortDirection
+name: SortDirection
+base_score: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Tag {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  assetEdges(filter: TagAssetEdgeFilter  limit: Int  offset: Int  orderBy: [TagAssetEdgeSort]): [TagAssetEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  containerEdges(filter: TagContainerEdgeFilter  limit: Int  offset: Int  orderBy: [TagContainerEdgeSort]): [TagContainerEdge]!
+  containers(filter: ContainerFilter  limit: Int  offset: Int  orderBy: [ContainerSort]): [Container]!
+  ipAddrEdges(filter: TagIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagIpAddrEdgeSort]): [TagIpAddrEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  unifiedUserEdges(filter: TagUnifiedUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedUserEdgeSort]): [TagUnifiedUserEdge]!
+  unifiedUsers(filter: UnifiedUserFilter  limit: Int  offset: Int  orderBy: [UnifiedUserSort]): [UnifiedUser]!
+  userEdges(filter: TagUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUserEdgeSort]): [TagUserEdge]!
+  users(filter: UserFilter  limit: Int  offset: Int  orderBy: [UserSort]): [User]!
+  unifiedAccountEdges(filter: TagUnifiedAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedAccountEdgeSort]): [TagUnifiedAccountEdge]!
+  unifiedAccounts(filter: UnifiedAccountFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountSort]): [UnifiedAccount]!
+  accountEdges(filter: TagAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagAccountEdgeSort]): [TagAccountEdge]!
+  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
+  applicationEdges(filter: TagApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [TagApplicationEdgeSort]): [TagApplicationEdge]!
+  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
+  hostnameEdges(filter: TagHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [TagHostnameEdgeSort]): [TagHostnameEdge]!
+  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+  databaseEdges(filter: TagDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
+  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
+  macAddrEdges(filter: TagMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagMacAddrEdgeSort]): [TagMacAddrEdge]!
+  macAddrs(filter: MacAddrFilter  limit: Int  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
+  portEdges(filter: TagPortEdgeFilter  limit: Int  offset: Int  orderBy: [TagPortEdgeSort]): [TagPortEdge]!
+  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
+  vulnerabilityEdges(filter: TagVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [TagVulnerabilityEdgeSort]): [TagVulnerabilityEdge]!
+  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+  geolocationEdges(filter: TagGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [TagGeolocationEdgeSort]): [TagGeolocationEdge]!
+  geolocations(filter: GeolocationFilter  limit: Int  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+}
+input TagSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type Geolocation {
+  _id: ID!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  _key: String
+  region: String
+  longitude: Float
+  latitude: Float
+  description: String
+  _created: Date
+  _modified: Date
+  tag: [String]
+  untag: [String]
+  external_id: String
+  source: String
+  assetEdges(filter: AssetGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetGeolocationEdgeSort]): [AssetGeolocationEdge]!
+  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
+  ipAddrEdges(filter: IpAddrGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrGeolocationEdgeSort]): [IpAddrGeolocationEdge]!
+  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+  tagEdges(filter: TagGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [TagGeolocationEdgeSort]): [TagGeolocationEdge]!
+  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+}
+input GeolocationSort {
+_key: SortDirection
+_created: SortDirection
+_modified: SortDirection
+}
+
+type AssetVulnerabilityEdgePort {
+  port_number: Float
+  protocol: String
+  status: String
+}
+
+type AssetVulnerabilityEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  port: AssetVulnerabilityEdgePort
+  risk_score: Float
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  vulnerability: Vulnerability!
+}
+input AssetVulnerabilityEdgeSort {
+risk_score: SortDirection
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetIpAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  ipAddr: IpAddr!
+}
+input AssetIpAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetMacAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  macAddr: MacAddr!
+}
+input AssetMacAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetHostnameEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  hostname: Hostname!
+}
+input AssetHostnameEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetAccountEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  account: Account!
+}
+input AssetAccountEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetContainerEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  container: Container!
+}
+input AssetContainerEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetApplicationEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  application: Application!
+}
+input AssetApplicationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetDatabaseEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  database: Database!
+}
+input AssetDatabaseEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AssetGeolocationEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  asset: Asset!
+  geolocation: Geolocation!
+}
+input AssetGeolocationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type ApplicationPortEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  application: Application!
+  port: Port!
+}
+input ApplicationPortEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AccountApplicationEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  user_id: String
+  last_access_time: Float
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  account: Account!
+  application: Application!
+}
+input AccountApplicationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type ApplicationDatabaseEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  application: Application!
+  database: Database!
+}
+input ApplicationDatabaseEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type ApplicationVulnerabilityEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  application: Application!
+  vulnerability: Vulnerability!
+}
+input ApplicationVulnerabilityEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type DatabaseIpAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  database: Database!
+  ipAddr: IpAddr!
+}
+input DatabaseIpAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type DatabaseVulnerabilityEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  version_level: String
+  patch_level: String
+  full_version_info: String
+  result_text: String
+  recommendation: String
+  severity: String
+  category: String
+  assessment_description: String
+  result_details: String
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  database: Database!
+  vulnerability: Vulnerability!
+}
+input DatabaseVulnerabilityEdgeSort {
+severity: SortDirection
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type IpAddrContainerEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  ipAddr: IpAddr!
+  container: Container!
+}
+input IpAddrContainerEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type IpAddrMacAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  ipAddr: IpAddr!
+  macAddr: MacAddr!
+}
+input IpAddrMacAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type IpAddrHostnameEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  ipAddr: IpAddr!
+  hostname: Hostname!
+}
+input IpAddrHostnameEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type IpAddrVulnerabilityEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  ipAddr: IpAddr!
+  vulnerability: Vulnerability!
+}
+input IpAddrVulnerabilityEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type IpAddrGeolocationEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  ipAddr: IpAddr!
+  geolocation: Geolocation!
+}
+input IpAddrGeolocationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type IpAddrPortEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  ipAddr: IpAddr!
+  port: Port!
+}
+input IpAddrPortEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type UserAccountEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  last_access_time: Float
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  user: User!
+  account: Account!
+}
+input UserAccountEdgeSort {
+last_access_time: SortDirection
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AccountDatabaseEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  account: Account!
+  database: Database!
+}
+input AccountDatabaseEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AccountHostnameEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  account: Account!
+  hostname: Hostname!
+}
+input AccountHostnameEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type AccountIpAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  total_risk_score: Float
+  threat_analytics_score: Float
+  violations_score: Float
+  vulnerability_score: Float
+  sensitive_objects_score: Float
+  select_queries_score: Float
+  ddl_queries_score: Float
+  dml_queries_score: Float
+  administrative_queries_score: Float
+  high_volume_activity_score: Float
+  off_work_activity_score: Float
+  group_state_description: String
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  account: Account!
+  ipAddr: IpAddr!
+}
+input AccountIpAddrEdgeSort {
+total_risk_score: SortDirection
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type UnifiedAccountAccountEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  unifiedAccount: UnifiedAccount!
+  account: Account!
+}
+input UnifiedAccountAccountEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type UnifiedUserUserEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  unifiedUser: UnifiedUser!
+  user: User!
+}
+input UnifiedUserUserEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type PortVulnerabilityEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  port: Port!
+  vulnerability: Vulnerability!
+}
+input PortVulnerabilityEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagAssetEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  asset: Asset!
+}
+input TagAssetEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagContainerEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  container: Container!
+}
+input TagContainerEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagIpAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  ipAddr: IpAddr!
+}
+input TagIpAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagUnifiedUserEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  unifiedUser: UnifiedUser!
+}
+input TagUnifiedUserEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagUserEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  user: User!
+}
+input TagUserEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagUnifiedAccountEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  unifiedAccount: UnifiedAccount!
+}
+input TagUnifiedAccountEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagAccountEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  account: Account!
+}
+input TagAccountEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagApplicationEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  application: Application!
+}
+input TagApplicationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagHostnameEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  hostname: Hostname!
+}
+input TagHostnameEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagDatabaseEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  database: Database!
+}
+input TagDatabaseEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagMacAddrEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  macAddr: MacAddr!
+}
+input TagMacAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagPortEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  port: Port!
+}
+input TagPortEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagVulnerabilityEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  vulnerability: Vulnerability!
+}
+input TagVulnerabilityEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type TagGeolocationEdge {
+  _id: ID!
+  _from: ID!
+  _to: ID!
+  source: String!
+  report: String!
+  customProperties(filter: CustomPropertiesFilter): JSON!
+  created: Date
+  modified: Date
+  external_id: String
+  _created: Date
+  _modified: Date
+  _deleted: Date
+  tag: Tag!
+  geolocation: Geolocation!
+}
+input TagGeolocationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+input GlobalFilter {
+  AND: [GlobalFilter!]
+  OR: [GlobalFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+}
+
+input CustomPropertiesFilter {
+  id_EQ: String
+  id_IN: [String!]
+  id_NOTIN: [String!]
+}
+
+input AssetFilter {
+  AND: [AssetFilter!]
+  OR: [AssetFilter!]
+  name_EQ: String
+  name_IN: [String!]
+  name_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input ContainerFilter {
+  AND: [ContainerFilter!]
+  OR: [ContainerFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input IpAddrFilter {
+  AND: [IpAddrFilter!]
+  OR: [IpAddrFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input UnifiedUserFilter {
+  AND: [UnifiedUserFilter!]
+  OR: [UnifiedUserFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input UserFilter {
+  AND: [UserFilter!]
+  OR: [UserFilter!]
+  fullname_EQ: String
+  fullname_IN: [String!]
+  fullname_NOTIN: [String!]
+  employee_id_EQ: String
+  employee_id_IN: [String!]
+  employee_id_NOTIN: [String!]
+  department_EQ: String
+  department_IN: [String!]
+  department_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input UnifiedAccountFilter {
+  AND: [UnifiedAccountFilter!]
+  OR: [UnifiedAccountFilter!]
+  name_EQ: String
+  name_IN: [String!]
+  name_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input AccountFilter {
+  AND: [AccountFilter!]
+  OR: [AccountFilter!]
+  name_EQ: String
+  name_IN: [String!]
+  name_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input ApplicationFilter {
+  AND: [ApplicationFilter!]
+  OR: [ApplicationFilter!]
+  name_EQ: String
+  name_IN: [String!]
+  name_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input HostnameFilter {
+  AND: [HostnameFilter!]
+  OR: [HostnameFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input DatabaseFilter {
+  AND: [DatabaseFilter!]
+  OR: [DatabaseFilter!]
+  name_EQ: String
+  name_IN: [String!]
+  name_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input MacAddrFilter {
+  AND: [MacAddrFilter!]
+  OR: [MacAddrFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input ReportFilter {
+  AND: [ReportFilter!]
+  OR: [ReportFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input PortFilter {
+  AND: [PortFilter!]
+  OR: [PortFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input SourceFilter {
+  AND: [SourceFilter!]
+  OR: [SourceFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input VulnerabilityFilter {
+  AND: [VulnerabilityFilter!]
+  OR: [VulnerabilityFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input TagFilter {
+  AND: [TagFilter!]
+  OR: [TagFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input GeolocationFilter {
+  AND: [GeolocationFilter!]
+  OR: [GeolocationFilter!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input AssetVulnerabilityEdgeFilter {
+  AND: [AssetVulnerabilityEdgeFilter!]
+  OR: [AssetVulnerabilityEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetVulnerabilityEdgePortFilter {
+  AND: [AssetVulnerabilityEdgePortFilter!]
+  OR: [AssetVulnerabilityEdgePortFilter!]
+}
+
+input AssetIpAddrEdgeFilter {
+  AND: [AssetIpAddrEdgeFilter!]
+  OR: [AssetIpAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetMacAddrEdgeFilter {
+  AND: [AssetMacAddrEdgeFilter!]
+  OR: [AssetMacAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetHostnameEdgeFilter {
+  AND: [AssetHostnameEdgeFilter!]
+  OR: [AssetHostnameEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetAccountEdgeFilter {
+  AND: [AssetAccountEdgeFilter!]
+  OR: [AssetAccountEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetContainerEdgeFilter {
+  AND: [AssetContainerEdgeFilter!]
+  OR: [AssetContainerEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetApplicationEdgeFilter {
+  AND: [AssetApplicationEdgeFilter!]
+  OR: [AssetApplicationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetDatabaseEdgeFilter {
+  AND: [AssetDatabaseEdgeFilter!]
+  OR: [AssetDatabaseEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AssetGeolocationEdgeFilter {
+  AND: [AssetGeolocationEdgeFilter!]
+  OR: [AssetGeolocationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input ApplicationPortEdgeFilter {
+  AND: [ApplicationPortEdgeFilter!]
+  OR: [ApplicationPortEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AccountApplicationEdgeFilter {
+  AND: [AccountApplicationEdgeFilter!]
+  OR: [AccountApplicationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input ApplicationDatabaseEdgeFilter {
+  AND: [ApplicationDatabaseEdgeFilter!]
+  OR: [ApplicationDatabaseEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input ApplicationVulnerabilityEdgeFilter {
+  AND: [ApplicationVulnerabilityEdgeFilter!]
+  OR: [ApplicationVulnerabilityEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input DatabaseIpAddrEdgeFilter {
+  AND: [DatabaseIpAddrEdgeFilter!]
+  OR: [DatabaseIpAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input DatabaseVulnerabilityEdgeFilter {
+  AND: [DatabaseVulnerabilityEdgeFilter!]
+  OR: [DatabaseVulnerabilityEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input IpAddrContainerEdgeFilter {
+  AND: [IpAddrContainerEdgeFilter!]
+  OR: [IpAddrContainerEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input IpAddrMacAddrEdgeFilter {
+  AND: [IpAddrMacAddrEdgeFilter!]
+  OR: [IpAddrMacAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input IpAddrHostnameEdgeFilter {
+  AND: [IpAddrHostnameEdgeFilter!]
+  OR: [IpAddrHostnameEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input IpAddrVulnerabilityEdgeFilter {
+  AND: [IpAddrVulnerabilityEdgeFilter!]
+  OR: [IpAddrVulnerabilityEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input IpAddrGeolocationEdgeFilter {
+  AND: [IpAddrGeolocationEdgeFilter!]
+  OR: [IpAddrGeolocationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input IpAddrPortEdgeFilter {
+  AND: [IpAddrPortEdgeFilter!]
+  OR: [IpAddrPortEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input UserAccountEdgeFilter {
+  AND: [UserAccountEdgeFilter!]
+  OR: [UserAccountEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AccountDatabaseEdgeFilter {
+  AND: [AccountDatabaseEdgeFilter!]
+  OR: [AccountDatabaseEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AccountHostnameEdgeFilter {
+  AND: [AccountHostnameEdgeFilter!]
+  OR: [AccountHostnameEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input AccountIpAddrEdgeFilter {
+  AND: [AccountIpAddrEdgeFilter!]
+  OR: [AccountIpAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input UnifiedAccountAccountEdgeFilter {
+  AND: [UnifiedAccountAccountEdgeFilter!]
+  OR: [UnifiedAccountAccountEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input UnifiedUserUserEdgeFilter {
+  AND: [UnifiedUserUserEdgeFilter!]
+  OR: [UnifiedUserUserEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input PortVulnerabilityEdgeFilter {
+  AND: [PortVulnerabilityEdgeFilter!]
+  OR: [PortVulnerabilityEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagAssetEdgeFilter {
+  AND: [TagAssetEdgeFilter!]
+  OR: [TagAssetEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagContainerEdgeFilter {
+  AND: [TagContainerEdgeFilter!]
+  OR: [TagContainerEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagIpAddrEdgeFilter {
+  AND: [TagIpAddrEdgeFilter!]
+  OR: [TagIpAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagUnifiedUserEdgeFilter {
+  AND: [TagUnifiedUserEdgeFilter!]
+  OR: [TagUnifiedUserEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagUserEdgeFilter {
+  AND: [TagUserEdgeFilter!]
+  OR: [TagUserEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagUnifiedAccountEdgeFilter {
+  AND: [TagUnifiedAccountEdgeFilter!]
+  OR: [TagUnifiedAccountEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagAccountEdgeFilter {
+  AND: [TagAccountEdgeFilter!]
+  OR: [TagAccountEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagApplicationEdgeFilter {
+  AND: [TagApplicationEdgeFilter!]
+  OR: [TagApplicationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagHostnameEdgeFilter {
+  AND: [TagHostnameEdgeFilter!]
+  OR: [TagHostnameEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagDatabaseEdgeFilter {
+  AND: [TagDatabaseEdgeFilter!]
+  OR: [TagDatabaseEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagMacAddrEdgeFilter {
+  AND: [TagMacAddrEdgeFilter!]
+  OR: [TagMacAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagPortEdgeFilter {
+  AND: [TagPortEdgeFilter!]
+  OR: [TagPortEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagVulnerabilityEdgeFilter {
+  AND: [TagVulnerabilityEdgeFilter!]
+  OR: [TagVulnerabilityEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagGeolocationEdgeFilter {
+  AND: [TagGeolocationEdgeFilter!]
+  OR: [TagGeolocationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+

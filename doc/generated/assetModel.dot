@@ -1,0 +1,123 @@
+graph cluster_Asset_Model {
+ splines=line;
+label=Asset_Model;
+rankdir=LR;
+subgraph cluster_Edges {
+ label=Edges;
+"asset_vulnerability" [id="asset_vulnerability", type="node type", shape="record", label="Edge | {asset_vulnerability | {port | risk_score | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_ipaddress" [id="asset_ipaddress", type="node type", shape="record", label="Edge | {asset_ipaddress | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_macaddress" [id="asset_macaddress", type="node type", shape="record", label="Edge | {asset_macaddress | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_hostname" [id="asset_hostname", type="node type", shape="record", label="Edge | {asset_hostname | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_account" [id="asset_account", type="node type", shape="record", label="Edge | {asset_account | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_container" [id="asset_container", type="node type", shape="record", label="Edge | {asset_container | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_application" [id="asset_application", type="node type", shape="record", label="Edge | {asset_application | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_database" [id="asset_database", type="node type", shape="record", label="Edge | {asset_database | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"asset_geolocation" [id="asset_geolocation", type="node type", shape="record", label="Edge | {asset_geolocation | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"application_port" [id="application_port", type="node type", shape="record", label="Edge | {application_port | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"account_application" [id="account_application", type="node type", shape="record", label="Edge | {account_application | {user_id | last_access_time | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"application_database" [id="application_database", type="node type", shape="record", label="Edge | {application_database | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"application_vulnerability" [id="application_vulnerability", type="node type", shape="record", label="Edge | {application_vulnerability | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"database_ipaddress" [id="database_ipaddress", type="node type", shape="record", label="Edge | {database_ipaddress | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"database_vulnerability" [id="database_vulnerability", type="node type", shape="record", label="Edge | {database_vulnerability | {version_level | patch_level | full_version_info | result_text | recommendation | severity | category | assessment_description | result_details | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"ipaddress_container" [id="ipaddress_container", type="node type", shape="record", label="Edge | {ipaddress_container | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"ipaddress_macaddress" [id="ipaddress_macaddress", type="node type", shape="record", label="Edge | {ipaddress_macaddress | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"ipaddress_hostname" [id="ipaddress_hostname", type="node type", shape="record", label="Edge | {ipaddress_hostname | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"ipaddress_vulnerability" [id="ipaddress_vulnerability", type="node type", shape="record", label="Edge | {ipaddress_vulnerability | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"ipaddress_geolocation" [id="ipaddress_geolocation", type="node type", shape="record", label="Edge | {ipaddress_geolocation | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"ipaddress_port" [id="ipaddress_port", type="node type", shape="record", label="Edge | {ipaddress_port | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"user_account" [id="user_account", type="node type", shape="record", label="Edge | {user_account | {last_access_time | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"account_database" [id="account_database", type="node type", shape="record", label="Edge | {account_database | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"account_hostname" [id="account_hostname", type="node type", shape="record", label="Edge | {account_hostname | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"account_ipaddress" [id="account_ipaddress", type="node type", shape="record", label="Edge | {account_ipaddress | {total_risk_score | threat_analytics_score | violations_score | vulnerability_score | sensitive_objects_score | select_queries_score | ddl_queries_score | dml_queries_score | administrative_queries_score | high_volume_activity_score | off_work_activity_score | group_state_description | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"unifiedaccount_account" [id="unifiedaccount_account", type="node type", shape="record", label="Edge | {unifiedaccount_account | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"unifieduser_user" [id="unifieduser_user", type="node type", shape="record", label="Edge | {unifieduser_user | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"port_vulnerability" [id="port_vulnerability", type="node type", shape="record", label="Edge | {port_vulnerability | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"tag_edge" [id="tag_edge", type="node type", shape="record", label="Edge | {tag_edge | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+tag_edge -- port_vulnerability [style=invis]
+ port_vulnerability -- unifieduser_user [style=invis]
+ unifieduser_user -- unifiedaccount_account [style=invis]
+ unifiedaccount_account -- account_ipaddress [style=invis]
+ account_ipaddress -- account_hostname [style=invis]
+ account_hostname -- account_database [style=invis]
+ user_account -- ipaddress_port [style=invis]
+ ipaddress_port -- ipaddress_geolocation [style=invis]
+ ipaddress_geolocation -- ipaddress_vulnerability [style=invis]
+ ipaddress_vulnerability -- ipaddress_hostname [style=invis]
+ ipaddress_hostname -- ipaddress_macaddress [style=invis]
+ ipaddress_macaddress -- ipaddress_container [style=invis]
+ database_vulnerability -- database_ipaddress [style=invis]
+ database_ipaddress -- application_vulnerability [style=invis]
+ application_vulnerability -- application_database [style=invis]
+ application_database -- account_application [style=invis]
+ account_application -- application_port [style=invis]
+ application_port -- asset_geolocation [style=invis]
+ asset_database -- asset_application [style=invis]
+ asset_application -- asset_container [style=invis]
+ asset_container -- asset_account [style=invis]
+ asset_account -- asset_hostname [style=invis]
+ asset_hostname -- asset_macaddress [style=invis]
+ asset_macaddress -- asset_ipaddress [style=invis]
+ }
+subgraph cluster_Vertices {
+ label=Vertices;
+"asset" [id="asset", type="node type", shape="record", label="Vertex | {asset | {_key | name | business_value | risk | description | asset_type | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"container" [id="container", type="node type", shape="record", label="Vertex | {container | {_key | name | image | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"ipaddress" [id="ipaddress", type="node type", shape="record", label="Vertex | {ipaddress | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"unifieduser" [id="unifieduser", type="node type", shape="record", label="Vertex | {unifieduser | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"user" [id="user", type="node type", shape="record", label="Vertex | {user | {_key | external_id | username | fullname | job_title | email | description | role | family_name | given_name | upn | user_category | title | employee_id | active | department | modified | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _number_of_active_edges | tag | untag | source }}"];
+"unifiedaccount" [id="unifiedaccount", type="node type", shape="record", label="Vertex | {unifiedaccount | {_key | name | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"account" [id="account", type="node type", shape="record", label="Vertex | {account | {_key | name | created | active | compliance_status | modified | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"application" [id="application", type="node type", shape="record", label="Vertex | {application | {_key | name | description | cpe | is_os | owner | owner_code | last_access_time | threat_score | app_type | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"hostname" [id="hostname", type="node type", shape="record", label="Vertex | {hostname | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"database" [id="database", type="node type", shape="record", label="Vertex | {database | {_key | name | description | type | modified | protocol | port | datasource_name | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"macaddress" [id="macaddress", type="node type", shape="record", label="Vertex | {macaddress | {_key | interface | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"report" [id="report", type="node type", shape="record", label="Vertex | {report | {_key | type | parameters | value | created | description | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"port" [id="port", type="node type", shape="record", label="Vertex | {port | {_key | port_number | status | protocol | description | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"source" [id="source", type="node type", shape="record", label="Vertex | {source | {_key | description | product_link | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"vulnerability" [id="vulnerability", type="node type", shape="record", label="Vertex | {vulnerability | {_key | external_properties | external_reference | name | base_score | description | disclosed_on | published_on | updated_on | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"tag" [id="tag", type="node type", shape="record", label="Vertex | {tag | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
+"geolocation" [id="geolocation", type="node type", shape="record", label="Vertex | {geolocation | {_key | region | longitude | latitude | description | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"asset" -- "vulnerability" [source="asset", target="vulnerability", relation="asset to vulnerability", directed="false", label="asset_vulnerability"];
+"asset" -- "ipaddress" [source="asset", target="ipaddress", relation="asset to ipaddress", directed="false", label="asset_ipaddress"];
+"asset" -- "macaddress" [source="asset", target="macaddress", relation="asset to macaddress", directed="false", label="asset_macaddress"];
+"asset" -- "hostname" [source="asset", target="hostname", relation="asset to hostname", directed="false", label="asset_hostname"];
+"asset" -- "account" [source="asset", target="account", relation="asset to account", directed="false", label="asset_account"];
+"asset" -- "container" [source="asset", target="container", relation="asset to container", directed="false", label="asset_container"];
+"asset" -- "application" [source="asset", target="application", relation="asset to application", directed="false", label="asset_application"];
+"asset" -- "database" [source="asset", target="database", relation="asset to database", directed="false", label="asset_database"];
+"asset" -- "geolocation" [source="asset", target="geolocation", relation="asset to geolocation", directed="false", label="asset_geolocation"];
+"application" -- "port" [source="application", target="port", relation="application to port", directed="false", label="application_port"];
+"account" -- "application" [source="account", target="application", relation="account to application", directed="false", label="account_application"];
+"application" -- "database" [source="application", target="database", relation="application to database", directed="false", label="application_database"];
+"application" -- "vulnerability" [source="application", target="vulnerability", relation="application to vulnerability", directed="false", label="application_vulnerability"];
+"database" -- "ipaddress" [source="database", target="ipaddress", relation="database to ipaddress", directed="false", label="database_ipaddress"];
+"database" -- "vulnerability" [source="database", target="vulnerability", relation="database to vulnerability", directed="false", label="database_vulnerability"];
+"ipaddress" -- "container" [source="ipaddress", target="container", relation="ipaddress to container", directed="false", label="ipaddress_container"];
+"ipaddress" -- "macaddress" [source="ipaddress", target="macaddress", relation="ipaddress to macaddress", directed="false", label="ipaddress_macaddress"];
+"ipaddress" -- "hostname" [source="ipaddress", target="hostname", relation="ipaddress to hostname", directed="false", label="ipaddress_hostname"];
+"ipaddress" -- "vulnerability" [source="ipaddress", target="vulnerability", relation="ipaddress to vulnerability", directed="false", label="ipaddress_vulnerability"];
+"ipaddress" -- "geolocation" [source="ipaddress", target="geolocation", relation="ipaddress to geolocation", directed="false", label="ipaddress_geolocation"];
+"ipaddress" -- "port" [source="ipaddress", target="port", relation="ipaddress to port", directed="false", label="ipaddress_port"];
+"user" -- "account" [source="user", target="account", relation="user to account", directed="false", label="user_account"];
+"account" -- "database" [source="account", target="database", relation="account to database", directed="false", label="account_database"];
+"account" -- "hostname" [source="account", target="hostname", relation="account to hostname", directed="false", label="account_hostname"];
+"account" -- "ipaddress" [source="account", target="ipaddress", relation="account to ipaddress", directed="false", label="account_ipaddress"];
+"unifiedaccount" -- "account" [source="unifiedaccount", target="account", relation="unifiedaccount to account", directed="false", label="unifiedaccount_account"];
+"unifieduser" -- "user" [source="unifieduser", target="user", relation="unifieduser to user", directed="false", label="unifieduser_user"];
+"port" -- "vulnerability" [source="port", target="vulnerability", relation="port to vulnerability", directed="false", label="port_vulnerability"];
+"tag" -- "asset" [source="tag", target="asset", relation="tag to asset", directed="false", label="tag_edge"];
+"tag" -- "container" [source="tag", target="container", relation="tag to container", directed="false", label="tag_edge"];
+"tag" -- "ipaddress" [source="tag", target="ipaddress", relation="tag to ipaddress", directed="false", label="tag_edge"];
+"tag" -- "unifieduser" [source="tag", target="unifieduser", relation="tag to unifieduser", directed="false", label="tag_edge"];
+"tag" -- "user" [source="tag", target="user", relation="tag to user", directed="false", label="tag_edge"];
+"tag" -- "unifiedaccount" [source="tag", target="unifiedaccount", relation="tag to unifiedaccount", directed="false", label="tag_edge"];
+"tag" -- "account" [source="tag", target="account", relation="tag to account", directed="false", label="tag_edge"];
+"tag" -- "application" [source="tag", target="application", relation="tag to application", directed="false", label="tag_edge"];
+"tag" -- "hostname" [source="tag", target="hostname", relation="tag to hostname", directed="false", label="tag_edge"];
+"tag" -- "database" [source="tag", target="database", relation="tag to database", directed="false", label="tag_edge"];
+"tag" -- "macaddress" [source="tag", target="macaddress", relation="tag to macaddress", directed="false", label="tag_edge"];
+"tag" -- "port" [source="tag", target="port", relation="tag to port", directed="false", label="tag_edge"];
+"tag" -- "vulnerability" [source="tag", target="vulnerability", relation="tag to vulnerability", directed="false", label="tag_edge"];
+"tag" -- "geolocation" [source="tag", target="geolocation", relation="tag to geolocation", directed="false", label="tag_edge"];
+}
+}

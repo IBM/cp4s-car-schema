@@ -1,0 +1,764 @@
+{
+  "swagger": "2.0",
+  "basePath": "/car/api",
+  "host": "host",
+  "info": {
+    "title": "CAR ingestion API.",
+    "version": "1.0.0"
+  },
+  "definitions": {
+    "Error": {
+      "additionalProperties": true
+    },
+    "Status": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The uuid of the import.",
+          "type": "string"
+        },
+        "status": {
+          "description": "status of the import",
+          "type": "string"
+        }
+      }
+    },
+    "Database": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "collections": {
+            "description": "vertices and edge names of the database",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_collections": {
+            "description": "vertices and edge names of the database",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "collections_without_indexes": {
+            "description": "vertices and/or edge names of the database that are not indexed yet",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_ready": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/metrics": {
+      "parameters": [],
+      "get": {
+        "summary": "Retrieve microservice performance metrics",
+        "operationId": "getMetrics",
+        "responses": {
+          "200": {
+            "description": "Microservice performance metrics are returned in the response body."
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/jobstatus": {
+      "parameters": [],
+      "get": {
+        "summary": "Returns list of the job statuses",
+        "responses": {
+          "200": {
+            "description": "status object represents the status of the job.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Status"
+              }
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/ipvulnerability": {
+      "parameters": [],
+      "post": {
+        "summary": "Get vuln for given ip",
+        "description": "get vulnerability for given ip address",
+        "operationId": "ipVuln",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "a status of an import",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/importstatus": {
+      "parameters": [],
+      "get": {
+        "summary": "Returns list of the import statuses",
+        "responses": {
+          "200": {
+            "description": "status object represents the status of the import.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Status"
+              }
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/imports": {
+      "parameters": [],
+      "post": {
+        "summary": "Import assets ...",
+        "operationId": "importData",
+        "responses": {
+          "200": {
+            "description": "object contains the id of the import and its initial status",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/health/all": {
+      "parameters": [],
+      "get": {
+        "summary": "Checks if the microservice's dependencies is up and running",
+        "responses": {
+          "200": {
+            "description": "Microservice and its dependencies is in good state."
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "parameters": [],
+      "get": {
+        "summary": "Checks if the microservice is up and running",
+        "responses": {
+          "200": {
+            "description": "Microservice is in good state."
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/databases": {
+      "parameters": [],
+      "get": {
+        "summary": "Get information about the database",
+        "operationId": "getDatabase",
+        "responses": {
+          "200": {
+            "description": "object contains the metadata of the database",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Database"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Asset database",
+        "operationId": "createDatabase",
+        "responses": {
+          "201": {
+            "description": "object contains the metadata of the database",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Database"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update database, Creating indexes or adding collections",
+        "operationId": "updateDatabase",
+        "responses": {
+          "200": {
+            "description": "object contains the metadata of the database",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Database"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the database",
+        "operationId": "deleteDatabase",
+        "responses": {
+          "204": {
+            "description": "data base successfully deleted"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/source/{id}/full-import-in-progress": {
+      "parameters": [],
+      "post": {
+        "summary": "Start Full Import",
+        "operationId": "startFullImport",
+        "responses": {
+          "200": {
+            "description": "an object that contains job_id will be returned {\n          job_id: uuid,\n          status: INPROGRESS,\n          message: 'Check the status of the job by calling the endpoint GET /jobstatus/{uuid}',\n        }. Use this endpoint GET /jobstatus/{job_id} to check if the job is completed. \n        Once the job is completed, the system is ready for processing full import\n        "
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Complete Full Import",
+        "operationId": "completeFullImport",
+        "responses": {
+          "200": {
+            "description": "an object that contains job_id will be returned {\n          job_id: uuid,\n          status: INPROGRESS,\n          message: 'Check the status of the job by calling the endpoint GET /jobstatus/{uuid}',\n        }. Use this endpoint GET /jobstatus/{job_id} to check if the job is completed. \n        Once the job is completed, the system has completed processing full import.\n        "
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/source/{id}/{collection}/{key}": {
+      "parameters": [],
+      "delete": {
+        "summary": "Disable all the edges belongs to the source",
+        "description": "disable edges",
+        "operationId": "disableAllEdges",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The edges has been disabled successfully"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/source/{id}/{collection}": {
+      "parameters": [],
+      "delete": {
+        "summary": "Disable all the edges belongs to the source",
+        "description": "disable edges",
+        "operationId": "disableAllEdges",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "string",
+            "enum": [
+              "asset",
+              "container",
+              "ipaddress",
+              "unifieduser",
+              "user",
+              "unifiedaccount",
+              "account",
+              "application",
+              "hostname",
+              "database",
+              "macaddress",
+              "report",
+              "port",
+              "source",
+              "vulnerability",
+              "tag",
+              "geolocation",
+              "asset_vulnerability",
+              "asset_ipaddress",
+              "asset_macaddress",
+              "asset_hostname",
+              "asset_account",
+              "asset_container",
+              "asset_application",
+              "asset_database",
+              "asset_geolocation",
+              "application_port",
+              "account_application",
+              "application_database",
+              "application_vulnerability",
+              "database_ipaddress",
+              "database_vulnerability",
+              "ipaddress_container",
+              "ipaddress_macaddress",
+              "ipaddress_hostname",
+              "ipaddress_vulnerability",
+              "ipaddress_geolocation",
+              "ipaddress_port",
+              "user_account",
+              "account_database",
+              "account_hostname",
+              "account_ipaddress",
+              "unifiedaccount_account",
+              "unifieduser_user",
+              "port_vulnerability",
+              "tag_edge"
+            ],
+            "required": true,
+            "in": "path"
+          },
+          {
+            "name": "external_ids",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "keys",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The edges has been disabled successfully"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/source/{id}": {
+      "parameters": [],
+      "delete": {
+        "summary": "Disable all the edges belongs to the source",
+        "description": "disable edges",
+        "operationId": "disableAllEdges",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The edges has been disabled successfully"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/search/{collection}": {
+      "parameters": [],
+      "post": {
+        "summary": "Get details/attributes of the nodes of a collection specified in API path. The nodes are specified by the given list of IDs.",
+        "description": "get node details",
+        "operationId": "getDetail",
+        "responses": {
+          "200": {
+            "description": "A successful invocation response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "list": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "collection",
+            "type": "string",
+            "enum": [
+              "asset",
+              "container",
+              "ipaddress",
+              "unifieduser",
+              "user",
+              "unifiedaccount",
+              "account",
+              "application",
+              "hostname",
+              "database",
+              "macaddress",
+              "report",
+              "port",
+              "source",
+              "vulnerability",
+              "tag",
+              "geolocation"
+            ],
+            "required": true,
+            "in": "path"
+          }
+        ]
+      }
+    },
+    "/jobstatus/{id}": {
+      "parameters": [],
+      "get": {
+        "summary": "Get status of an import",
+        "description": "get a status",
+        "operationId": "getStatus",
+        "tags": [
+          "assets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "a status of an import",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/importstatus/{id}": {
+      "parameters": [],
+      "get": {
+        "summary": "Get status of an import",
+        "description": "get a status",
+        "operationId": "getStatus",
+        "tags": [
+          "assets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "a status of an import",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/{collection}/risk": {
+      "parameters": [],
+      "get": {
+        "summary": "Get risk for given collection ids",
+        "description": "get risk for given collection ids",
+        "operationId": "risk",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "a status of an import",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/{collection}/{id}/graph": {
+      "parameters": [],
+      "get": {
+        "summary": "Get node and edge related to given node",
+        "description": "get graph with center as given node",
+        "operationId": "getGraph",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "a status of an import",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/{collection}/{id}": {
+      "parameters": [],
+      "get": {
+        "summary": "Return the node detail",
+        "description": "Return the node detail",
+        "operationId": "getNode",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The node details"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete the node and its edges",
+        "description": "delete the node and its edges",
+        "operationId": "deleteNode",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The node and its edges has been deleted"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Disable the edge of given key",
+        "description": "disable edge",
+        "operationId": "disableEdge",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The edge has been disabled successfully"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "/{collection}": {
+      "parameters": [],
+      "patch": {
+        "summary": "Disable the edge between from and to node",
+        "description": "disable edge",
+        "operationId": "disableEdge",
+        "responses": {
+          "200": {
+            "description": "The edge has been disabled successfully"
+          },
+          "default": {
+            "description": "An error occurred",
+            "schema": {
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "assets"
+    },
+    {
+      "description": "qradar assets",
+      "name": "qradar"
+    }
+  ]
+}
