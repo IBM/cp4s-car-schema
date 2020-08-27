@@ -104,6 +104,8 @@
 
 * Type: string 
 
+* Pattern: ^[a-fA-F0-9:\.]+$ 
+
 * required: true 
 
 ### tag 
@@ -518,9 +520,11 @@
 
 ### _key* 
 
-* Description: a unique key which should be the hostname 
+* Description: hostname 
 
 * Type: string 
+
+* Pattern: ^[a-zA-Z0-9_:@=;!'%\-\.\(\)\+\,\$\*]+$ 
 
 * required: true 
 
@@ -642,9 +646,9 @@
 
 ### _key* 
 
-* Description: a unique key of the report that needs to be provided 
+* Description: a unique identifier for report 
 
-* Type: string 
+* Pattern: ^[a-zA-Z0-9_:@=;!'%\-\.\(\)\+\,\$\*]+$ 
 
 * required: true 
 
@@ -752,9 +756,9 @@
 
 ### _key* 
 
-* Description: a unique key of the source that needs to be provided. This is an identifier of the source 
+* Description: a unique identifier for source 
 
-* Type: string 
+* Pattern: ^[a-zA-Z0-9_:@=;!'%\-\.\(\)\+\,\$\*]+$ 
 
 * required: true 
 

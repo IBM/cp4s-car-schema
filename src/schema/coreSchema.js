@@ -8,6 +8,7 @@ const defaultEdgeIndexes = [index__from__source__active, index__source];
 
 const defaultVertexIndexes = [index__external_id__source];
 
+const MANY = null;
 
 const commonVertexProperties = {
   _created: {
@@ -762,17 +763,25 @@ const SchemaTemplate = {
       },
       indexes: [index__external_id__source].concat(defaultEdgeIndexes),
     },
-
-    asset_ipaddress: {},
-    asset_macaddress: {},
-    asset_hostname: {},
-    asset_account: {},
-    asset_container: {},
+    // Cardinality is estimates of the cardinality of the edge in both direction used by GraphQL query cost estimation.
+    // If the *average case* is that there would be a one-to-one relationship, then set both in & out cardinality to 1.
+    // If the *average case* is many or quite variable, then do not set a cardinality (or set it MANY).
+    // cardinality.in refers to the source, cardinality.out refers to the target.
+    // e.g. for asset_ipaddress
+    // cardinality.in - would many assets have the same ip address?
+    // cardinality.out - would many ip addresses have the same asset?
+    // It is not necessary to specify cardinality, which implies many on both sides.
+    // MANY is the default and can be omitted, but should be specified for readability.
+    asset_ipaddress: { cardinality: { in: 1, out: 1 } },
+    asset_macaddress: { cardinality: { in: 1, out: 1 } },
+    asset_hostname: { cardinality: { in: 1, out: 1 } },
+    asset_account: { cardinality: { in: MANY, out: MANY } },
+    asset_container: { cardinality: { in: MANY, out: 1 } },
     asset_application: {},
     asset_database: {},
-    asset_geolocation: {},
+    asset_geolocation: { cardinality: { in: MANY, out: 1 } },
 
-    application_port: {},
+    application_port: { cardinality: { in: MANY, out: 1 } },
     account_application: {
       properties: {
         user_id: {
@@ -787,11 +796,12 @@ const SchemaTemplate = {
         },
       },
     },
-    application_database: {},
-    application_vulnerability: {},
+    application_database: { cardinality: { in: MANY, out: 1 } },
+    application_vulnerability: { cardinality: { in: 1, out: 1 } },
 
-    database_ipaddress: {},
+    database_ipaddress: { cardinality: { in: 1, out: 1 } },
     database_vulnerability: {
+      cardinality: { in: 1, out: 1 },
       properties: {
         version_level: {
           description:
@@ -842,14 +852,15 @@ const SchemaTemplate = {
       },
     },
 
-    ipaddress_container: {},
-    ipaddress_macaddress: {},
-    ipaddress_hostname: {},
-    ipaddress_vulnerability: {},
-    ipaddress_geolocation: {},
-    ipaddress_port: {},
+    ipaddress_container: { cardinality: { in: MANY, out: 1 } },
+    ipaddress_macaddress: { cardinality: { in: 1, out: 1 } },
+    ipaddress_hostname: { cardinality: { in: 1, out: 1 } },
+    ipaddress_vulnerability: { cardinality: { in: 1, out: 1 } },
+    ipaddress_geolocation: { cardinality: { in: MANY, out: 1 } },
+    ipaddress_port: { cardinality: { in: MANY, out: 1 } },
 
     user_account: {
+      cardinality: { in: MANY, out: 1 },
       properties: {
         last_access_time: {
           description:
@@ -859,9 +870,10 @@ const SchemaTemplate = {
         },
       },
     },
-    account_database: {},
-    account_hostname: {},
+    account_database: { cardinality: { in: MANY, out: MANY } },
+    account_hostname: { cardinality: { in: MANY, out: 1 } },
     account_ipaddress: {
+      cardinality: { in: MANY, out: MANY },
       properties: {
         total_risk_score: {
           description:
@@ -927,11 +939,11 @@ const SchemaTemplate = {
       },
     },
 
-    unifiedaccount_account: {},
+    unifiedaccount_account: { cardinality: { in: 1, out: 1 } },
 
-    unifieduser_user: {},
+    unifieduser_user: { cardinality: { in: 1, out: 1 } },
 
-    port_vulnerability: {},
+    port_vulnerability: { cardinality: { in: 1, out: MANY } },
 
     tag_edge: { import_schema: false, exclude: ['source', 'report'], indexes: [index__from__to__source] },
   },

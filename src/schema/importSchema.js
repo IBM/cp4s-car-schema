@@ -21,6 +21,9 @@ var importSchemaTemplate = {
           // regex for IPV4 and IPV6
           // pattern:
           //   '(^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$)|(?:[A-Fa-f0-9]{1,4}:){6}(?:[A-Fa-f0-9]{1,4}:[A-Fa-f0-9]{1,4}|(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))',
+          pattern: '^[a-fA-F0-9:\\.]+$',
+          minLength: 1,
+          maxLength: 254,
         },
       },
       required: ['_key'],
@@ -47,6 +50,15 @@ var importSchemaTemplate = {
     },
 
     hostname: {
+      properties: {
+        _key: {
+          description: 'hostname',
+          type: 'string',
+          pattern: "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
+          minLength: 1,
+          maxLength: 254,
+        },
+      },
       required: ['_key'],
     },
 
@@ -69,6 +81,14 @@ var importSchemaTemplate = {
 
     report: {
       notArray: true,
+      properties: {
+        _key: {
+          description: 'a unique identifier for report',
+          pattern: "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
+          minLength: 1,
+          maxLength: 254,
+        },
+      },
       required: ['_key', 'type', 'created'],
     },
 
@@ -78,6 +98,14 @@ var importSchemaTemplate = {
 
     source: {
       notArray: true,
+      properties: {
+        _key: {
+          description: 'a unique identifier for source',
+          pattern: "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
+          minLength: 1,
+          maxLength: 254,
+        },
+      },
       required: ['_key'],
     },
 
