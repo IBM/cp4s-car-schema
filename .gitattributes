@@ -1,0 +1,5 @@
+# automatically generated files:
+# -merge = don't attempt to merge
+# linguist-generated=true tells github to collapse the diff of this file by default
+doc/generated/**      -merge
+doc/generated/**      linguist-generated=true

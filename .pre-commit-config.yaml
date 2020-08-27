@@ -1,0 +1,33 @@
+# Skip all hooks with the `--no-verify` switch OR
+# Skip a single hook by specifying its id in a SKIP env var like:
+# SKIP=eslint git commit
+# or multiple hooks like:
+# SKIP=eslint,jest
+
+# more info at https://pre-commit.com/
+
+fail_fast: true
+# exclude: regex to exclude certain files from all hooks
+repos:
+  - repo: https://github.com/prettier/prettier
+    rev: 1.11.1
+    hooks:
+      # fails if committing files that haven't been prettified yet
+      - id: prettier
+        stages: [commit]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      # don't accidentally commit pending merges
+      - id: check-merge-conflict
+        stages: [commit]
+  - repo: local
+    hooks:
+      - id: doc
+        stages: [commit]
+        name: doc
+        language: system
+        # adjust as needed: regex should match schema changes or changes to doc-generating scripts
+        files: ^(src/graphql/.*)|(src/schema/.*)|(doc/script/.*)|(doc/wrapper/.*)
+        entry: bash -c "npm run doc && git add -u"
+        pass_filenames: false
