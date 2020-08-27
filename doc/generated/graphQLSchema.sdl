@@ -1,11 +1,12 @@
+directive @cost(complexity: Int = 1, useMultipliers: Boolean, multipliers: [String]) on FIELD_DEFINITION
 type Query {
 
+  "Default items = 100, use limit filter to adjust"
   assets(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -28,16 +29,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: AssetFilter
-    
-    ): [Asset]
+    filter: AssetFilter): [Asset]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   containers(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -60,16 +61,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: ContainerFilter
-    
-    ): [Container]
+    filter: ContainerFilter): [Container]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   ipAddrs(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -92,16 +93,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: IpAddrFilter
-    
-    ): [IpAddr]
+    filter: IpAddrFilter): [IpAddr]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   unifiedUsers(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -124,16 +125,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: UnifiedUserFilter
-    
-    ): [UnifiedUser]
+    filter: UnifiedUserFilter): [UnifiedUser]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   users(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -156,16 +157,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: UserFilter
-    
-    ): [User]
+    filter: UserFilter): [User]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   unifiedAccounts(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -188,16 +189,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: UnifiedAccountFilter
-    
-    ): [UnifiedAccount]
+    filter: UnifiedAccountFilter): [UnifiedAccount]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   accounts(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -220,16 +221,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: AccountFilter
-    
-    ): [Account]
+    filter: AccountFilter): [Account]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   applications(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -252,16 +253,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: ApplicationFilter
-    
-    ): [Application]
+    filter: ApplicationFilter): [Application]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   hostnames(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -284,16 +285,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: HostnameFilter
-    
-    ): [Hostname]
+    filter: HostnameFilter): [Hostname]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   databases(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -316,16 +317,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: DatabaseFilter
-    
-    ): [Database]
+    filter: DatabaseFilter): [Database]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   macAddrs(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -348,16 +349,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: MacAddrFilter
-    
-    ): [MacAddr]
+    filter: MacAddrFilter): [MacAddr]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   reports(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -380,16 +381,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: ReportFilter
-    
-    ): [Report]
+    filter: ReportFilter): [Report]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   ports(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -412,16 +413,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: PortFilter
-    
-    ): [Port]
+    filter: PortFilter): [Port]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   sources(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -444,16 +445,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: SourceFilter
-    
-    ): [Source]
+    filter: SourceFilter): [Source]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   vulnerabilities(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -476,16 +477,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: VulnerabilityFilter
-    
-    ): [Vulnerability]
+    filter: VulnerabilityFilter): [Vulnerability]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   tags(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -508,16 +509,16 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: TagFilter
-    
-    ): [Tag]
+    filter: TagFilter): [Tag]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 
+  "Default items = 100, use limit filter to adjust"
   geolocations(
     """
     Specifies how many elements should be at most included in the result.
-    If no limit or filters are specified, limit defaults to 100.
     """
-    limit: Int
+    limit: Int = 100
     """
     Specifies how many elements from the result shall be skipped.
     If limit is not specified, this argument is ignored.
@@ -540,52 +541,90 @@ type Query {
     Provides advanced search via multiple operators in a single search level.
     It is automatically joined with other arguments in the same search level by 'AND' conjunction.
     """
-    filter: GeolocationFilter
-    
-    ): [Geolocation]
+    filter: GeolocationFilter): [Geolocation]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 }
 
 scalar Date
 scalar JSON
 enum SortDirection { asc, desc }
 type Asset {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  name: String
-  business_value: Float
-  risk: Float
-  description: String
-  asset_type: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  vulnerabilityEdges(filter: AssetVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [AssetVulnerabilityEdgeSort]): [AssetVulnerabilityEdge]!
-  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
-  ipAddrEdges(filter: AssetIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetIpAddrEdgeSort]): [AssetIpAddrEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  macAddrEdges(filter: AssetMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetMacAddrEdgeSort]): [AssetMacAddrEdge]!
-  macAddrs(filter: MacAddrFilter  limit: Int  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
-  hostnameEdges(filter: AssetHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AssetHostnameEdgeSort]): [AssetHostnameEdge]!
-  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
-  accountEdges(filter: AssetAccountEdgeFilter  limit: Int  offset: Int  orderBy: [AssetAccountEdgeSort]): [AssetAccountEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  containerEdges(filter: AssetContainerEdgeFilter  limit: Int  offset: Int  orderBy: [AssetContainerEdgeSort]): [AssetContainerEdge]!
-  containers(filter: ContainerFilter  limit: Int  offset: Int  orderBy: [ContainerSort]): [Container]!
-  applicationEdges(filter: AssetApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetApplicationEdgeSort]): [AssetApplicationEdge]!
-  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
-  databaseEdges(filter: AssetDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AssetDatabaseEdgeSort]): [AssetDatabaseEdge]!
-  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
-  geolocationEdges(filter: AssetGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetGeolocationEdgeSort]): [AssetGeolocationEdge]!
-  geolocations(filter: GeolocationFilter  limit: Int  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
-  tagEdges(filter: TagAssetEdgeFilter  limit: Int  offset: Int  orderBy: [TagAssetEdgeSort]): [TagAssetEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  business_value: Float @cost
+  risk: Float @cost
+  description: String @cost
+  asset_type: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilityEdges(filter: AssetVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetVulnerabilityEdgeSort]): [AssetVulnerabilityEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilities(filter: VulnerabilityFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: AssetIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetIpAddrEdgeSort]): [AssetIpAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  macAddrEdges(filter: AssetMacAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetMacAddrEdgeSort]): [AssetMacAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  macAddrs(filter: MacAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  hostnameEdges(filter: AssetHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetHostnameEdgeSort]): [AssetHostnameEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  hostnames(filter: HostnameFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: AssetAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetAccountEdgeSort]): [AssetAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  containerEdges(filter: AssetContainerEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetContainerEdgeSort]): [AssetContainerEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  containers(filter: ContainerFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ContainerSort]): [Container]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: AssetApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetApplicationEdgeSort]): [AssetApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databaseEdges(filter: AssetDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetDatabaseEdgeSort]): [AssetDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databases(filter: DatabaseFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [DatabaseSort]): [Database]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  geolocationEdges(filter: AssetGeolocationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetGeolocationEdgeSort]): [AssetGeolocationEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  geolocations(filter: GeolocationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagAssetEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagAssetEdgeSort]): [TagAssetEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input AssetSort {
-_key: SortDirection
+key: SortDirection
 name: SortDirection
 business_value: SortDirection
 risk: SortDirection
@@ -594,126 +633,192 @@ _modified: SortDirection
 }
 
 type Container {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  name: String
-  image: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  assetEdges(filter: AssetContainerEdgeFilter  limit: Int  offset: Int  orderBy: [AssetContainerEdgeSort]): [AssetContainerEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  ipAddrEdges(filter: IpAddrContainerEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrContainerEdgeSort]): [IpAddrContainerEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  tagEdges(filter: TagContainerEdgeFilter  limit: Int  offset: Int  orderBy: [TagContainerEdgeSort]): [TagContainerEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  image: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetContainerEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetContainerEdgeSort]): [AssetContainerEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: IpAddrContainerEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrContainerEdgeSort]): [IpAddrContainerEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagContainerEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagContainerEdgeSort]): [TagContainerEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input ContainerSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type IpAddr {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  assetEdges(filter: AssetIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetIpAddrEdgeSort]): [AssetIpAddrEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  databaseEdges(filter: DatabaseIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
-  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
-  containerEdges(filter: IpAddrContainerEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrContainerEdgeSort]): [IpAddrContainerEdge]!
-  containers(filter: ContainerFilter  limit: Int  offset: Int  orderBy: [ContainerSort]): [Container]!
-  macAddrEdges(filter: IpAddrMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrMacAddrEdgeSort]): [IpAddrMacAddrEdge]!
-  macAddrs(filter: MacAddrFilter  limit: Int  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
-  hostnameEdges(filter: IpAddrHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrHostnameEdgeSort]): [IpAddrHostnameEdge]!
-  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
-  vulnerabilityEdges(filter: IpAddrVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrVulnerabilityEdgeSort]): [IpAddrVulnerabilityEdge]!
-  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
-  geolocationEdges(filter: IpAddrGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrGeolocationEdgeSort]): [IpAddrGeolocationEdge]!
-  geolocations(filter: GeolocationFilter  limit: Int  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
-  portEdges(filter: IpAddrPortEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrPortEdgeSort]): [IpAddrPortEdge]!
-  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
-  accountEdges(filter: AccountIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AccountIpAddrEdgeSort]): [AccountIpAddrEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  tagEdges(filter: TagIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagIpAddrEdgeSort]): [TagIpAddrEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetIpAddrEdgeSort]): [AssetIpAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  databaseEdges(filter: DatabaseIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  databases(filter: DatabaseFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [DatabaseSort]): [Database]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  containerEdges(filter: IpAddrContainerEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrContainerEdgeSort]): [IpAddrContainerEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  containers(filter: ContainerFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ContainerSort]): [Container]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  macAddrEdges(filter: IpAddrMacAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrMacAddrEdgeSort]): [IpAddrMacAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  macAddrs(filter: MacAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  hostnameEdges(filter: IpAddrHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrHostnameEdgeSort]): [IpAddrHostnameEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  hostnames(filter: HostnameFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilityEdges(filter: IpAddrVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrVulnerabilityEdgeSort]): [IpAddrVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilities(filter: VulnerabilityFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  geolocationEdges(filter: IpAddrGeolocationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrGeolocationEdgeSort]): [IpAddrGeolocationEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  geolocations(filter: GeolocationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  portEdges(filter: IpAddrPortEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrPortEdgeSort]): [IpAddrPortEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ports(filter: PortFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [PortSort]): [Port]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: AccountIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountIpAddrEdgeSort]): [AccountIpAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagIpAddrEdgeSort]): [TagIpAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input IpAddrSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type UnifiedUser {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  userEdges(filter: UnifiedUserUserEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedUserUserEdgeSort]): [UnifiedUserUserEdge]!
-  users(filter: UserFilter  limit: Int  offset: Int  orderBy: [UserSort]): [User]!
-  tagEdges(filter: TagUnifiedUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedUserEdgeSort]): [TagUnifiedUserEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  "Default nested items = 10, use limit filter to adjust"
+  userEdges(filter: UnifiedUserUserEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UnifiedUserUserEdgeSort]): [UnifiedUserUserEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  users(filter: UserFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UserSort]): [User]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagUnifiedUserEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagUnifiedUserEdgeSort]): [TagUnifiedUserEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input UnifiedUserSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type User {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  external_id: String
-  username: String
-  fullname: String
-  job_title: String
-  email: String
-  description: String
-  role: String
-  family_name: String
-  given_name: String
-  upn: String
-  user_category: String
-  title: String
-  employee_id: String
-  active: Boolean
-  department: String
-  modified: Float
-  cumulative_score: Float
-  current_score: Float
-  critical: Float
-  high: Float
-  medium: Float
-  low: Float
-  first_occurrence: Float
-  last_occurrence: Float
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  source: String
-  accountEdges(filter: UserAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  unifiedUserEdges(filter: UnifiedUserUserEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedUserUserEdgeSort]): [UnifiedUserUserEdge]!
-  unifiedUsers(filter: UnifiedUserFilter  limit: Int  offset: Int  orderBy: [UnifiedUserSort]): [UnifiedUser]!
-  tagEdges(filter: TagUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUserEdgeSort]): [TagUserEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  username: String @cost
+  fullname: String @cost
+  job_title: String @cost
+  email: String @cost
+  description: String @cost
+  role: String @cost
+  family_name: String @cost
+  given_name: String @cost
+  upn: String @cost
+  user_category: String @cost
+  title: String @cost
+  employee_id: String @cost
+  active: Boolean @cost
+  department: String @cost
+  modified: Float @cost
+  cumulative_score: Float @cost
+  current_score: Float @cost
+  critical: Float @cost
+  high: Float @cost
+  medium: Float @cost
+  low: Float @cost
+  first_occurrence: Float @cost
+  last_occurrence: Float @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: UserAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedUserEdges(filter: UnifiedUserUserEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UnifiedUserUserEdgeSort]): [UnifiedUserUserEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedUsers(filter: UnifiedUserFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UnifiedUserSort]): [UnifiedUser]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagUserEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagUserEdgeSort]): [TagUserEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input UserSort {
-_key: SortDirection
+key: SortDirection
 fullname: SortDirection
 job_title: SortDirection
 employee_id: SortDirection
@@ -725,68 +830,105 @@ _modified: SortDirection
 }
 
 type UnifiedAccount {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  name: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  accountEdges(filter: UnifiedAccountAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountAccountEdgeSort]): [UnifiedAccountAccountEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  tagEdges(filter: TagUnifiedAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedAccountEdgeSort]): [TagUnifiedAccountEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: UnifiedAccountAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UnifiedAccountAccountEdgeSort]): [UnifiedAccountAccountEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagUnifiedAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagUnifiedAccountEdgeSort]): [TagUnifiedAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input UnifiedAccountSort {
-_key: SortDirection
+key: SortDirection
 name: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Account {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  name: String
-  created: Float
-  active: Boolean
-  compliance_status: Boolean
-  modified: Float
-  cumulative_score: Float
-  current_score: Float
-  critical: Float
-  high: Float
-  medium: Float
-  low: Float
-  first_occurrence: Float
-  last_occurrence: Float
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  assetEdges(filter: AssetAccountEdgeFilter  limit: Int  offset: Int  orderBy: [AssetAccountEdgeSort]): [AssetAccountEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  applicationEdges(filter: AccountApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AccountApplicationEdgeSort]): [AccountApplicationEdge]!
-  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
-  userEdges(filter: UserAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
-  users(filter: UserFilter  limit: Int  offset: Int  orderBy: [UserSort]): [User]!
-  databaseEdges(filter: AccountDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AccountDatabaseEdgeSort]): [AccountDatabaseEdge]!
-  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
-  hostnameEdges(filter: AccountHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AccountHostnameEdgeSort]): [AccountHostnameEdge]!
-  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
-  ipAddrEdges(filter: AccountIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AccountIpAddrEdgeSort]): [AccountIpAddrEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  unifiedAccountEdges(filter: UnifiedAccountAccountEdgeFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountAccountEdgeSort]): [UnifiedAccountAccountEdge]!
-  unifiedAccounts(filter: UnifiedAccountFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountSort]): [UnifiedAccount]!
-  tagEdges(filter: TagAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagAccountEdgeSort]): [TagAccountEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  created: Float @cost
+  active: Boolean @cost
+  compliance_status: Boolean @cost
+  modified: Float @cost
+  cumulative_score: Float @cost
+  current_score: Float @cost
+  critical: Float @cost
+  high: Float @cost
+  medium: Float @cost
+  low: Float @cost
+  first_occurrence: Float @cost
+  last_occurrence: Float @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetAccountEdgeSort]): [AssetAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: AccountApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountApplicationEdgeSort]): [AccountApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  userEdges(filter: UserAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  users(filter: UserFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UserSort]): [User]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databaseEdges(filter: AccountDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountDatabaseEdgeSort]): [AccountDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databases(filter: DatabaseFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [DatabaseSort]): [Database]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  hostnameEdges(filter: AccountHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountHostnameEdgeSort]): [AccountHostnameEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  hostnames(filter: HostnameFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: AccountIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountIpAddrEdgeSort]): [AccountIpAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedAccountEdges(filter: UnifiedAccountAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UnifiedAccountAccountEdgeSort]): [UnifiedAccountAccountEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedAccounts(filter: UnifiedAccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UnifiedAccountSort]): [UnifiedAccount]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagAccountEdgeSort]): [TagAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input AccountSort {
-_key: SortDirection
+key: SortDirection
 name: SortDirection
 cumulative_score: SortDirection
 current_score: SortDirection
@@ -795,47 +937,69 @@ _modified: SortDirection
 }
 
 type Application {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  name: String
-  description: String
-  cpe: String
-  is_os: Boolean
-  owner: String
-  owner_code: String
-  last_access_time: Float
-  threat_score: Float
-  app_type: String
-  cumulative_score: Float
-  current_score: Float
-  critical: Float
-  high: Float
-  medium: Float
-  low: Float
-  first_occurrence: Float
-  last_occurrence: Float
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  assetEdges(filter: AssetApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetApplicationEdgeSort]): [AssetApplicationEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  portEdges(filter: ApplicationPortEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationPortEdgeSort]): [ApplicationPortEdge]!
-  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
-  accountEdges(filter: AccountApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [AccountApplicationEdgeSort]): [AccountApplicationEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  databaseEdges(filter: ApplicationDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
-  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
-  vulnerabilityEdges(filter: ApplicationVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationVulnerabilityEdgeSort]): [ApplicationVulnerabilityEdge]!
-  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
-  tagEdges(filter: TagApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [TagApplicationEdgeSort]): [TagApplicationEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  description: String @cost
+  cpe: String @cost
+  is_os: Boolean @cost
+  owner: String @cost
+  owner_code: String @cost
+  last_access_time: Float @cost
+  threat_score: Float @cost
+  app_type: String @cost
+  cumulative_score: Float @cost
+  current_score: Float @cost
+  critical: Float @cost
+  high: Float @cost
+  medium: Float @cost
+  low: Float @cost
+  first_occurrence: Float @cost
+  last_occurrence: Float @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetApplicationEdgeSort]): [AssetApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  portEdges(filter: ApplicationPortEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationPortEdgeSort]): [ApplicationPortEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ports(filter: PortFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [PortSort]): [Port]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: AccountApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountApplicationEdgeSort]): [AccountApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databaseEdges(filter: ApplicationDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  databases(filter: DatabaseFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [DatabaseSort]): [Database]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilityEdges(filter: ApplicationVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationVulnerabilityEdgeSort]): [ApplicationVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilities(filter: VulnerabilityFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagApplicationEdgeSort]): [TagApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input ApplicationSort {
-_key: SortDirection
+key: SortDirection
 name: SortDirection
 last_access_time: SortDirection
 threat_score: SortDirection
@@ -846,186 +1010,268 @@ _modified: SortDirection
 }
 
 type Hostname {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  assetEdges(filter: AssetHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AssetHostnameEdgeSort]): [AssetHostnameEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  ipAddrEdges(filter: IpAddrHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrHostnameEdgeSort]): [IpAddrHostnameEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  accountEdges(filter: AccountHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [AccountHostnameEdgeSort]): [AccountHostnameEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  tagEdges(filter: TagHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [TagHostnameEdgeSort]): [TagHostnameEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetHostnameEdgeSort]): [AssetHostnameEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: IpAddrHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrHostnameEdgeSort]): [IpAddrHostnameEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: AccountHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountHostnameEdgeSort]): [AccountHostnameEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagHostnameEdgeSort]): [TagHostnameEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input HostnameSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Database {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  name: String
-  description: String
-  type: String
-  modified: Float
-  protocol: String
-  port: String
-  datasource_name: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  assetEdges(filter: AssetDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AssetDatabaseEdgeSort]): [AssetDatabaseEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  applicationEdges(filter: ApplicationDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
-  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
-  ipAddrEdges(filter: DatabaseIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  vulnerabilityEdges(filter: DatabaseVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseVulnerabilityEdgeSort]): [DatabaseVulnerabilityEdge]!
-  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
-  accountEdges(filter: AccountDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [AccountDatabaseEdgeSort]): [AccountDatabaseEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  tagEdges(filter: TagDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  description: String @cost
+  type: String @cost
+  modified: Float @cost
+  protocol: String @cost
+  port: String @cost
+  datasource_name: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetDatabaseEdgeSort]): [AssetDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: ApplicationDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: DatabaseIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilityEdges(filter: DatabaseVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [DatabaseVulnerabilityEdgeSort]): [DatabaseVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilities(filter: VulnerabilityFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: AccountDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AccountDatabaseEdgeSort]): [AccountDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input DatabaseSort {
-_key: SortDirection
+key: SortDirection
 name: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type MacAddr {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  interface: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  assetEdges(filter: AssetMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [AssetMacAddrEdgeSort]): [AssetMacAddrEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  ipAddrEdges(filter: IpAddrMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrMacAddrEdgeSort]): [IpAddrMacAddrEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  tagEdges(filter: TagMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagMacAddrEdgeSort]): [TagMacAddrEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  interface: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetMacAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetMacAddrEdgeSort]): [AssetMacAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: IpAddrMacAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrMacAddrEdgeSort]): [IpAddrMacAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagMacAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagMacAddrEdgeSort]): [TagMacAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input MacAddrSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Report {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  type: String
-  parameters: String
-  value: String
-  modified: Date
-  description: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  type: String @cost
+  parameters: String @cost
+  value: String @cost
+  modified: Date @cost
+  description: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
 }
 input ReportSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Port {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  port_number: Int
-  status: String
-  protocol: String
-  description: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  applicationEdges(filter: ApplicationPortEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationPortEdgeSort]): [ApplicationPortEdge]!
-  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
-  ipAddrEdges(filter: IpAddrPortEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrPortEdgeSort]): [IpAddrPortEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  vulnerabilityEdges(filter: PortVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [PortVulnerabilityEdgeSort]): [PortVulnerabilityEdge]!
-  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
-  tagEdges(filter: TagPortEdgeFilter  limit: Int  offset: Int  orderBy: [TagPortEdgeSort]): [TagPortEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  port_number: Int @cost
+  status: String @cost
+  protocol: String @cost
+  description: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: ApplicationPortEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationPortEdgeSort]): [ApplicationPortEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: IpAddrPortEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrPortEdgeSort]): [IpAddrPortEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilityEdges(filter: PortVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [PortVulnerabilityEdgeSort]): [PortVulnerabilityEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilities(filter: VulnerabilityFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagPortEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagPortEdgeSort]): [TagPortEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input PortSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Source {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  description: String
-  product_link: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  description: String @cost
+  product_link: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
 }
 input SourceSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Vulnerability {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  external_properties: Int
-  external_reference: String
-  name: String
-  base_score: Float
-  description: String
-  disclosed_on: Float
-  published_on: Float
-  updated_on: Float
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  assetEdges(filter: AssetVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [AssetVulnerabilityEdgeSort]): [AssetVulnerabilityEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  applicationEdges(filter: ApplicationVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [ApplicationVulnerabilityEdgeSort]): [ApplicationVulnerabilityEdge]!
-  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
-  databaseEdges(filter: DatabaseVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [DatabaseVulnerabilityEdgeSort]): [DatabaseVulnerabilityEdge]!
-  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
-  ipAddrEdges(filter: IpAddrVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrVulnerabilityEdgeSort]): [IpAddrVulnerabilityEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  portEdges(filter: PortVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [PortVulnerabilityEdgeSort]): [PortVulnerabilityEdge]!
-  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
-  tagEdges(filter: TagVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [TagVulnerabilityEdgeSort]): [TagVulnerabilityEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  external_properties: Int @cost
+  external_reference: String @cost
+  name: String @cost
+  base_score: Float @cost
+  description: String @cost
+  disclosed_on: Float @cost
+  published_on: Float @cost
+  updated_on: Float @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetVulnerabilityEdgeSort]): [AssetVulnerabilityEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: ApplicationVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationVulnerabilityEdgeSort]): [ApplicationVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  databaseEdges(filter: DatabaseVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [DatabaseVulnerabilityEdgeSort]): [DatabaseVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  databases(filter: DatabaseFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [DatabaseSort]): [Database]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: IpAddrVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrVulnerabilityEdgeSort]): [IpAddrVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  portEdges(filter: PortVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [PortVulnerabilityEdgeSort]): [PortVulnerabilityEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ports(filter: PortFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [PortSort]): [Port]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagVulnerabilityEdgeSort]): [TagVulnerabilityEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input VulnerabilitySort {
-_key: SortDirection
+key: SortDirection
 name: SortDirection
 base_score: SortDirection
 _created: SortDirection
@@ -1033,98 +1279,163 @@ _modified: SortDirection
 }
 
 type Tag {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  assetEdges(filter: TagAssetEdgeFilter  limit: Int  offset: Int  orderBy: [TagAssetEdgeSort]): [TagAssetEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  containerEdges(filter: TagContainerEdgeFilter  limit: Int  offset: Int  orderBy: [TagContainerEdgeSort]): [TagContainerEdge]!
-  containers(filter: ContainerFilter  limit: Int  offset: Int  orderBy: [ContainerSort]): [Container]!
-  ipAddrEdges(filter: TagIpAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagIpAddrEdgeSort]): [TagIpAddrEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  unifiedUserEdges(filter: TagUnifiedUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedUserEdgeSort]): [TagUnifiedUserEdge]!
-  unifiedUsers(filter: UnifiedUserFilter  limit: Int  offset: Int  orderBy: [UnifiedUserSort]): [UnifiedUser]!
-  userEdges(filter: TagUserEdgeFilter  limit: Int  offset: Int  orderBy: [TagUserEdgeSort]): [TagUserEdge]!
-  users(filter: UserFilter  limit: Int  offset: Int  orderBy: [UserSort]): [User]!
-  unifiedAccountEdges(filter: TagUnifiedAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagUnifiedAccountEdgeSort]): [TagUnifiedAccountEdge]!
-  unifiedAccounts(filter: UnifiedAccountFilter  limit: Int  offset: Int  orderBy: [UnifiedAccountSort]): [UnifiedAccount]!
-  accountEdges(filter: TagAccountEdgeFilter  limit: Int  offset: Int  orderBy: [TagAccountEdgeSort]): [TagAccountEdge]!
-  accounts(filter: AccountFilter  limit: Int  offset: Int  orderBy: [AccountSort]): [Account]!
-  applicationEdges(filter: TagApplicationEdgeFilter  limit: Int  offset: Int  orderBy: [TagApplicationEdgeSort]): [TagApplicationEdge]!
-  applications(filter: ApplicationFilter  limit: Int  offset: Int  orderBy: [ApplicationSort]): [Application]!
-  hostnameEdges(filter: TagHostnameEdgeFilter  limit: Int  offset: Int  orderBy: [TagHostnameEdgeSort]): [TagHostnameEdge]!
-  hostnames(filter: HostnameFilter  limit: Int  offset: Int  orderBy: [HostnameSort]): [Hostname]!
-  databaseEdges(filter: TagDatabaseEdgeFilter  limit: Int  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
-  databases(filter: DatabaseFilter  limit: Int  offset: Int  orderBy: [DatabaseSort]): [Database]!
-  macAddrEdges(filter: TagMacAddrEdgeFilter  limit: Int  offset: Int  orderBy: [TagMacAddrEdgeSort]): [TagMacAddrEdge]!
-  macAddrs(filter: MacAddrFilter  limit: Int  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
-  portEdges(filter: TagPortEdgeFilter  limit: Int  offset: Int  orderBy: [TagPortEdgeSort]): [TagPortEdge]!
-  ports(filter: PortFilter  limit: Int  offset: Int  orderBy: [PortSort]): [Port]!
-  vulnerabilityEdges(filter: TagVulnerabilityEdgeFilter  limit: Int  offset: Int  orderBy: [TagVulnerabilityEdgeSort]): [TagVulnerabilityEdge]!
-  vulnerabilities(filter: VulnerabilityFilter  limit: Int  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
-  geolocationEdges(filter: TagGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [TagGeolocationEdgeSort]): [TagGeolocationEdge]!
-  geolocations(filter: GeolocationFilter  limit: Int  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: TagAssetEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagAssetEdgeSort]): [TagAssetEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  containerEdges(filter: TagContainerEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagContainerEdgeSort]): [TagContainerEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  containers(filter: ContainerFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ContainerSort]): [Container]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: TagIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagIpAddrEdgeSort]): [TagIpAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedUserEdges(filter: TagUnifiedUserEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagUnifiedUserEdgeSort]): [TagUnifiedUserEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedUsers(filter: UnifiedUserFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UnifiedUserSort]): [UnifiedUser]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  userEdges(filter: TagUserEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagUserEdgeSort]): [TagUserEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  users(filter: UserFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UserSort]): [User]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedAccountEdges(filter: TagUnifiedAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagUnifiedAccountEdgeSort]): [TagUnifiedAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  unifiedAccounts(filter: UnifiedAccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [UnifiedAccountSort]): [UnifiedAccount]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: TagAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagAccountEdgeSort]): [TagAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: TagApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagApplicationEdgeSort]): [TagApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  hostnameEdges(filter: TagHostnameEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagHostnameEdgeSort]): [TagHostnameEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  hostnames(filter: HostnameFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [HostnameSort]): [Hostname]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databaseEdges(filter: TagDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  databases(filter: DatabaseFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [DatabaseSort]): [Database]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  macAddrEdges(filter: TagMacAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagMacAddrEdgeSort]): [TagMacAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  macAddrs(filter: MacAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [MacAddrSort]): [MacAddr]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  portEdges(filter: TagPortEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagPortEdgeSort]): [TagPortEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ports(filter: PortFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [PortSort]): [Port]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilityEdges(filter: TagVulnerabilityEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagVulnerabilityEdgeSort]): [TagVulnerabilityEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  vulnerabilities(filter: VulnerabilityFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [VulnerabilitySort]): [Vulnerability]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  geolocationEdges(filter: TagGeolocationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagGeolocationEdgeSort]): [TagGeolocationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  geolocations(filter: GeolocationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [GeolocationSort]): [Geolocation]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input TagSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type Geolocation {
-  _id: ID!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  _key: String
-  region: String
-  longitude: Float
-  latitude: Float
-  description: String
-  _created: Date
-  _modified: Date
-  tag: [String]
-  untag: [String]
-  external_id: String
-  source: String
-  assetEdges(filter: AssetGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [AssetGeolocationEdgeSort]): [AssetGeolocationEdge]!
-  assets(filter: AssetFilter  limit: Int  offset: Int  orderBy: [AssetSort]): [Asset]!
-  ipAddrEdges(filter: IpAddrGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [IpAddrGeolocationEdgeSort]): [IpAddrGeolocationEdge]!
-  ipAddrs(filter: IpAddrFilter  limit: Int  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
-  tagEdges(filter: TagGeolocationEdgeFilter  limit: Int  offset: Int  orderBy: [TagGeolocationEdgeSort]): [TagGeolocationEdge]!
-  tags(filter: TagFilter  limit: Int  offset: Int  orderBy: [TagSort]): [Tag]!
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  region: String @cost
+  longitude: Float @cost
+  latitude: Float @cost
+  description: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  assetEdges(filter: AssetGeolocationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [AssetGeolocationEdgeSort]): [AssetGeolocationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: IpAddrGeolocationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [IpAddrGeolocationEdgeSort]): [IpAddrGeolocationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagGeolocationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagGeolocationEdgeSort]): [TagGeolocationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
 }
 input GeolocationSort {
-_key: SortDirection
+key: SortDirection
 _created: SortDirection
 _modified: SortDirection
 }
 
 type AssetVulnerabilityEdgePort {
-  port_number: Float
-  protocol: String
-  status: String
+  port_number: Float @cost
+  protocol: String @cost
+  status: String @cost
 }
 
 type AssetVulnerabilityEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  port: AssetVulnerabilityEdgePort
-  risk_score: Float
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  vulnerability: Vulnerability!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  port: AssetVulnerabilityEdgePort @cost
+  risk_score: Float @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  vulnerability: Vulnerability! @cost
 }
 input AssetVulnerabilityEdgeSort {
 risk_score: SortDirection
@@ -1135,20 +1446,20 @@ _deleted: SortDirection
 }
 
 type AssetIpAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  ipAddr: IpAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  ipAddr: IpAddr! @cost
 }
 input AssetIpAddrEdgeSort {
 source: SortDirection
@@ -1158,20 +1469,20 @@ _deleted: SortDirection
 }
 
 type AssetMacAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  macAddr: MacAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  macAddr: MacAddr! @cost
 }
 input AssetMacAddrEdgeSort {
 source: SortDirection
@@ -1181,20 +1492,20 @@ _deleted: SortDirection
 }
 
 type AssetHostnameEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  hostname: Hostname!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  hostname: Hostname! @cost
 }
 input AssetHostnameEdgeSort {
 source: SortDirection
@@ -1204,20 +1515,20 @@ _deleted: SortDirection
 }
 
 type AssetAccountEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  account: Account!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  account: Account! @cost
 }
 input AssetAccountEdgeSort {
 source: SortDirection
@@ -1227,20 +1538,20 @@ _deleted: SortDirection
 }
 
 type AssetContainerEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  container: Container!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  container: Container! @cost
 }
 input AssetContainerEdgeSort {
 source: SortDirection
@@ -1250,20 +1561,20 @@ _deleted: SortDirection
 }
 
 type AssetApplicationEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  application: Application!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  application: Application! @cost
 }
 input AssetApplicationEdgeSort {
 source: SortDirection
@@ -1273,20 +1584,20 @@ _deleted: SortDirection
 }
 
 type AssetDatabaseEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  database: Database!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  database: Database! @cost
 }
 input AssetDatabaseEdgeSort {
 source: SortDirection
@@ -1296,20 +1607,20 @@ _deleted: SortDirection
 }
 
 type AssetGeolocationEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  asset: Asset!
-  geolocation: Geolocation!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  asset: Asset! @cost
+  geolocation: Geolocation! @cost
 }
 input AssetGeolocationEdgeSort {
 source: SortDirection
@@ -1319,20 +1630,20 @@ _deleted: SortDirection
 }
 
 type ApplicationPortEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  application: Application!
-  port: Port!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  application: Application! @cost
+  port: Port! @cost
 }
 input ApplicationPortEdgeSort {
 source: SortDirection
@@ -1342,22 +1653,22 @@ _deleted: SortDirection
 }
 
 type AccountApplicationEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  user_id: String
-  last_access_time: Float
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  account: Account!
-  application: Application!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  user_id: String @cost
+  last_access_time: Float @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  account: Account! @cost
+  application: Application! @cost
 }
 input AccountApplicationEdgeSort {
 source: SortDirection
@@ -1367,20 +1678,20 @@ _deleted: SortDirection
 }
 
 type ApplicationDatabaseEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  application: Application!
-  database: Database!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  application: Application! @cost
+  database: Database! @cost
 }
 input ApplicationDatabaseEdgeSort {
 source: SortDirection
@@ -1390,20 +1701,20 @@ _deleted: SortDirection
 }
 
 type ApplicationVulnerabilityEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  application: Application!
-  vulnerability: Vulnerability!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  application: Application! @cost
+  vulnerability: Vulnerability! @cost
 }
 input ApplicationVulnerabilityEdgeSort {
 source: SortDirection
@@ -1413,20 +1724,20 @@ _deleted: SortDirection
 }
 
 type DatabaseIpAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  database: Database!
-  ipAddr: IpAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  database: Database! @cost
+  ipAddr: IpAddr! @cost
 }
 input DatabaseIpAddrEdgeSort {
 source: SortDirection
@@ -1436,29 +1747,29 @@ _deleted: SortDirection
 }
 
 type DatabaseVulnerabilityEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  version_level: String
-  patch_level: String
-  full_version_info: String
-  result_text: String
-  recommendation: String
-  severity: String
-  category: String
-  assessment_description: String
-  result_details: String
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  database: Database!
-  vulnerability: Vulnerability!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  version_level: String @cost
+  patch_level: String @cost
+  full_version_info: String @cost
+  result_text: String @cost
+  recommendation: String @cost
+  severity: String @cost
+  category: String @cost
+  assessment_description: String @cost
+  result_details: String @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  database: Database! @cost
+  vulnerability: Vulnerability! @cost
 }
 input DatabaseVulnerabilityEdgeSort {
 severity: SortDirection
@@ -1469,20 +1780,20 @@ _deleted: SortDirection
 }
 
 type IpAddrContainerEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  ipAddr: IpAddr!
-  container: Container!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  ipAddr: IpAddr! @cost
+  container: Container! @cost
 }
 input IpAddrContainerEdgeSort {
 source: SortDirection
@@ -1492,20 +1803,20 @@ _deleted: SortDirection
 }
 
 type IpAddrMacAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  ipAddr: IpAddr!
-  macAddr: MacAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  ipAddr: IpAddr! @cost
+  macAddr: MacAddr! @cost
 }
 input IpAddrMacAddrEdgeSort {
 source: SortDirection
@@ -1515,20 +1826,20 @@ _deleted: SortDirection
 }
 
 type IpAddrHostnameEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  ipAddr: IpAddr!
-  hostname: Hostname!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  ipAddr: IpAddr! @cost
+  hostname: Hostname! @cost
 }
 input IpAddrHostnameEdgeSort {
 source: SortDirection
@@ -1538,20 +1849,20 @@ _deleted: SortDirection
 }
 
 type IpAddrVulnerabilityEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  ipAddr: IpAddr!
-  vulnerability: Vulnerability!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  ipAddr: IpAddr! @cost
+  vulnerability: Vulnerability! @cost
 }
 input IpAddrVulnerabilityEdgeSort {
 source: SortDirection
@@ -1561,20 +1872,20 @@ _deleted: SortDirection
 }
 
 type IpAddrGeolocationEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  ipAddr: IpAddr!
-  geolocation: Geolocation!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  ipAddr: IpAddr! @cost
+  geolocation: Geolocation! @cost
 }
 input IpAddrGeolocationEdgeSort {
 source: SortDirection
@@ -1584,20 +1895,20 @@ _deleted: SortDirection
 }
 
 type IpAddrPortEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  ipAddr: IpAddr!
-  port: Port!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  ipAddr: IpAddr! @cost
+  port: Port! @cost
 }
 input IpAddrPortEdgeSort {
 source: SortDirection
@@ -1607,21 +1918,21 @@ _deleted: SortDirection
 }
 
 type UserAccountEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  last_access_time: Float
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  user: User!
-  account: Account!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  last_access_time: Float @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  user: User! @cost
+  account: Account! @cost
 }
 input UserAccountEdgeSort {
 last_access_time: SortDirection
@@ -1632,20 +1943,20 @@ _deleted: SortDirection
 }
 
 type AccountDatabaseEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  account: Account!
-  database: Database!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  account: Account! @cost
+  database: Database! @cost
 }
 input AccountDatabaseEdgeSort {
 source: SortDirection
@@ -1655,20 +1966,20 @@ _deleted: SortDirection
 }
 
 type AccountHostnameEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  account: Account!
-  hostname: Hostname!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  account: Account! @cost
+  hostname: Hostname! @cost
 }
 input AccountHostnameEdgeSort {
 source: SortDirection
@@ -1678,32 +1989,32 @@ _deleted: SortDirection
 }
 
 type AccountIpAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  total_risk_score: Float
-  threat_analytics_score: Float
-  violations_score: Float
-  vulnerability_score: Float
-  sensitive_objects_score: Float
-  select_queries_score: Float
-  ddl_queries_score: Float
-  dml_queries_score: Float
-  administrative_queries_score: Float
-  high_volume_activity_score: Float
-  off_work_activity_score: Float
-  group_state_description: String
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  account: Account!
-  ipAddr: IpAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  total_risk_score: Float @cost
+  threat_analytics_score: Float @cost
+  violations_score: Float @cost
+  vulnerability_score: Float @cost
+  sensitive_objects_score: Float @cost
+  select_queries_score: Float @cost
+  ddl_queries_score: Float @cost
+  dml_queries_score: Float @cost
+  administrative_queries_score: Float @cost
+  high_volume_activity_score: Float @cost
+  off_work_activity_score: Float @cost
+  group_state_description: String @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  account: Account! @cost
+  ipAddr: IpAddr! @cost
 }
 input AccountIpAddrEdgeSort {
 total_risk_score: SortDirection
@@ -1714,20 +2025,20 @@ _deleted: SortDirection
 }
 
 type UnifiedAccountAccountEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  unifiedAccount: UnifiedAccount!
-  account: Account!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  unifiedAccount: UnifiedAccount! @cost
+  account: Account! @cost
 }
 input UnifiedAccountAccountEdgeSort {
 source: SortDirection
@@ -1737,20 +2048,20 @@ _deleted: SortDirection
 }
 
 type UnifiedUserUserEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  unifiedUser: UnifiedUser!
-  user: User!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  unifiedUser: UnifiedUser! @cost
+  user: User! @cost
 }
 input UnifiedUserUserEdgeSort {
 source: SortDirection
@@ -1760,20 +2071,20 @@ _deleted: SortDirection
 }
 
 type PortVulnerabilityEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  port: Port!
-  vulnerability: Vulnerability!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  port: Port! @cost
+  vulnerability: Vulnerability! @cost
 }
 input PortVulnerabilityEdgeSort {
 source: SortDirection
@@ -1783,20 +2094,20 @@ _deleted: SortDirection
 }
 
 type TagAssetEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  asset: Asset!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  asset: Asset! @cost
 }
 input TagAssetEdgeSort {
 source: SortDirection
@@ -1806,20 +2117,20 @@ _deleted: SortDirection
 }
 
 type TagContainerEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  container: Container!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  container: Container! @cost
 }
 input TagContainerEdgeSort {
 source: SortDirection
@@ -1829,20 +2140,20 @@ _deleted: SortDirection
 }
 
 type TagIpAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  ipAddr: IpAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  ipAddr: IpAddr! @cost
 }
 input TagIpAddrEdgeSort {
 source: SortDirection
@@ -1852,20 +2163,20 @@ _deleted: SortDirection
 }
 
 type TagUnifiedUserEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  unifiedUser: UnifiedUser!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  unifiedUser: UnifiedUser! @cost
 }
 input TagUnifiedUserEdgeSort {
 source: SortDirection
@@ -1875,20 +2186,20 @@ _deleted: SortDirection
 }
 
 type TagUserEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  user: User!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  user: User! @cost
 }
 input TagUserEdgeSort {
 source: SortDirection
@@ -1898,20 +2209,20 @@ _deleted: SortDirection
 }
 
 type TagUnifiedAccountEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  unifiedAccount: UnifiedAccount!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  unifiedAccount: UnifiedAccount! @cost
 }
 input TagUnifiedAccountEdgeSort {
 source: SortDirection
@@ -1921,20 +2232,20 @@ _deleted: SortDirection
 }
 
 type TagAccountEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  account: Account!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  account: Account! @cost
 }
 input TagAccountEdgeSort {
 source: SortDirection
@@ -1944,20 +2255,20 @@ _deleted: SortDirection
 }
 
 type TagApplicationEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  application: Application!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  application: Application! @cost
 }
 input TagApplicationEdgeSort {
 source: SortDirection
@@ -1967,20 +2278,20 @@ _deleted: SortDirection
 }
 
 type TagHostnameEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  hostname: Hostname!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  hostname: Hostname! @cost
 }
 input TagHostnameEdgeSort {
 source: SortDirection
@@ -1990,20 +2301,20 @@ _deleted: SortDirection
 }
 
 type TagDatabaseEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  database: Database!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  database: Database! @cost
 }
 input TagDatabaseEdgeSort {
 source: SortDirection
@@ -2013,20 +2324,20 @@ _deleted: SortDirection
 }
 
 type TagMacAddrEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  macAddr: MacAddr!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  macAddr: MacAddr! @cost
 }
 input TagMacAddrEdgeSort {
 source: SortDirection
@@ -2036,20 +2347,20 @@ _deleted: SortDirection
 }
 
 type TagPortEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  port: Port!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  port: Port! @cost
 }
 input TagPortEdgeSort {
 source: SortDirection
@@ -2059,20 +2370,20 @@ _deleted: SortDirection
 }
 
 type TagVulnerabilityEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  vulnerability: Vulnerability!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  vulnerability: Vulnerability! @cost
 }
 input TagVulnerabilityEdgeSort {
 source: SortDirection
@@ -2082,20 +2393,20 @@ _deleted: SortDirection
 }
 
 type TagGeolocationEdge {
-  _id: ID!
-  _from: ID!
-  _to: ID!
-  source: String!
-  report: String!
-  customProperties(filter: CustomPropertiesFilter): JSON!
-  created: Date
-  modified: Date
-  external_id: String
-  _created: Date
-  _modified: Date
-  _deleted: Date
-  tag: Tag!
-  geolocation: Geolocation!
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  geolocation: Geolocation! @cost
 }
 input TagGeolocationEdgeSort {
 source: SortDirection
