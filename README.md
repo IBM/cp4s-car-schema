@@ -1309,5 +1309,3 @@ For non-naturally keyed collections, collector has to provide value of external_
 \_key and external_id cannot be both put in the same import object.
 
 For detail of type of objects please reference [Data Model](#Data-stored-in-CAR)
-
-> > > > > > > initializing

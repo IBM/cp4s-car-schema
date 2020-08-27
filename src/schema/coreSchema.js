@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-
 const index__external_id__source = { type: 'persistent', unique: true, sparse: true, fields: ['external_id', 'source'] };
 const index__from__source__active = { type: 'persistent', fields: ['_from', 'source', 'active'] };  
 const index__source = { type: 'persistent', fields: ['source'] };  
