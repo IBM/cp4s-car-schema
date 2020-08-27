@@ -8,6 +8,7 @@ const defaultEdgeIndexes = [index__from__source__active, index__source];
 
 const defaultVertexIndexes = [index__external_id__source];
 
+
 const commonVertexProperties = {
   _created: {
     // format: 'date-time',
