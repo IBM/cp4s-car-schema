@@ -10,10 +10,13 @@ hub clone --branch=${TARGET_REPO_BRANCH} https://${TARGET_REPO_TOKEN}:x-oauth-ba
 if [ -d ./target ]
 then
   cd target && git checkout -b ${TARGET_REPO_INTERMEDIATE_BRANCH}
+  ls -la
   for file in "${result[@]}"
   do
+    echo "${file}"
     cp -f ../$file ./$file
   done 
+  npm install
   node ./doc/script/docSchemaHelper.js
   if ! git diff --exit-code --quiet; then
     git config  user.email "iscstg@ie.ibm.com"
