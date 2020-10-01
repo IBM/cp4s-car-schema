@@ -494,6 +494,12 @@
 
 * Type: number 
 
+### status 
+
+* Description: Application status 
+
+* Type: string 
+
 ### tag 
 
 * Type: array 
@@ -539,6 +545,44 @@
 * Type: array 
 
 * Description: Tags to remove from the document. When untag array property is provided, tags that are in this array will be removed from the document. If untag property is empty or not provided then no removal of tags will occur. 
+
+## businessprocess 
+
+### Type: array 
+
+### name* 
+
+* Description: name of the business process 
+
+* Type: string 
+
+* required: true 
+
+### description 
+
+* Description: businsess process description 
+
+* Type: string 
+
+### tag 
+
+* Type: array 
+
+* Description: Tags to add to the document. When tag array property is provided, tags that are in this array will be added. If tag is not provided or empty then no updates/inserts of tags will occur. 
+
+### untag 
+
+* Type: array 
+
+* Description: Tags to remove from the document. When untag array property is provided, tags that are in this array will be removed from the document. If untag property is empty or not provided then no removal of tags will occur. 
+
+### external_id* 
+
+* Description: a unique id of the object in the system source 
+
+* Type: string 
+
+* required: true 
 
 ## database 
 
@@ -1719,6 +1763,248 @@
 * Description: time when application was last accessed (ms since epoch) 
 
 * Type: number 
+
+### created* 
+
+* Type: number 
+
+* Description: epoch in milliseconds 
+
+* required: true 
+
+### modified 
+
+* Type: number 
+
+* Description: this field should be missed when there is no update and should contain the last modified timestamp when there is an update  
+
+### report* 
+
+* Type: string 
+
+* Description: the report _key 
+
+* required: true 
+
+### source* 
+
+* Type: string 
+
+* Description: the source _key 
+
+* required: true 
+
+### external_id 
+
+* Type: string 
+
+* Description: external identifier if exists 
+
+### _created 
+
+* Type: number 
+
+* Description: epoch in milliseconds, created time 
+
+### _modified 
+
+* Type: number 
+
+* Description: epoch in milliseconds, updated time 
+
+### _deleted 
+
+* Type: number 
+
+* Description: epoch in milliseconds, disabled time  
+
+### active* 
+
+* Type: boolean 
+
+* Description: True if the edge is active, false if the edge is disabled 
+
+* required: true 
+
+### _from_external_id* 
+
+* Type: string 
+
+* required: true 
+
+### _to_external_id* 
+
+* Type: string 
+
+* required: true 
+
+## application_ipaddress 
+
+### Type: array 
+
+### mappingtype 
+
+* Description: Mapping Relationship between Ip address and Application  
+
+* Type: string 
+
+### created* 
+
+* Type: number 
+
+* Description: epoch in milliseconds 
+
+* required: true 
+
+### modified 
+
+* Type: number 
+
+* Description: this field should be missed when there is no update and should contain the last modified timestamp when there is an update  
+
+### report* 
+
+* Type: string 
+
+* Description: the report _key 
+
+* required: true 
+
+### source* 
+
+* Type: string 
+
+* Description: the source _key 
+
+* required: true 
+
+### external_id 
+
+* Type: string 
+
+* Description: external identifier if exists 
+
+### _created 
+
+* Type: number 
+
+* Description: epoch in milliseconds, created time 
+
+### _modified 
+
+* Type: number 
+
+* Description: epoch in milliseconds, updated time 
+
+### _deleted 
+
+* Type: number 
+
+* Description: epoch in milliseconds, disabled time  
+
+### active* 
+
+* Type: boolean 
+
+* Description: True if the edge is active, false if the edge is disabled 
+
+* required: true 
+
+### _from_external_id* 
+
+* Type: string 
+
+* required: true 
+
+### _to* 
+
+* Type: string 
+
+* Pattern: ^ipaddress/* 
+
+* required: true 
+
+## businessprocess_application 
+
+### Type: array 
+
+### created* 
+
+* Type: number 
+
+* Description: epoch in milliseconds 
+
+* required: true 
+
+### modified 
+
+* Type: number 
+
+* Description: this field should be missed when there is no update and should contain the last modified timestamp when there is an update  
+
+### report* 
+
+* Type: string 
+
+* Description: the report _key 
+
+* required: true 
+
+### source* 
+
+* Type: string 
+
+* Description: the source _key 
+
+* required: true 
+
+### external_id 
+
+* Type: string 
+
+* Description: external identifier if exists 
+
+### _created 
+
+* Type: number 
+
+* Description: epoch in milliseconds, created time 
+
+### _modified 
+
+* Type: number 
+
+* Description: epoch in milliseconds, updated time 
+
+### _deleted 
+
+* Type: number 
+
+* Description: epoch in milliseconds, disabled time  
+
+### active* 
+
+* Type: boolean 
+
+* Description: True if the edge is active, false if the edge is disabled 
+
+* required: true 
+
+### _from_external_id* 
+
+* Type: string 
+
+* required: true 
+
+### _to_external_id* 
+
+* Type: string 
+
+* required: true 
+
+## businessprocess_account 
+
+### Type: array 
 
 ### created* 
 

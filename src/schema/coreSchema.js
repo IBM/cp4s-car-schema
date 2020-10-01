@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* eslint-disable camelcase  */
 const index__external_id__source = { type: 'persistent', unique: true, sparse: true, fields: ['external_id', 'source'] };
 const index__from__source__active = { type: 'persistent', fields: ['_from', 'source', 'active'] };  
 const index__source = { type: 'persistent', fields: ['source'] };  
@@ -30,6 +30,15 @@ const commonVertexProperties = {
     graphql_filter_attribute: true,
     graphql_globalfilter_attribute: true,
     graphql_sort_attribute: true,
+  },
+  _deleted: {
+    // format: 'date-time',
+    type: 'number',
+    description:'epoch in milliseconds, disabled time ',
+    graphql_filter_attribute: true,
+    graphql_sort_attribute: true,
+    import_schema: false,
+    graphql_type: 'Date',
   },
   _number_of_active_edges: {
     type: 'number',
@@ -488,7 +497,12 @@ const SchemaTemplate = {
         last_occurrence: {
           description: 'Epoch Time when latest risk was seen',
           type: 'number',
+        },  
+          status: {
+          description: 'Application status',
+          type: 'string',
         },
+        
       },
     },
 
@@ -502,6 +516,33 @@ const SchemaTemplate = {
         },
       },
     },
+
+
+
+    businessprocess: {
+      usesExternalId: true,
+      properties: {
+        _key: {
+          description: 'auto generated key',
+          type: 'string',
+          graphql_sort_attribute: true,
+          import_schema: false
+        },
+        name: {
+          description: 'name of the business process',
+          type: 'string',
+          graphql_filter_attribute: true,
+          graphql_sort_attribute: true,
+          search_index: true
+        },
+        description: {
+          description: 'businsess process description',
+          type: 'string',
+        },
+      
+      },
+    },
+
 
     database: {
       usesExternalId: true,
@@ -796,6 +837,22 @@ const SchemaTemplate = {
         },
       },
     },
+
+    application_ipaddress: { 
+    	cardinality: { in: MANY, out: 1 }, 
+    	 properties: {
+    	    mappingtype: {
+          		description:     'Mapping Relationship between Ip address and Application ',
+	          type: 'string',
+	          }
+        }
+	
+    },
+    
+    
+    businessprocess_application: { cardinality: { in: MANY, out: 1 } },    
+    businessprocess_account: { cardinality: { in: MANY, out: 1 } },
+
     application_database: { cardinality: { in: MANY, out: 1 } },
     application_vulnerability: { cardinality: { in: 1, out: 1 } },
 

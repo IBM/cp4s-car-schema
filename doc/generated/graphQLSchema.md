@@ -236,6 +236,32 @@
 
 * Return: ![[Hostname]](#type-Hostname) 
 
+### Businessprocess 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[Businessprocess]](#type-Businessprocess) 
+
 ### Database 
 
 * Arguments 
@@ -493,6 +519,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -1230,6 +1260,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -1480,6 +1514,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -1555,6 +1593,74 @@
          > isArray: true 
 
   * type: [[Asset]!](#type-Asset) 
+
+  * isArray: true 
+
+  * required: true 
+
+* applicationEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationIpAddrEdgeFilter](#type-ApplicationIpAddrEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationIpAddrEdgeSort]](#type-ApplicationIpAddrEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[ApplicationIpAddrEdge]!](#type-ApplicationIpAddrEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* applications 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationFilter](#type-ApplicationFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationSort]](#type-ApplicationSort) 
+
+         > isArray: true 
+
+  * type: [[Application]!](#type-Application) 
 
   * isArray: true 
 
@@ -2202,6 +2308,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -2472,6 +2582,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -2726,6 +2840,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -2956,6 +3074,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -3103,6 +3225,74 @@
          > isArray: true 
 
   * type: [[Application]!](#type-Application) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocessEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessAccountEdgeFilter](#type-BusinessprocessAccountEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessAccountEdgeSort]](#type-BusinessprocessAccountEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessAccountEdge]!](#type-BusinessprocessAccountEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocesses 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+         > isArray: true 
+
+  * type: [[Businessprocess]!](#type-Businessprocess) 
 
   * isArray: true 
 
@@ -3606,11 +3796,19 @@
 
   * type: [Float](#type-Float) 
 
+* status 
+
+  * type: [String](#type-String) 
+
 * _created 
 
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -3829,6 +4027,142 @@
          > isArray: true 
 
   * type: [[Account]!](#type-Account) 
+
+  * isArray: true 
+
+  * required: true 
+
+* ipAddrEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationIpAddrEdgeFilter](#type-ApplicationIpAddrEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationIpAddrEdgeSort]](#type-ApplicationIpAddrEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[ApplicationIpAddrEdge]!](#type-ApplicationIpAddrEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* ipAddrs 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [IpAddrFilter](#type-IpAddrFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[IpAddrSort]](#type-IpAddrSort) 
+
+         > isArray: true 
+
+  * type: [[IpAddr]!](#type-IpAddr) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocessEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessApplicationEdgeFilter](#type-BusinessprocessApplicationEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessApplicationEdgeSort]](#type-BusinessprocessApplicationEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessApplicationEdge]!](#type-BusinessprocessApplicationEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocesses 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+         > isArray: true 
+
+  * type: [[Businessprocess]!](#type-Businessprocess) 
 
   * isArray: true 
 
@@ -4065,6 +4399,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -4352,6 +4690,268 @@
 
   * required: true 
 
+### type Businessprocess 
+
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* name 
+
+  * type: [String](#type-String) 
+
+* description 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* tag 
+
+  * isArray: true 
+
+  * type: [[String]](#type-String) 
+
+* untag 
+
+  * isArray: true 
+
+  * type: [[String]](#type-String) 
+
+* source 
+
+  * type: [String](#type-String) 
+
+* applicationEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessApplicationEdgeFilter](#type-BusinessprocessApplicationEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessApplicationEdgeSort]](#type-BusinessprocessApplicationEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessApplicationEdge]!](#type-BusinessprocessApplicationEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* applications 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationFilter](#type-ApplicationFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationSort]](#type-ApplicationSort) 
+
+         > isArray: true 
+
+  * type: [[Application]!](#type-Application) 
+
+  * isArray: true 
+
+  * required: true 
+
+* accountEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessAccountEdgeFilter](#type-BusinessprocessAccountEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessAccountEdgeSort]](#type-BusinessprocessAccountEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessAccountEdge]!](#type-BusinessprocessAccountEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* accounts 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [AccountFilter](#type-AccountFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[AccountSort]](#type-AccountSort) 
+
+         > isArray: true 
+
+  * type: [[Account]!](#type-Account) 
+
+  * isArray: true 
+
+  * required: true 
+
+* tagEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [TagBusinessprocessEdgeFilter](#type-TagBusinessprocessEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[TagBusinessprocessEdgeSort]](#type-TagBusinessprocessEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[TagBusinessprocessEdge]!](#type-TagBusinessprocessEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* tags 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [TagFilter](#type-TagFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[TagSort]](#type-TagSort) 
+
+         > isArray: true 
+
+  * type: [[Tag]!](#type-Tag) 
+
+  * isArray: true 
+
+  * required: true 
+
 ### type Database 
 
 * key 
@@ -4407,6 +5007,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -4868,6 +5472,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -5134,6 +5742,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -5189,6 +5801,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -5518,6 +6134,10 @@
 
   * type: [Date](#type-Date) 
 
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
 * tag 
 
   * isArray: true 
@@ -5589,6 +6209,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -6043,6 +6667,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -6670,6 +7298,74 @@
 
   * required: true 
 
+* businessprocessEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [TagBusinessprocessEdgeFilter](#type-TagBusinessprocessEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[TagBusinessprocessEdgeSort]](#type-TagBusinessprocessEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[TagBusinessprocessEdge]!](#type-TagBusinessprocessEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocesses 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+         > isArray: true 
+
+  * type: [[Businessprocess]!](#type-Businessprocess) 
+
+  * isArray: true 
+
+  * required: true 
+
 * databaseEdges 
 
   * Arguments 
@@ -7053,6 +7749,10 @@
   * type: [Date](#type-Date) 
 
 * _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
 
   * type: [Date](#type-Date) 
 
@@ -8205,6 +8905,256 @@
 * application 
 
   * type: [Application!](#type-Application) 
+
+  * required: true 
+
+### type ApplicationIpAddrEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* mappingtype 
+
+  * type: [String](#type-String) 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* application 
+
+  * type: [Application!](#type-Application) 
+
+  * required: true 
+
+* ipAddr 
+
+  * type: [IpAddr!](#type-IpAddr) 
+
+  * required: true 
+
+### type BusinessprocessApplicationEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* businessprocess 
+
+  * type: [Businessprocess!](#type-Businessprocess) 
+
+  * required: true 
+
+* application 
+
+  * type: [Application!](#type-Application) 
+
+  * required: true 
+
+### type BusinessprocessAccountEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* businessprocess 
+
+  * type: [Businessprocess!](#type-Businessprocess) 
+
+  * required: true 
+
+* account 
+
+  * type: [Account!](#type-Account) 
 
   * required: true 
 
@@ -10428,6 +11378,88 @@
 
   * required: true 
 
+### type TagBusinessprocessEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* tag 
+
+  * type: [Tag!](#type-Tag) 
+
+  * required: true 
+
+* businessprocess 
+
+  * type: [Businessprocess!](#type-Businessprocess) 
+
+  * required: true 
+
 ### type TagDatabaseEdge 
 
 * _id 
@@ -11024,6 +12056,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -11129,6 +12191,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -11244,6 +12336,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -11331,6 +12453,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -11482,6 +12634,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -11610,6 +12792,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -11715,6 +12927,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -11848,6 +13090,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -11958,6 +13230,194 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* key_EQ 
+
+  * type: [ID](#type-ID) 
+
+  * isArray: false 
+
+* key_IN 
+
+  * type: [[ID]](#type-ID) 
+
+  * isArray: true 
+
+* key_NOTIN 
+
+  * type: [[ID]](#type-ID) 
+
+  * isArray: true 
+
+### type BusinessprocessFilter 
+
+* AND 
+
+  * type: [[BusinessprocessFilter]](#type-BusinessprocessFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[BusinessprocessFilter]](#type-BusinessprocessFilter) 
+
+  * isArray: true 
+
+* name_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* name_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* name_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -12063,6 +13523,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12178,6 +13668,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -12270,6 +13790,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -12357,6 +13907,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12472,6 +14052,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -12559,6 +14169,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12674,6 +14314,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -12761,6 +14431,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -14047,6 +15747,372 @@
 * OR 
 
   * type: [[AccountApplicationEdgeFilter]](#type-AccountApplicationEdgeFilter) 
+
+  * isArray: true 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type ApplicationIpAddrEdgeFilter 
+
+* AND 
+
+  * type: [[ApplicationIpAddrEdgeFilter]](#type-ApplicationIpAddrEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[ApplicationIpAddrEdgeFilter]](#type-ApplicationIpAddrEdgeFilter) 
+
+  * isArray: true 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type BusinessprocessApplicationEdgeFilter 
+
+* AND 
+
+  * type: [[BusinessprocessApplicationEdgeFilter]](#type-BusinessprocessApplicationEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[BusinessprocessApplicationEdgeFilter]](#type-BusinessprocessApplicationEdgeFilter) 
+
+  * isArray: true 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type BusinessprocessAccountEdgeFilter 
+
+* AND 
+
+  * type: [[BusinessprocessAccountEdgeFilter]](#type-BusinessprocessAccountEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[BusinessprocessAccountEdgeFilter]](#type-BusinessprocessAccountEdgeFilter) 
 
   * isArray: true 
 
@@ -17330,6 +19396,128 @@
 
   * isArray: false 
 
+### type TagBusinessprocessEdgeFilter 
+
+* AND 
+
+  * type: [[TagBusinessprocessEdgeFilter]](#type-TagBusinessprocessEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[TagBusinessprocessEdgeFilter]](#type-TagBusinessprocessEdgeFilter) 
+
+  * isArray: true 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 ### type TagDatabaseEdgeFilter 
 
 * AND 
@@ -17990,6 +20178,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type ContainerSort 
 
 * key 
@@ -18009,6 +20205,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18042,6 +20246,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type UnifiedUserSort 
 
 * key 
@@ -18061,6 +20273,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18142,6 +20362,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type UnifiedAccountSort 
 
 * key 
@@ -18169,6 +20397,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18219,6 +20455,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18292,6 +20536,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type HostnameSort 
 
 * key 
@@ -18311,6 +20563,56 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type BusinessprocessSort 
+
+* key 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* name 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18352,6 +20654,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type MacAddrSort 
 
 * key 
@@ -18371,6 +20681,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18404,6 +20722,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type PortSort 
 
 * key 
@@ -18430,6 +20756,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type SourceSort 
 
 * key 
@@ -18449,6 +20783,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18498,6 +20840,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type TagSort 
 
 * key 
@@ -18524,6 +20874,14 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type GeolocationSort 
 
 * key 
@@ -18543,6 +20901,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18899,6 +21265,108 @@
   * isArray: false 
 
 ### type AccountApplicationEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type ApplicationIpAddrEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type BusinessprocessApplicationEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type BusinessprocessAccountEdgeSort 
 
 * source 
 
@@ -19807,6 +22275,40 @@
   * isArray: false 
 
 ### type TagHostnameEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type TagBusinessprocessEdgeSort 
 
 * source 
 

@@ -290,6 +290,38 @@ type Query {
   
 
   "Default items = 100, use limit filter to adjust"
+  businessprocesses(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ BusinessprocessSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: BusinessprocessFilter): [Businessprocess]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
   databases(
     """
     Specifies how many elements should be at most included in the result.
@@ -559,6 +591,7 @@ type Asset {
   asset_type: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -630,6 +663,7 @@ business_value: SortDirection
 risk: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Container {
@@ -639,6 +673,7 @@ type Container {
   image: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -665,6 +700,7 @@ input ContainerSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type IpAddr {
@@ -672,6 +708,7 @@ type IpAddr {
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   "Default nested items = 10, use limit filter to adjust"
@@ -680,6 +717,12 @@ type IpAddr {
   "Default nested items = 10, use limit filter to adjust"
   assets(filter: AssetFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AssetSort]): [Asset]!
     @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: ApplicationIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationIpAddrEdgeSort]): [ApplicationIpAddrEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
   databaseEdges(filter: DatabaseIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [DatabaseIpAddrEdgeSort]): [DatabaseIpAddrEdge]!
     @cost(complexity: 1)
@@ -739,6 +782,7 @@ input IpAddrSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type UnifiedUser {
@@ -746,6 +790,7 @@ type UnifiedUser {
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   "Default nested items = 10, use limit filter to adjust"
@@ -765,6 +810,7 @@ input UnifiedUserSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type User {
@@ -795,6 +841,7 @@ type User {
   last_occurrence: Float @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -827,6 +874,7 @@ cumulative_score: SortDirection
 current_score: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type UnifiedAccount {
@@ -835,6 +883,7 @@ type UnifiedAccount {
   name: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   "Default nested items = 10, use limit filter to adjust"
@@ -855,6 +904,7 @@ key: SortDirection
 name: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Account {
@@ -875,6 +925,7 @@ type Account {
   last_occurrence: Float @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -889,6 +940,12 @@ type Account {
     @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
   applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  businessprocessEdges(filter: BusinessprocessAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [BusinessprocessAccountEdgeSort]): [BusinessprocessAccountEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  businessprocesses(filter: BusinessprocessFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [BusinessprocessSort]): [Businessprocess]!
     @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
   userEdges(filter: UserAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [UserAccountEdgeSort]): [UserAccountEdge]!
@@ -934,6 +991,7 @@ cumulative_score: SortDirection
 current_score: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Application {
@@ -956,8 +1014,10 @@ type Application {
   low: Float @cost
   first_occurrence: Float @cost
   last_occurrence: Float @cost
+  status: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -978,6 +1038,18 @@ type Application {
     @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
   accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrEdges(filter: ApplicationIpAddrEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationIpAddrEdgeSort]): [ApplicationIpAddrEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  ipAddrs(filter: IpAddrFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [IpAddrSort]): [IpAddr]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  businessprocessEdges(filter: BusinessprocessApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [BusinessprocessApplicationEdgeSort]): [BusinessprocessApplicationEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  businessprocesses(filter: BusinessprocessFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [BusinessprocessSort]): [Businessprocess]!
     @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
   databaseEdges(filter: ApplicationDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [ApplicationDatabaseEdgeSort]): [ApplicationDatabaseEdge]!
@@ -1007,6 +1079,7 @@ cumulative_score: SortDirection
 current_score: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Hostname {
@@ -1014,6 +1087,7 @@ type Hostname {
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   "Default nested items = 10, use limit filter to adjust"
@@ -1045,6 +1119,45 @@ input HostnameSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
+}
+
+type Businessprocess {
+  key: ID! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  name: String @cost
+  description: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: [String] @cost
+  untag: [String] @cost
+  source: String @cost
+  "Default nested items = 10, use limit filter to adjust"
+  applicationEdges(filter: BusinessprocessApplicationEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [BusinessprocessApplicationEdgeSort]): [BusinessprocessApplicationEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  applications(filter: ApplicationFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [ApplicationSort]): [Application]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accountEdges(filter: BusinessprocessAccountEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [BusinessprocessAccountEdgeSort]): [BusinessprocessAccountEdge]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  accounts(filter: AccountFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [AccountSort]): [Account]!
+    @cost(complexity: 1)
+  "Default nested items = 10, use limit filter to adjust"
+  tagEdges(filter: TagBusinessprocessEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagBusinessprocessEdgeSort]): [TagBusinessprocessEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  tags(filter: TagFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [TagSort]): [Tag]!
+    @cost(complexity: 0, multipliers: ["limit"])
+}
+input BusinessprocessSort {
+key: SortDirection
+name: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
 }
 
 type Database {
@@ -1059,6 +1172,7 @@ type Database {
   datasource_name: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -1104,6 +1218,7 @@ key: SortDirection
 name: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type MacAddr {
@@ -1112,6 +1227,7 @@ type MacAddr {
   interface: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   "Default nested items = 10, use limit filter to adjust"
@@ -1137,6 +1253,7 @@ input MacAddrSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Report {
@@ -1149,6 +1266,7 @@ type Report {
   description: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
 }
@@ -1156,6 +1274,7 @@ input ReportSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Port {
@@ -1167,6 +1286,7 @@ type Port {
   description: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -1199,6 +1319,7 @@ input PortSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Source {
@@ -1208,6 +1329,7 @@ type Source {
   product_link: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
 }
@@ -1215,6 +1337,7 @@ input SourceSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Vulnerability {
@@ -1230,6 +1353,7 @@ type Vulnerability {
   updated_on: Float @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -1276,6 +1400,7 @@ name: SortDirection
 base_score: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Tag {
@@ -1283,6 +1408,7 @@ type Tag {
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   "Default nested items = 10, use limit filter to adjust"
@@ -1340,6 +1466,12 @@ type Tag {
   hostnames(filter: HostnameFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [HostnameSort]): [Hostname]!
     @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
+  businessprocessEdges(filter: TagBusinessprocessEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagBusinessprocessEdgeSort]): [TagBusinessprocessEdge]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
+  businessprocesses(filter: BusinessprocessFilter  "(Default = 10)" limit: Int = 10  offset: Int  orderBy: [BusinessprocessSort]): [Businessprocess]!
+    @cost(complexity: 0, multipliers: ["limit"])
+  "Default nested items = 10, use limit filter to adjust"
   databaseEdges(filter: TagDatabaseEdgeFilter  "Default = 10" limit: Int = 10  offset: Int  orderBy: [TagDatabaseEdgeSort]): [TagDatabaseEdge]!
     @cost(complexity: 0, multipliers: ["limit"])
   "Default nested items = 10, use limit filter to adjust"
@@ -1374,6 +1506,7 @@ input TagSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type Geolocation {
@@ -1385,6 +1518,7 @@ type Geolocation {
   description: String @cost
   _created: Date @cost
   _modified: Date @cost
+  _deleted: Date @cost
   tag: [String] @cost
   untag: [String] @cost
   source: String @cost
@@ -1411,6 +1545,7 @@ input GeolocationSort {
 key: SortDirection
 _created: SortDirection
 _modified: SortDirection
+_deleted: SortDirection
 }
 
 type AssetVulnerabilityEdgePort {
@@ -1671,6 +1806,76 @@ type AccountApplicationEdge {
   application: Application! @cost
 }
 input AccountApplicationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type ApplicationIpAddrEdge {
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  mappingtype: String @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  application: Application! @cost
+  ipAddr: IpAddr! @cost
+}
+input ApplicationIpAddrEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type BusinessprocessApplicationEdge {
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  businessprocess: Businessprocess! @cost
+  application: Application! @cost
+}
+input BusinessprocessApplicationEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
+type BusinessprocessAccountEdge {
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  businessprocess: Businessprocess! @cost
+  account: Account! @cost
+}
+input BusinessprocessAccountEdgeSort {
 source: SortDirection
 _created: SortDirection
 _modified: SortDirection
@@ -2300,6 +2505,29 @@ _modified: SortDirection
 _deleted: SortDirection
 }
 
+type TagBusinessprocessEdge {
+  _id: ID! @cost
+  _from: ID! @cost
+  _to: ID! @cost
+  source: String! @cost
+  report: String! @cost
+  customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  created: Date @cost
+  modified: Date @cost
+  external_id: String @cost
+  _created: Date @cost
+  _modified: Date @cost
+  _deleted: Date @cost
+  tag: Tag! @cost
+  businessprocess: Businessprocess! @cost
+}
+input TagBusinessprocessEdgeSort {
+source: SortDirection
+_created: SortDirection
+_modified: SortDirection
+_deleted: SortDirection
+}
+
 type TagDatabaseEdge {
   _id: ID! @cost
   _from: ID! @cost
@@ -2452,6 +2680,11 @@ input AssetFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2473,6 +2706,11 @@ input ContainerFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2494,6 +2732,11 @@ input IpAddrFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2512,6 +2755,11 @@ input UnifiedUserFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2539,6 +2787,11 @@ input UserFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2563,6 +2816,11 @@ input UnifiedAccountFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2584,6 +2842,11 @@ input AccountFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2608,6 +2871,11 @@ input ApplicationFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2629,6 +2897,40 @@ input HostnameFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+  key_EQ: ID
+  key_IN: [ID!]
+  key_NOTIN: [ID!]
+}
+
+input BusinessprocessFilter {
+  AND: [BusinessprocessFilter!]
+  OR: [BusinessprocessFilter!]
+  name_EQ: String
+  name_IN: [String!]
+  name_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2650,6 +2952,11 @@ input DatabaseFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2671,6 +2978,11 @@ input MacAddrFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2689,6 +3001,11 @@ input ReportFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2707,6 +3024,11 @@ input PortFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2728,6 +3050,11 @@ input SourceFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2746,6 +3073,11 @@ input VulnerabilityFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -2767,6 +3099,11 @@ input TagFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   key_EQ: ID
   key_IN: [ID!]
   key_NOTIN: [ID!]
@@ -2785,6 +3122,11 @@ input GeolocationFilter {
   _modified_GTE: Date
   _modified_LT: Date
   _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3031,6 +3373,75 @@ input ApplicationPortEdgeFilter {
 input AccountApplicationEdgeFilter {
   AND: [AccountApplicationEdgeFilter!]
   OR: [AccountApplicationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input ApplicationIpAddrEdgeFilter {
+  AND: [ApplicationIpAddrEdgeFilter!]
+  OR: [ApplicationIpAddrEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input BusinessprocessApplicationEdgeFilter {
+  AND: [BusinessprocessApplicationEdgeFilter!]
+  OR: [BusinessprocessApplicationEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input BusinessprocessAccountEdgeFilter {
+  AND: [BusinessprocessAccountEdgeFilter!]
+  OR: [BusinessprocessAccountEdgeFilter!]
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3629,6 +4040,29 @@ input TagApplicationEdgeFilter {
 input TagHostnameEdgeFilter {
   AND: [TagHostnameEdgeFilter!]
   OR: [TagHostnameEdgeFilter!]
+  source_EQ: String
+  source_IN: [String!]
+  source_NOTIN: [String!]
+  _created_EQ: Date
+  _created_GT: Date
+  _created_GTE: Date
+  _created_LT: Date
+  _created_LTE: Date
+  _modified_EQ: Date
+  _modified_GT: Date
+  _modified_GTE: Date
+  _modified_LT: Date
+  _modified_LTE: Date
+  _deleted_EQ: Date
+  _deleted_GT: Date
+  _deleted_GTE: Date
+  _deleted_LT: Date
+  _deleted_LTE: Date
+}
+
+input TagBusinessprocessEdgeFilter {
+  AND: [TagBusinessprocessEdgeFilter!]
+  OR: [TagBusinessprocessEdgeFilter!]
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
