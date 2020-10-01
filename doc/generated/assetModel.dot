@@ -15,6 +15,9 @@ subgraph cluster_Edges {
 "asset_geolocation" [id="asset_geolocation", type="node type", shape="record", label="Edge | {asset_geolocation | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
 "application_port" [id="application_port", type="node type", shape="record", label="Edge | {application_port | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
 "account_application" [id="account_application", type="node type", shape="record", label="Edge | {account_application | {user_id | last_access_time | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"application_ipaddress" [id="application_ipaddress", type="node type", shape="record", label="Edge | {application_ipaddress | {mappingtype | created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"businessprocess_application" [id="businessprocess_application", type="node type", shape="record", label="Edge | {businessprocess_application | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
+"businessprocess_account" [id="businessprocess_account", type="node type", shape="record", label="Edge | {businessprocess_account | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
 "application_database" [id="application_database", type="node type", shape="record", label="Edge | {application_database | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
 "application_vulnerability" [id="application_vulnerability", type="node type", shape="record", label="Edge | {application_vulnerability | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
 "database_ipaddress" [id="database_ipaddress", type="node type", shape="record", label="Edge | {database_ipaddress | {created | modified | report | source | external_id | _created | _modified | _deleted | active }}"];
@@ -48,35 +51,39 @@ tag_edge -- port_vulnerability [style=invis]
  database_vulnerability -- database_ipaddress [style=invis]
  database_ipaddress -- application_vulnerability [style=invis]
  application_vulnerability -- application_database [style=invis]
- application_database -- account_application [style=invis]
+ application_database -- businessprocess_account [style=invis]
+ businessprocess_account -- businessprocess_application [style=invis]
+ businessprocess_application -- application_ipaddress [style=invis]
  account_application -- application_port [style=invis]
  application_port -- asset_geolocation [style=invis]
+ asset_geolocation -- asset_database [style=invis]
  asset_database -- asset_application [style=invis]
  asset_application -- asset_container [style=invis]
  asset_container -- asset_account [style=invis]
- asset_account -- asset_hostname [style=invis]
  asset_hostname -- asset_macaddress [style=invis]
  asset_macaddress -- asset_ipaddress [style=invis]
+ asset_ipaddress -- asset_vulnerability [style=invis]
  }
 subgraph cluster_Vertices {
  label=Vertices;
-"asset" [id="asset", type="node type", shape="record", label="Vertex | {asset | {_key | name | business_value | risk | description | asset_type | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"container" [id="container", type="node type", shape="record", label="Vertex | {container | {_key | name | image | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"ipaddress" [id="ipaddress", type="node type", shape="record", label="Vertex | {ipaddress | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"unifieduser" [id="unifieduser", type="node type", shape="record", label="Vertex | {unifieduser | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"user" [id="user", type="node type", shape="record", label="Vertex | {user | {_key | external_id | username | fullname | job_title | email | description | role | family_name | given_name | upn | user_category | title | employee_id | active | department | modified | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _number_of_active_edges | tag | untag | source }}"];
-"unifiedaccount" [id="unifiedaccount", type="node type", shape="record", label="Vertex | {unifiedaccount | {_key | name | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"account" [id="account", type="node type", shape="record", label="Vertex | {account | {_key | name | created | active | compliance_status | modified | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"application" [id="application", type="node type", shape="record", label="Vertex | {application | {_key | name | description | cpe | is_os | owner | owner_code | last_access_time | threat_score | app_type | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"hostname" [id="hostname", type="node type", shape="record", label="Vertex | {hostname | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"database" [id="database", type="node type", shape="record", label="Vertex | {database | {_key | name | description | type | modified | protocol | port | datasource_name | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"macaddress" [id="macaddress", type="node type", shape="record", label="Vertex | {macaddress | {_key | interface | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"report" [id="report", type="node type", shape="record", label="Vertex | {report | {_key | type | parameters | value | created | description | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"port" [id="port", type="node type", shape="record", label="Vertex | {port | {_key | port_number | status | protocol | description | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"source" [id="source", type="node type", shape="record", label="Vertex | {source | {_key | description | product_link | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"vulnerability" [id="vulnerability", type="node type", shape="record", label="Vertex | {vulnerability | {_key | external_properties | external_reference | name | base_score | description | disclosed_on | published_on | updated_on | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
-"tag" [id="tag", type="node type", shape="record", label="Vertex | {tag | {_key | _created | _modified | _number_of_active_edges | tag | untag }}"];
-"geolocation" [id="geolocation", type="node type", shape="record", label="Vertex | {geolocation | {_key | region | longitude | latitude | description | _created | _modified | _number_of_active_edges | tag | untag | external_id | source }}"];
+"asset" [id="asset", type="node type", shape="record", label="Vertex | {asset | {_key | name | business_value | risk | description | asset_type | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"container" [id="container", type="node type", shape="record", label="Vertex | {container | {_key | name | image | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"ipaddress" [id="ipaddress", type="node type", shape="record", label="Vertex | {ipaddress | {_key | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"unifieduser" [id="unifieduser", type="node type", shape="record", label="Vertex | {unifieduser | {_key | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"user" [id="user", type="node type", shape="record", label="Vertex | {user | {_key | external_id | username | fullname | job_title | email | description | role | family_name | given_name | upn | user_category | title | employee_id | active | department | modified | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _deleted | _number_of_active_edges | tag | untag | source }}"];
+"unifiedaccount" [id="unifiedaccount", type="node type", shape="record", label="Vertex | {unifiedaccount | {_key | name | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"account" [id="account", type="node type", shape="record", label="Vertex | {account | {_key | name | created | active | compliance_status | modified | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"application" [id="application", type="node type", shape="record", label="Vertex | {application | {_key | name | description | cpe | is_os | owner | owner_code | last_access_time | threat_score | app_type | cumulative_score | current_score | critical | high | medium | low | first_occurrence | last_occurrence | status | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"hostname" [id="hostname", type="node type", shape="record", label="Vertex | {hostname | {_key | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"businessprocess" [id="businessprocess", type="node type", shape="record", label="Vertex | {businessprocess | {_key | name | description | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"database" [id="database", type="node type", shape="record", label="Vertex | {database | {_key | name | description | type | modified | protocol | port | datasource_name | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"macaddress" [id="macaddress", type="node type", shape="record", label="Vertex | {macaddress | {_key | interface | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"report" [id="report", type="node type", shape="record", label="Vertex | {report | {_key | type | parameters | value | created | description | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"port" [id="port", type="node type", shape="record", label="Vertex | {port | {_key | port_number | status | protocol | description | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"source" [id="source", type="node type", shape="record", label="Vertex | {source | {_key | description | product_link | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"vulnerability" [id="vulnerability", type="node type", shape="record", label="Vertex | {vulnerability | {_key | external_properties | external_reference | name | base_score | description | disclosed_on | published_on | updated_on | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
+"tag" [id="tag", type="node type", shape="record", label="Vertex | {tag | {_key | _created | _modified | _deleted | _number_of_active_edges | tag | untag }}"];
+"geolocation" [id="geolocation", type="node type", shape="record", label="Vertex | {geolocation | {_key | region | longitude | latitude | description | _created | _modified | _deleted | _number_of_active_edges | tag | untag | external_id | source }}"];
 "asset" -- "vulnerability" [source="asset", target="vulnerability", relation="asset to vulnerability", directed="false", label="asset_vulnerability"];
 "asset" -- "ipaddress" [source="asset", target="ipaddress", relation="asset to ipaddress", directed="false", label="asset_ipaddress"];
 "asset" -- "macaddress" [source="asset", target="macaddress", relation="asset to macaddress", directed="false", label="asset_macaddress"];
@@ -88,6 +95,9 @@ subgraph cluster_Vertices {
 "asset" -- "geolocation" [source="asset", target="geolocation", relation="asset to geolocation", directed="false", label="asset_geolocation"];
 "application" -- "port" [source="application", target="port", relation="application to port", directed="false", label="application_port"];
 "account" -- "application" [source="account", target="application", relation="account to application", directed="false", label="account_application"];
+"application" -- "ipaddress" [source="application", target="ipaddress", relation="application to ipaddress", directed="false", label="application_ipaddress"];
+"businessprocess" -- "application" [source="businessprocess", target="application", relation="businessprocess to application", directed="false", label="businessprocess_application"];
+"businessprocess" -- "account" [source="businessprocess", target="account", relation="businessprocess to account", directed="false", label="businessprocess_account"];
 "application" -- "database" [source="application", target="database", relation="application to database", directed="false", label="application_database"];
 "application" -- "vulnerability" [source="application", target="vulnerability", relation="application to vulnerability", directed="false", label="application_vulnerability"];
 "database" -- "ipaddress" [source="database", target="ipaddress", relation="database to ipaddress", directed="false", label="database_ipaddress"];
@@ -114,6 +124,7 @@ subgraph cluster_Vertices {
 "tag" -- "account" [source="tag", target="account", relation="tag to account", directed="false", label="tag_edge"];
 "tag" -- "application" [source="tag", target="application", relation="tag to application", directed="false", label="tag_edge"];
 "tag" -- "hostname" [source="tag", target="hostname", relation="tag to hostname", directed="false", label="tag_edge"];
+"tag" -- "businessprocess" [source="tag", target="businessprocess", relation="tag to businessprocess", directed="false", label="tag_edge"];
 "tag" -- "database" [source="tag", target="database", relation="tag to database", directed="false", label="tag_edge"];
 "tag" -- "macaddress" [source="tag", target="macaddress", relation="tag to macaddress", directed="false", label="tag_edge"];
 "tag" -- "port" [source="tag", target="port", relation="tag to port", directed="false", label="tag_edge"];

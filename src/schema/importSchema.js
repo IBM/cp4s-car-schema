@@ -34,7 +34,7 @@ var importSchemaTemplate = {
         email: {
           description: 'email',
           type: 'string',
-          // pattern:
+          //  pattern:
           //   "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
         },
       },
@@ -124,6 +124,9 @@ var importSchemaTemplate = {
       ],
       required: [],
     },
+    businessprocess: {
+      required: ['name'],
+    },
   },
 };
 
@@ -131,7 +134,7 @@ class ImportSchema {
   load() {
     this.schema = {};
     this.schema.properties = {};
-    Object.keys(importSchemaTemplate).forEach(item => {
+    Object.keys(importSchemaTemplate).forEach((item) => {
       if (item !== 'collections') this.schema[item] = importSchemaTemplate[item];
     });
     this.generateVertices();
@@ -164,13 +167,13 @@ class ImportSchema {
           .forEach(prop => {
             props[prop] = coreSchema.vertices[vertexName].properties[prop];
           });
-        Object.keys(importSchemaTemplate.collections[vertexName]).forEach(item => {
+        Object.keys(importSchemaTemplate.collections[vertexName]).forEach((item) => {
           if (item !== 'properties')
             propsParent[item] = importSchemaTemplate.collections[vertexName][item];
         });
 
         if (importSchemaTemplate.collections[vertexName].properties)
-          Object.keys(importSchemaTemplate.collections[vertexName].properties).forEach(prop => {
+          Object.keys(importSchemaTemplate.collections[vertexName].properties).forEach((prop) => {
             props[prop] = importSchemaTemplate.collections[vertexName].properties[prop];
           });
 
@@ -228,7 +231,7 @@ class ImportSchema {
         const props = def.items.properties;
         const propsParent = def.items;
         this.schema.properties[edgeName] = def;
-        Object.keys(edge.properties).forEach(prop => {
+        Object.keys(edge.properties).forEach((prop) => {
           props[prop] = edge.properties[prop];
         });
 
@@ -264,7 +267,7 @@ class ImportSchema {
           }
         }
 
-        required = required.filter(item => item !== source && item !== target);
+        required = required.filter((item) => item !== source && item !== target);
         propsParent.required = required;
       });
   }
