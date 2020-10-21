@@ -534,6 +534,12 @@
 
 * required: true 
 
+### host_name 
+
+* Description: a unique key which should be hostname 
+
+* Type: string 
+
 ### tag 
 
 * Type: array 

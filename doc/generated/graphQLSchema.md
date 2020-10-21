@@ -4394,6 +4394,10 @@
 
   * required: true 
 
+* host_name 
+
+  * type: [String](#type-String) 
+
 * _created 
 
   * type: [Date](#type-Date) 
@@ -12538,6 +12542,24 @@
 
   * isArray: true 
 
+* email_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* email_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* email_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
 * employee_id_EQ 
 
   * type: [String](#type-String) 
@@ -20547,6 +20569,14 @@
 ### type HostnameSort 
 
 * key 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* host_name 
 
   * type: [SortDirection](#type-SortDirection) 
 

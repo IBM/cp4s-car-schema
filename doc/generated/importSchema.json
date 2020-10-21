@@ -471,6 +471,11 @@
                         "minLength": 1,
                         "maxLength": 254
                     },
+                    "host_name": {
+                        "description": "a unique key which should be hostname",
+                        "type": "string",
+                        "graphql_sort_attribute": true
+                    },
                     "tag": {
                         "type": "array",
                         "items": {
