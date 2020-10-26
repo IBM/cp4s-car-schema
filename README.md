@@ -1070,7 +1070,7 @@ To simplify the filtering, CAR GraphQL supports global filters that are automati
 The default endpoint of GraphQL is
 
 ```
-:3000/car/api/v3/graphql
+:3000/api/car/v3/graphql
 ```
 
 Use any browser to open that link, you should see the GrapQL playground.
