@@ -1,8 +1,9 @@
-/* eslint-disable camelcase  */
+/* eslint-disable camelcase */
 const index__external_id__source = { type: 'persistent', unique: true, sparse: true, fields: ['external_id', 'source'] };
 const index__from__source__active = { type: 'persistent', fields: ['_from', 'source', 'active'] };  
 const index__source = { type: 'persistent', fields: ['source'] };  
 const index__from__to__source = { type: 'persistent', unique: false, sparse: true, deduplicate: false, fields: ['_from', '_to', 'source'] }; 
+const index_host_name = { fields: [ 'host_name' ], unique: true, type: 'persistent' };
 
 const defaultEdgeIndexes = [index__from__source__active, index__source];
 
@@ -238,6 +239,8 @@ const SchemaTemplate = {
         email: {
           description: 'email',
           type: 'string',
+          graphql_filter_attribute: true,
+          search_index: true,
         },
         description: {
           description: 'user description',
@@ -510,11 +513,24 @@ const SchemaTemplate = {
       usesExternalId: false,
       properties: {
         _key: {
-          description: 'a unique key which should be the hostname',
+          description: 'a unique key which is auto generated',
           type: 'string',
           graphql_sort_attribute: true,
         },
+        host_name: {
+          description: 'a unique key which should be hostname',
+          type: 'string',
+          graphql_sort_attribute: true
+        }
       },
+      indexes: [ index_host_name ],
+      // key property allows for having a property other than _key as the unique key
+      // for naturally keyed collections. Arangodb has limitations on length and characters
+      // allowed in the _key attribute, hence using an input value from the connector 
+      // as _key may not be possible for all naturally keyed collections. In such a case
+      // define this key attribute and let arangodb auto generate _key attribute.
+      // Make sure the attribute which is selected as key is indexed.
+      key: 'host_name'
     },
 
 
@@ -1008,7 +1024,7 @@ const SchemaTemplate = {
 
 class CoreSchema {
   constructor() {
-    this.version = '2';
+    this.version = '3';
     this.vertices = SchemaTemplate.vertices;
     this.edges = SchemaTemplate.edges;
 

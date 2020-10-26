@@ -1085,6 +1085,7 @@ _deleted: SortDirection
 type Hostname {
   key: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
+  host_name: String @cost
   _created: Date @cost
   _modified: Date @cost
   _deleted: Date @cost
@@ -1117,6 +1118,7 @@ type Hostname {
 }
 input HostnameSort {
 key: SortDirection
+host_name: SortDirection
 _created: SortDirection
 _modified: SortDirection
 _deleted: SortDirection
@@ -2771,6 +2773,9 @@ input UserFilter {
   fullname_EQ: String
   fullname_IN: [String!]
   fullname_NOTIN: [String!]
+  email_EQ: String
+  email_IN: [String!]
+  email_NOTIN: [String!]
   employee_id_EQ: String
   employee_id_IN: [String!]
   employee_id_NOTIN: [String!]
