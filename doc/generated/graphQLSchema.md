@@ -2,7 +2,7 @@
 
 ## APIType: Query 
 
-### Asset 
+### assets 
 
 * Arguments 
 
@@ -28,7 +28,7 @@
 
 * Return: ![[Asset]](#type-Asset) 
 
-### Container 
+### containers 
 
 * Arguments 
 
@@ -54,7 +54,7 @@
 
 * Return: ![[Container]](#type-Container) 
 
-### IpAddr 
+### ipAddrs 
 
 * Arguments 
 
@@ -80,7 +80,7 @@
 
 * Return: ![[IpAddr]](#type-IpAddr) 
 
-### UnifiedUser 
+### unifiedUsers 
 
 * Arguments 
 
@@ -106,7 +106,7 @@
 
 * Return: ![[UnifiedUser]](#type-UnifiedUser) 
 
-### User 
+### users 
 
 * Arguments 
 
@@ -132,7 +132,7 @@
 
 * Return: ![[User]](#type-User) 
 
-### UnifiedAccount 
+### unifiedAccounts 
 
 * Arguments 
 
@@ -158,7 +158,7 @@
 
 * Return: ![[UnifiedAccount]](#type-UnifiedAccount) 
 
-### Account 
+### accounts 
 
 * Arguments 
 
@@ -184,7 +184,7 @@
 
 * Return: ![[Account]](#type-Account) 
 
-### Application 
+### applications 
 
 * Arguments 
 
@@ -210,7 +210,7 @@
 
 * Return: ![[Application]](#type-Application) 
 
-### Hostname 
+### hostnames 
 
 * Arguments 
 
@@ -236,7 +236,7 @@
 
 * Return: ![[Hostname]](#type-Hostname) 
 
-### Businessprocess 
+### businessprocesses 
 
 * Arguments 
 
@@ -262,7 +262,7 @@
 
 * Return: ![[Businessprocess]](#type-Businessprocess) 
 
-### Database 
+### databases 
 
 * Arguments 
 
@@ -288,7 +288,7 @@
 
 * Return: ![[Database]](#type-Database) 
 
-### MacAddr 
+### macAddrs 
 
 * Arguments 
 
@@ -314,7 +314,7 @@
 
 * Return: ![[MacAddr]](#type-MacAddr) 
 
-### Report 
+### reports 
 
 * Arguments 
 
@@ -340,7 +340,7 @@
 
 * Return: ![[Report]](#type-Report) 
 
-### Port 
+### ports 
 
 * Arguments 
 
@@ -366,7 +366,7 @@
 
 * Return: ![[Port]](#type-Port) 
 
-### Source 
+### sources 
 
 * Arguments 
 
@@ -392,7 +392,7 @@
 
 * Return: ![[Source]](#type-Source) 
 
-### Vulnerability 
+### vulnerabilities 
 
 * Arguments 
 
@@ -418,7 +418,7 @@
 
 * Return: ![[Vulnerability]](#type-Vulnerability) 
 
-### Tag 
+### tags 
 
 * Arguments 
 
@@ -444,7 +444,7 @@
 
 * Return: ![[Tag]](#type-Tag) 
 
-### Geolocation 
+### geolocations 
 
 * Arguments 
 
@@ -470,11 +470,1213 @@
 
 * Return: ![[Geolocation]](#type-Geolocation) 
 
+### assetVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetVulnerabilityEdgeSort]](#type-AssetVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetVulnerabilityEdgeFilter](#type-AssetVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetVulnerabilityEdge]](#type-AssetVulnerabilityEdge) 
+
+### assetIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetIpAddrEdgeSort]](#type-AssetIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetIpAddrEdgeFilter](#type-AssetIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetIpAddrEdge]](#type-AssetIpAddrEdge) 
+
+### assetMacAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetMacAddrEdgeSort]](#type-AssetMacAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetMacAddrEdgeFilter](#type-AssetMacAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetMacAddrEdge]](#type-AssetMacAddrEdge) 
+
+### assetHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetHostnameEdgeSort]](#type-AssetHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetHostnameEdgeFilter](#type-AssetHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetHostnameEdge]](#type-AssetHostnameEdge) 
+
+### assetAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetAccountEdgeSort]](#type-AssetAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetAccountEdgeFilter](#type-AssetAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetAccountEdge]](#type-AssetAccountEdge) 
+
+### assetContainerEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetContainerEdgeSort]](#type-AssetContainerEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetContainerEdgeFilter](#type-AssetContainerEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetContainerEdge]](#type-AssetContainerEdge) 
+
+### assetApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetApplicationEdgeSort]](#type-AssetApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetApplicationEdgeFilter](#type-AssetApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetApplicationEdge]](#type-AssetApplicationEdge) 
+
+### assetDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetDatabaseEdgeSort]](#type-AssetDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetDatabaseEdgeFilter](#type-AssetDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetDatabaseEdge]](#type-AssetDatabaseEdge) 
+
+### assetGeolocationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetGeolocationEdgeSort]](#type-AssetGeolocationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetGeolocationEdgeFilter](#type-AssetGeolocationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetGeolocationEdge]](#type-AssetGeolocationEdge) 
+
+### applicationPortEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationPortEdgeSort]](#type-ApplicationPortEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationPortEdgeFilter](#type-ApplicationPortEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationPortEdge]](#type-ApplicationPortEdge) 
+
+### accountApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountApplicationEdgeSort]](#type-AccountApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountApplicationEdgeFilter](#type-AccountApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountApplicationEdge]](#type-AccountApplicationEdge) 
+
+### applicationIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationIpAddrEdgeSort]](#type-ApplicationIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationIpAddrEdgeFilter](#type-ApplicationIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationIpAddrEdge]](#type-ApplicationIpAddrEdge) 
+
+### businessprocessApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[BusinessprocessApplicationEdgeSort]](#type-BusinessprocessApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [BusinessprocessApplicationEdgeFilter](#type-BusinessprocessApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[BusinessprocessApplicationEdge]](#type-BusinessprocessApplicationEdge) 
+
+### businessprocessAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[BusinessprocessAccountEdgeSort]](#type-BusinessprocessAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [BusinessprocessAccountEdgeFilter](#type-BusinessprocessAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[BusinessprocessAccountEdge]](#type-BusinessprocessAccountEdge) 
+
+### applicationDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationDatabaseEdgeSort]](#type-ApplicationDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationDatabaseEdgeFilter](#type-ApplicationDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationDatabaseEdge]](#type-ApplicationDatabaseEdge) 
+
+### applicationVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationVulnerabilityEdgeSort]](#type-ApplicationVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationVulnerabilityEdgeFilter](#type-ApplicationVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationVulnerabilityEdge]](#type-ApplicationVulnerabilityEdge) 
+
+### databaseIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[DatabaseIpAddrEdgeSort]](#type-DatabaseIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [DatabaseIpAddrEdgeFilter](#type-DatabaseIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[DatabaseIpAddrEdge]](#type-DatabaseIpAddrEdge) 
+
+### databaseVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[DatabaseVulnerabilityEdgeSort]](#type-DatabaseVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [DatabaseVulnerabilityEdgeFilter](#type-DatabaseVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[DatabaseVulnerabilityEdge]](#type-DatabaseVulnerabilityEdge) 
+
+### ipAddrContainerEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrContainerEdgeSort]](#type-IpAddrContainerEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrContainerEdgeFilter](#type-IpAddrContainerEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrContainerEdge]](#type-IpAddrContainerEdge) 
+
+### ipAddrMacAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrMacAddrEdgeSort]](#type-IpAddrMacAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrMacAddrEdgeFilter](#type-IpAddrMacAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrMacAddrEdge]](#type-IpAddrMacAddrEdge) 
+
+### ipAddrHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrHostnameEdgeSort]](#type-IpAddrHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrHostnameEdgeFilter](#type-IpAddrHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrHostnameEdge]](#type-IpAddrHostnameEdge) 
+
+### ipAddrVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrVulnerabilityEdgeSort]](#type-IpAddrVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrVulnerabilityEdgeFilter](#type-IpAddrVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrVulnerabilityEdge]](#type-IpAddrVulnerabilityEdge) 
+
+### ipAddrGeolocationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrGeolocationEdgeSort]](#type-IpAddrGeolocationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrGeolocationEdgeFilter](#type-IpAddrGeolocationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrGeolocationEdge]](#type-IpAddrGeolocationEdge) 
+
+### ipAddrPortEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrPortEdgeSort]](#type-IpAddrPortEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrPortEdgeFilter](#type-IpAddrPortEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrPortEdge]](#type-IpAddrPortEdge) 
+
+### userAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[UserAccountEdgeSort]](#type-UserAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [UserAccountEdgeFilter](#type-UserAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[UserAccountEdge]](#type-UserAccountEdge) 
+
+### accountDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountDatabaseEdgeSort]](#type-AccountDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountDatabaseEdgeFilter](#type-AccountDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountDatabaseEdge]](#type-AccountDatabaseEdge) 
+
+### accountHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountHostnameEdgeSort]](#type-AccountHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountHostnameEdgeFilter](#type-AccountHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountHostnameEdge]](#type-AccountHostnameEdge) 
+
+### accountIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountIpAddrEdgeSort]](#type-AccountIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountIpAddrEdgeFilter](#type-AccountIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountIpAddrEdge]](#type-AccountIpAddrEdge) 
+
+### unifiedAccountAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[UnifiedAccountAccountEdgeSort]](#type-UnifiedAccountAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [UnifiedAccountAccountEdgeFilter](#type-UnifiedAccountAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[UnifiedAccountAccountEdge]](#type-UnifiedAccountAccountEdge) 
+
+### unifiedUserUserEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[UnifiedUserUserEdgeSort]](#type-UnifiedUserUserEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [UnifiedUserUserEdgeFilter](#type-UnifiedUserUserEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[UnifiedUserUserEdge]](#type-UnifiedUserUserEdge) 
+
+### portVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[PortVulnerabilityEdgeSort]](#type-PortVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [PortVulnerabilityEdgeFilter](#type-PortVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[PortVulnerabilityEdge]](#type-PortVulnerabilityEdge) 
+
+### tagAssetEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagAssetEdgeSort]](#type-TagAssetEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagAssetEdgeFilter](#type-TagAssetEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagAssetEdge]](#type-TagAssetEdge) 
+
+### tagContainerEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagContainerEdgeSort]](#type-TagContainerEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagContainerEdgeFilter](#type-TagContainerEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagContainerEdge]](#type-TagContainerEdge) 
+
+### tagIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagIpAddrEdgeSort]](#type-TagIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagIpAddrEdgeFilter](#type-TagIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagIpAddrEdge]](#type-TagIpAddrEdge) 
+
+### tagUnifiedUserEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagUnifiedUserEdgeSort]](#type-TagUnifiedUserEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagUnifiedUserEdgeFilter](#type-TagUnifiedUserEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagUnifiedUserEdge]](#type-TagUnifiedUserEdge) 
+
+### tagUserEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagUserEdgeSort]](#type-TagUserEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagUserEdgeFilter](#type-TagUserEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagUserEdge]](#type-TagUserEdge) 
+
+### tagUnifiedAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagUnifiedAccountEdgeSort]](#type-TagUnifiedAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagUnifiedAccountEdgeFilter](#type-TagUnifiedAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagUnifiedAccountEdge]](#type-TagUnifiedAccountEdge) 
+
+### tagAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagAccountEdgeSort]](#type-TagAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagAccountEdgeFilter](#type-TagAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagAccountEdge]](#type-TagAccountEdge) 
+
+### tagApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagApplicationEdgeSort]](#type-TagApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagApplicationEdgeFilter](#type-TagApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagApplicationEdge]](#type-TagApplicationEdge) 
+
+### tagHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagHostnameEdgeSort]](#type-TagHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagHostnameEdgeFilter](#type-TagHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagHostnameEdge]](#type-TagHostnameEdge) 
+
+### tagBusinessprocessEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagBusinessprocessEdgeSort]](#type-TagBusinessprocessEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagBusinessprocessEdgeFilter](#type-TagBusinessprocessEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagBusinessprocessEdge]](#type-TagBusinessprocessEdge) 
+
+### tagDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagDatabaseEdgeSort]](#type-TagDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagDatabaseEdgeFilter](#type-TagDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagDatabaseEdge]](#type-TagDatabaseEdge) 
+
+### tagMacAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagMacAddrEdgeSort]](#type-TagMacAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagMacAddrEdgeFilter](#type-TagMacAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagMacAddrEdge]](#type-TagMacAddrEdge) 
+
+### tagPortEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagPortEdgeSort]](#type-TagPortEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagPortEdgeFilter](#type-TagPortEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagPortEdge]](#type-TagPortEdge) 
+
+### tagVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagVulnerabilityEdgeSort]](#type-TagVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagVulnerabilityEdgeFilter](#type-TagVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagVulnerabilityEdge]](#type-TagVulnerabilityEdge) 
+
+### tagGeolocationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagGeolocationEdgeSort]](#type-TagGeolocationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagGeolocationEdgeFilter](#type-TagGeolocationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagGeolocationEdge]](#type-TagGeolocationEdge) 
+
 ## GraphQL Types 
 
 ### type Asset 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -1230,6 +2432,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -1487,6 +2695,12 @@
 ### type IpAddr 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -2286,6 +3500,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -2463,6 +3683,12 @@
 ### type User 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -2814,6 +4040,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -2995,6 +4227,12 @@
 ### type Account 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -3714,6 +4952,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -4380,6 +5624,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -4702,6 +5952,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -4959,6 +6215,12 @@
 ### type Database 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -5450,6 +6712,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -5704,6 +6972,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -5765,6 +7039,12 @@
 ### type Port 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -6108,6 +7388,12 @@
 
   * required: true 
 
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * customProperties 
 
   * Arguments 
@@ -6157,6 +7443,12 @@
 ### type Vulnerability 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -6647,6 +7939,12 @@
 ### type Tag 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -7713,6 +9011,12 @@
 ### type Geolocation 
 
 * key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
 
   * type: [ID!](#type-ID) 
 
@@ -11888,6 +13192,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -11950,6 +13260,12 @@
 
 ### type CustomPropertiesFilter 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * id_EQ 
 
   * type: [String](#type-String) 
@@ -11981,6 +13297,12 @@
   * type: [[AssetFilter]](#type-AssetFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * name_EQ 
 
@@ -12140,6 +13462,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12280,6 +13608,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12402,6 +13736,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12523,6 +13863,12 @@
   * type: [[UserFilter]](#type-UserFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * fullname_EQ 
 
@@ -12736,6 +14082,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * name_EQ 
 
   * type: [String](#type-String) 
@@ -12875,6 +14227,12 @@
   * type: [[AccountFilter]](#type-AccountFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * name_EQ 
 
@@ -13034,6 +14392,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * name_EQ 
 
   * type: [String](#type-String) 
@@ -13192,6 +14556,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13313,6 +14683,12 @@
   * type: [[BusinessprocessFilter]](#type-BusinessprocessFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * name_EQ 
 
@@ -13472,6 +14848,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * name_EQ 
 
   * type: [String](#type-String) 
@@ -13630,6 +15012,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13752,6 +15140,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13873,6 +15267,12 @@
   * type: [[PortFilter]](#type-PortFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * _created_EQ 
 
@@ -14014,6 +15414,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -14135,6 +15541,12 @@
   * type: [[VulnerabilityFilter]](#type-VulnerabilityFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * _created_EQ 
 
@@ -14276,6 +15688,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -14397,6 +15815,12 @@
   * type: [[GeolocationFilter]](#type-GeolocationFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * _created_EQ 
 
@@ -14538,6 +15962,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -14660,6 +16090,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 ### type AssetIpAddrEdgeFilter 
 
 * AND 
@@ -14673,6 +16109,12 @@
   * type: [[AssetIpAddrEdgeFilter]](#type-AssetIpAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -14796,6 +16238,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -14917,6 +16365,12 @@
   * type: [[AssetHostnameEdgeFilter]](#type-AssetHostnameEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15040,6 +16494,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15161,6 +16621,12 @@
   * type: [[AssetContainerEdgeFilter]](#type-AssetContainerEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15284,6 +16750,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15405,6 +16877,12 @@
   * type: [[AssetDatabaseEdgeFilter]](#type-AssetDatabaseEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15528,6 +17006,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15649,6 +17133,12 @@
   * type: [[ApplicationPortEdgeFilter]](#type-ApplicationPortEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15772,6 +17262,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15893,6 +17389,12 @@
   * type: [[ApplicationIpAddrEdgeFilter]](#type-ApplicationIpAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16016,6 +17518,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16137,6 +17645,12 @@
   * type: [[BusinessprocessAccountEdgeFilter]](#type-BusinessprocessAccountEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16260,6 +17774,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16381,6 +17901,12 @@
   * type: [[ApplicationVulnerabilityEdgeFilter]](#type-ApplicationVulnerabilityEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16504,6 +18030,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16625,6 +18157,12 @@
   * type: [[DatabaseVulnerabilityEdgeFilter]](#type-DatabaseVulnerabilityEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16748,6 +18286,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16869,6 +18413,12 @@
   * type: [[IpAddrMacAddrEdgeFilter]](#type-IpAddrMacAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16992,6 +18542,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17113,6 +18669,12 @@
   * type: [[IpAddrVulnerabilityEdgeFilter]](#type-IpAddrVulnerabilityEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17236,6 +18798,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17357,6 +18925,12 @@
   * type: [[IpAddrPortEdgeFilter]](#type-IpAddrPortEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17480,6 +19054,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17601,6 +19181,12 @@
   * type: [[AccountDatabaseEdgeFilter]](#type-AccountDatabaseEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17724,6 +19310,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17845,6 +19437,12 @@
   * type: [[AccountIpAddrEdgeFilter]](#type-AccountIpAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17968,6 +19566,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18089,6 +19693,12 @@
   * type: [[UnifiedUserUserEdgeFilter]](#type-UnifiedUserUserEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -18212,6 +19822,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18333,6 +19949,12 @@
   * type: [[TagAssetEdgeFilter]](#type-TagAssetEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -18456,6 +20078,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18577,6 +20205,12 @@
   * type: [[TagIpAddrEdgeFilter]](#type-TagIpAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -18700,6 +20334,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18821,6 +20461,12 @@
   * type: [[TagUserEdgeFilter]](#type-TagUserEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -18944,6 +20590,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -19065,6 +20717,12 @@
   * type: [[TagAccountEdgeFilter]](#type-TagAccountEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -19188,6 +20846,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -19309,6 +20973,12 @@
   * type: [[TagHostnameEdgeFilter]](#type-TagHostnameEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -19432,6 +21102,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -19553,6 +21229,12 @@
   * type: [[TagDatabaseEdgeFilter]](#type-TagDatabaseEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -19676,6 +21358,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -19797,6 +21485,12 @@
   * type: [[TagPortEdgeFilter]](#type-TagPortEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -19920,6 +21614,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -20041,6 +21741,12 @@
   * type: [[TagGeolocationEdgeFilter]](#type-TagGeolocationEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 

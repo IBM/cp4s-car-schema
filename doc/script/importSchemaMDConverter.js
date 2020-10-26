@@ -49,14 +49,14 @@ class ImportSchemaMDCoverter extends converter.MDConverter {
 
   createPropertiesMD(propertyContent, propertyWrapper, required) {
     const propertyMDNodes = [];
-    Object.keys(propertyContent).forEach(property => {
+    Object.keys(propertyContent).forEach((property) => {
       const propertyDetail = propertyContent[property];
       const propertyNode = new converter.MdNode(
         property,
         false,
         new converter.MdWrapper(propertyWrapper.wrapper)
       );
-      Object.keys(propertyDetail).forEach(key => {
+      Object.keys(propertyDetail).forEach((key) => {
         const itemWrapper = propertyWrapper[key];
         if (itemWrapper != undefined)
           propertyNode.children.push(

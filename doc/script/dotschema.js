@@ -30,7 +30,7 @@ class Node {
 
   attributesToString() {
     let result = '{';
-    this.attributes.forEach(attribute => {
+    this.attributes.forEach((attribute) => {
       result += attribute.toString();
     });
     return result.substr(0, result.lastIndexOf('|'));
@@ -109,16 +109,16 @@ class Graph {
   }
   toString() {
     let graphDot = `${this.graphType} cluster_${this.properties.label} {\n `;
-    Object.keys(this.properties).forEach(key => {
+    Object.keys(this.properties).forEach((key) => {
       graphDot += key + '=' + this.properties[key] + ';\n';
     });
-    this.nodes.forEach(node => {
+    this.nodes.forEach((node) => {
       graphDot += node.toString();
     });
-    this.edges.forEach(edge => {
+    this.edges.forEach((edge) => {
       graphDot += edge.toString();
     });
-    this.subGraphs.forEach(subgraph => {
+    this.subGraphs.forEach((subgraph) => {
       graphDot += subgraph.toString();
     });
     graphDot += this.layoutToString() || '';
@@ -173,7 +173,7 @@ class DotSchema {
   addAttributes(node, nodeContent) {
     let required = [];
     const fields = nodeContent.properties || {};
-    Object.keys(fields).forEach(filed => {
+    Object.keys(fields).forEach((filed) => {
       let isRequired = false;
       if (required.indexOf(filed) != -1) isRequired = true;
       node.attributes.push(new Attribute(graphQLSchema.typeNametoFieldName(filed), isRequired));
@@ -183,7 +183,7 @@ class DotSchema {
 
   handleMultidirectionalEdge(collectionName, collectionSchema) {
     const result = [];
-    collectionSchema.targets.forEach(target => {
+    collectionSchema.targets.forEach((target) => {
       result.push(new Edge(collectionSchema.source, target, collectionName));
     });
     return result;

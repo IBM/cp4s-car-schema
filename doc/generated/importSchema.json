@@ -465,16 +465,19 @@
                 "type": "object",
                 "properties": {
                     "_key": {
-                        "description": "hostname",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
-                        "minLength": 1,
-                        "maxLength": 254
-                    },
-                    "host_name": {
-                        "description": "a unique key which should be hostname",
+                        "description": "a unique key which is auto generated",
                         "type": "string",
                         "graphql_sort_attribute": true
+                    },
+                    "host_name": {
+                        "description": "hostname",
+                        "type": "string",
+                        "format": "car-host",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "errorMessage": {
+                            "format": "Should match pattern ^[A-Za-z0-9_:@=;!'%-.()+,$*s]+$"
+                        }
                     },
                     "tag": {
                         "type": "array",
@@ -492,7 +495,7 @@
                     }
                 },
                 "required": [
-                    "_key"
+                    "host_name"
                 ]
             }
         },

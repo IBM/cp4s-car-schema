@@ -34,7 +34,7 @@ var importSchemaTemplate = {
         email: {
           description: 'email',
           type: 'string',
-          //  pattern:
+          // pattern:
           //   "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
         },
       },
@@ -51,15 +51,18 @@ var importSchemaTemplate = {
 
     hostname: {
       properties: {
-        _key: {
+        host_name: {
           description: 'hostname',
           type: 'string',
-          pattern: "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
+          format: 'car-host',
           minLength: 1,
           maxLength: 254,
+          errorMessage: {
+            format: "Should match pattern ^[A-Za-z0-9_:@=;!'%-.()+,$*s]+$",
+          },
         },
       },
-      required: ['_key'],
+      required: ['host_name'],
     },
 
     database: {

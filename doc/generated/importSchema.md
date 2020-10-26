@@ -524,21 +524,19 @@
 
 ### Type: array 
 
-### _key* 
+### _key 
+
+* Description: a unique key which is auto generated 
+
+* Type: string 
+
+### host_name* 
 
 * Description: hostname 
 
 * Type: string 
 
-* Pattern: ^[a-zA-Z0-9_:@=;!'%\-\.\(\)\+\,\$\*]+$ 
-
 * required: true 
-
-### host_name 
-
-* Description: a unique key which should be hostname 
-
-* Type: string 
 
 ### tag 
 

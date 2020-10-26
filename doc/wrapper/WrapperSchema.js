@@ -3,7 +3,7 @@ const graphQLMDWrapper = {
     wrapper: '# %s',
     APItype: {
       wrapper: '## APIType: %s',
-      endpoint: {
+      searchFunction: {
         wrapper: '### %s',
         arguments: {
           wrapper: '* Arguments',
