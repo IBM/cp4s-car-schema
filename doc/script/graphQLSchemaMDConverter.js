@@ -14,8 +14,9 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
       false,
       new converter.MdWrapper(this.mdWrapperSchema.title.APItype.wrapper)
     );
+    const allTypes = Object.assign({}, this.schema.types, this.schema.edgeTypes);
     graphQLQueryNode.children = graphQLQueryNode.children.concat(
-      this.createGraphQLEndPointsMD(this.schema.types, this.mdWrapperSchema.title.APItype.endpoint)
+      this.createGraphQLSearchFunctions(allTypes, this.mdWrapperSchema.title.APItype.searchFunction)
     );
     this.mdNode.children.push(graphQLQueryNode);
 
@@ -32,24 +33,24 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
     return super.convert();
   }
 
-  createGraphQLEndPointsMD(endPoints, wrapper) {
+  createGraphQLSearchFunctions(types, wrapper) {
     const endPointsMD = [];
-    for (const typeName in endPoints) {
-      if (endPoints[typeName].searchFunctionName !== undefined)
-        endPointsMD.push(this.createGraphQLEndPointMD(endPoints[typeName], wrapper));
+    for (const typeName in types) {
+      if (types[typeName].searchFunctionName)
+        endPointsMD.push(this.createSearchFunction(types[typeName], wrapper));
     }
     return endPointsMD;
   }
 
-  createGraphQLEndPointMD(collection, wrapper) {
+  createSearchFunction(type, wrapper) {
     const endpontMD = new converter.MdNode(
-      collection.name,
+      type.searchFunctionName,
       false,
       new converter.MdWrapper(wrapper.wrapper)
     );
-    endpontMD.children.push(this.createEndPointArgumentNode(collection, wrapper.arguments));
+    endpontMD.children.push(this.createEndPointArgumentNode(type, wrapper.arguments));
     endpontMD.children.push(
-      this.createTypeNode(collection.name, { isArray: true }, wrapper.return)
+      this.createTypeNode(type.name, { isArray: true }, wrapper.return)
     );
     return endpontMD;
   }
@@ -67,7 +68,7 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
     argumentContent = argumentContent.match(/("{3}.+"{3}.+\)):/)[1];
     const argumentAndComments = argumentContent.split(/\"{3}/g);
     const comments = [];
-    argumentAndComments.forEach(argument => {
+    argumentAndComments.forEach((argument) => {
       // remove directives
       argument = argument.replace(/\s+@.*$/, '');
       // remove defaults
@@ -136,13 +137,13 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
       false,
       new converter.MdWrapper(wrapper.wrapper)
     );
-    type.sortFields.forEach(field => {
+    type.sortFields.forEach((field) => {
       const fieldNode = new converter.MdNode(
         field.name,
         false,
         new converter.MdWrapper(wrapper.properties.wrapper)
       );
-      Object.keys(field).forEach(key => {
+      Object.keys(field).forEach((key) => {
         const detail = this.createDetailMD(key, field, wrapper.properties);
         if (detail) {
           fieldNode.children.push(detail);
@@ -174,9 +175,9 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
       false,
       new converter.MdWrapper(wrapper.wrapper)
     );
-    Object.keys(type.filterItems).forEach(field => {
+    Object.keys(type.filterItems).forEach((field) => {
       const fieldContent = type.filterItems[field];
-      fieldContent.operators.forEach(operator => {
+      fieldContent.operators.forEach((operator) => {
         let separator = '';
         if (fieldContent.name.length > 0) separator = '_';
         const fieldNode = new converter.MdNode(
@@ -184,7 +185,7 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
           false,
           new converter.MdWrapper(wrapper.properties.wrapper)
         );
-        Object.keys(operator).forEach(key => {
+        Object.keys(operator).forEach((key) => {
           fieldNode.children.push(this.createDetailMD(key, operator, wrapper.properties));
         });
         typeNode.children.push(fieldNode);
@@ -199,7 +200,7 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
       false,
       new converter.MdWrapper(wrapper.wrapper)
     );
-    Object.keys(type.fields).forEach(field => {
+    Object.keys(type.fields).forEach((field) => {
       const fieldContent = type.fields[field];
       if (fieldContent.hidden) return;
       const fieldNode = new converter.MdNode(
@@ -207,7 +208,7 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
         false,
         new converter.MdWrapper(wrapper.properties.wrapper)
       );
-      Object.keys(fieldContent).forEach(field => {
+      Object.keys(fieldContent).forEach((field) => {
         if (
           wrapper.properties[field] !== undefined &&
           (typeof fieldContent[field] !== 'object' || fieldContent[field].length > 0)
@@ -230,13 +231,13 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
         false,
         new converter.MdWrapper(detailsWrapper.wrapper)
       );
-      details[name].forEach(argument => {
+      details[name].forEach((argument) => {
         const argumentNode = new converter.MdNode(
           argument.name,
           false,
           new converter.MdWrapper(detailsWrapper.argument.wrapper)
         );
-        Object.keys(argument).forEach(argumentProperty => {
+        Object.keys(argument).forEach((argumentProperty) => {
           if (detailsWrapper.argument[argumentProperty] != undefined)
             argumentNode.children.push(
               this.createDetailMD(argumentProperty, argument, detailsWrapper.argument)

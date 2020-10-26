@@ -576,6 +576,1478 @@ type Query {
     filter: GeolocationFilter): [Geolocation]
       @cost(complexity: 0, multipliers: ["limit"])
   
+
+  "Default items = 100, use limit filter to adjust"
+  assetVulnerabilityEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetVulnerabilityEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetVulnerabilityEdgeFilter): [AssetVulnerabilityEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetIpAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetIpAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetIpAddrEdgeFilter): [AssetIpAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetMacAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetMacAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetMacAddrEdgeFilter): [AssetMacAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetHostnameEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetHostnameEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetHostnameEdgeFilter): [AssetHostnameEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetAccountEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetAccountEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetAccountEdgeFilter): [AssetAccountEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetContainerEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetContainerEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetContainerEdgeFilter): [AssetContainerEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetApplicationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetApplicationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetApplicationEdgeFilter): [AssetApplicationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetDatabaseEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetDatabaseEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetDatabaseEdgeFilter): [AssetDatabaseEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  assetGeolocationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AssetGeolocationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AssetGeolocationEdgeFilter): [AssetGeolocationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  applicationPortEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ApplicationPortEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ApplicationPortEdgeFilter): [ApplicationPortEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  accountApplicationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AccountApplicationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AccountApplicationEdgeFilter): [AccountApplicationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  applicationIpAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ApplicationIpAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ApplicationIpAddrEdgeFilter): [ApplicationIpAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  businessprocessApplicationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ BusinessprocessApplicationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: BusinessprocessApplicationEdgeFilter): [BusinessprocessApplicationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  businessprocessAccountEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ BusinessprocessAccountEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: BusinessprocessAccountEdgeFilter): [BusinessprocessAccountEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  applicationDatabaseEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ApplicationDatabaseEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ApplicationDatabaseEdgeFilter): [ApplicationDatabaseEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  applicationVulnerabilityEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ ApplicationVulnerabilityEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: ApplicationVulnerabilityEdgeFilter): [ApplicationVulnerabilityEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  databaseIpAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ DatabaseIpAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: DatabaseIpAddrEdgeFilter): [DatabaseIpAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  databaseVulnerabilityEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ DatabaseVulnerabilityEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: DatabaseVulnerabilityEdgeFilter): [DatabaseVulnerabilityEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  ipAddrContainerEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrContainerEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrContainerEdgeFilter): [IpAddrContainerEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  ipAddrMacAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrMacAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrMacAddrEdgeFilter): [IpAddrMacAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  ipAddrHostnameEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrHostnameEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrHostnameEdgeFilter): [IpAddrHostnameEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  ipAddrVulnerabilityEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrVulnerabilityEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrVulnerabilityEdgeFilter): [IpAddrVulnerabilityEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  ipAddrGeolocationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrGeolocationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrGeolocationEdgeFilter): [IpAddrGeolocationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  ipAddrPortEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ IpAddrPortEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: IpAddrPortEdgeFilter): [IpAddrPortEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  userAccountEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ UserAccountEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: UserAccountEdgeFilter): [UserAccountEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  accountDatabaseEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AccountDatabaseEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AccountDatabaseEdgeFilter): [AccountDatabaseEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  accountHostnameEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AccountHostnameEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AccountHostnameEdgeFilter): [AccountHostnameEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  accountIpAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ AccountIpAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: AccountIpAddrEdgeFilter): [AccountIpAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  unifiedAccountAccountEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ UnifiedAccountAccountEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: UnifiedAccountAccountEdgeFilter): [UnifiedAccountAccountEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  unifiedUserUserEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ UnifiedUserUserEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: UnifiedUserUserEdgeFilter): [UnifiedUserUserEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  portVulnerabilityEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ PortVulnerabilityEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: PortVulnerabilityEdgeFilter): [PortVulnerabilityEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagAssetEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagAssetEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagAssetEdgeFilter): [TagAssetEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagContainerEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagContainerEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagContainerEdgeFilter): [TagContainerEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagIpAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagIpAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagIpAddrEdgeFilter): [TagIpAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagUnifiedUserEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagUnifiedUserEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagUnifiedUserEdgeFilter): [TagUnifiedUserEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagUserEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagUserEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagUserEdgeFilter): [TagUserEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagUnifiedAccountEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagUnifiedAccountEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagUnifiedAccountEdgeFilter): [TagUnifiedAccountEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagAccountEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagAccountEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagAccountEdgeFilter): [TagAccountEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagApplicationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagApplicationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagApplicationEdgeFilter): [TagApplicationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagHostnameEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagHostnameEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagHostnameEdgeFilter): [TagHostnameEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagBusinessprocessEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagBusinessprocessEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagBusinessprocessEdgeFilter): [TagBusinessprocessEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagDatabaseEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagDatabaseEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagDatabaseEdgeFilter): [TagDatabaseEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagMacAddrEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagMacAddrEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagMacAddrEdgeFilter): [TagMacAddrEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagPortEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagPortEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagPortEdgeFilter): [TagPortEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagVulnerabilityEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagVulnerabilityEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagVulnerabilityEdgeFilter): [TagVulnerabilityEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
+
+  "Default items = 100, use limit filter to adjust"
+  tagGeolocationEdges(
+    """
+    Specifies how many elements should be at most included in the result.
+    """
+    limit: Int = 100
+    """
+    Specifies how many elements from the result shall be skipped.
+    If limit is not specified, this argument is ignored.
+    """
+    offset: Int
+  
+    """
+    Specifies the field names to sort the results by in ascending or descending order.
+    """
+    orderBy: [ TagGeolocationEdgeSort ]
+    
+    """
+    Global filter is applied to each collection in all of the search range.
+    It is automatically joined with other arguments in each search level by 'AND' conjunction.
+    """
+    globalFilter: GlobalFilter
+    
+    
+    """
+    Provides advanced search via multiple operators in a single search level.
+    It is automatically joined with other arguments in the same search level by 'AND' conjunction.
+    """
+    filter: TagGeolocationEdgeFilter): [TagGeolocationEdge]
+      @cost(complexity: 0, multipliers: ["limit"])
+  
 }
 
 scalar Date
@@ -583,6 +2055,7 @@ scalar JSON
 enum SortDirection { asc, desc }
 type Asset {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   business_value: Float @cost
@@ -668,6 +2141,7 @@ _deleted: SortDirection
 
 type Container {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   image: String @cost
@@ -705,6 +2179,7 @@ _deleted: SortDirection
 
 type IpAddr {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
@@ -787,6 +2262,7 @@ _deleted: SortDirection
 
 type UnifiedUser {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
@@ -815,6 +2291,7 @@ _deleted: SortDirection
 
 type User {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   username: String @cost
   fullname: String @cost
@@ -879,6 +2356,7 @@ _deleted: SortDirection
 
 type UnifiedAccount {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   _created: Date @cost
@@ -909,6 +2387,7 @@ _deleted: SortDirection
 
 type Account {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   created: Float @cost
@@ -996,6 +2475,7 @@ _deleted: SortDirection
 
 type Application {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   description: String @cost
@@ -1084,6 +2564,7 @@ _deleted: SortDirection
 
 type Hostname {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   host_name: String @cost
   _created: Date @cost
@@ -1126,6 +2607,7 @@ _deleted: SortDirection
 
 type Businessprocess {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   description: String @cost
@@ -1164,6 +2646,7 @@ _deleted: SortDirection
 
 type Database {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   name: String @cost
   description: String @cost
@@ -1225,6 +2708,7 @@ _deleted: SortDirection
 
 type MacAddr {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   interface: String @cost
   _created: Date @cost
@@ -1260,6 +2744,7 @@ _deleted: SortDirection
 
 type Report {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   type: String @cost
   parameters: String @cost
@@ -1281,6 +2766,7 @@ _deleted: SortDirection
 
 type Port {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   port_number: Int @cost
   status: String @cost
@@ -1326,6 +2812,7 @@ _deleted: SortDirection
 
 type Source {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   description: String @cost
   product_link: String @cost
@@ -1344,6 +2831,7 @@ _deleted: SortDirection
 
 type Vulnerability {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   external_properties: Int @cost
   external_reference: String @cost
@@ -1407,6 +2895,7 @@ _deleted: SortDirection
 
 type Tag {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   _created: Date @cost
   _modified: Date @cost
@@ -1513,6 +3002,7 @@ _deleted: SortDirection
 
 type Geolocation {
   key: ID! @cost
+  _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
   region: String @cost
   longitude: Float @cost
@@ -2648,6 +4138,7 @@ _deleted: SortDirection
 input GlobalFilter {
   AND: [GlobalFilter!]
   OR: [GlobalFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -2661,6 +4152,7 @@ input GlobalFilter {
 }
 
 input CustomPropertiesFilter {
+  AT: Date
   id_EQ: String
   id_IN: [String!]
   id_NOTIN: [String!]
@@ -2669,6 +4161,7 @@ input CustomPropertiesFilter {
 input AssetFilter {
   AND: [AssetFilter!]
   OR: [AssetFilter!]
+  AT: Date
   name_EQ: String
   name_IN: [String!]
   name_NOTIN: [String!]
@@ -2698,6 +4191,7 @@ input AssetFilter {
 input ContainerFilter {
   AND: [ContainerFilter!]
   OR: [ContainerFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -2724,6 +4218,7 @@ input ContainerFilter {
 input IpAddrFilter {
   AND: [IpAddrFilter!]
   OR: [IpAddrFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -2747,6 +4242,7 @@ input IpAddrFilter {
 input UnifiedUserFilter {
   AND: [UnifiedUserFilter!]
   OR: [UnifiedUserFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -2770,6 +4266,7 @@ input UnifiedUserFilter {
 input UserFilter {
   AND: [UserFilter!]
   OR: [UserFilter!]
+  AT: Date
   fullname_EQ: String
   fullname_IN: [String!]
   fullname_NOTIN: [String!]
@@ -2808,6 +4305,7 @@ input UserFilter {
 input UnifiedAccountFilter {
   AND: [UnifiedAccountFilter!]
   OR: [UnifiedAccountFilter!]
+  AT: Date
   name_EQ: String
   name_IN: [String!]
   name_NOTIN: [String!]
@@ -2834,6 +4332,7 @@ input UnifiedAccountFilter {
 input AccountFilter {
   AND: [AccountFilter!]
   OR: [AccountFilter!]
+  AT: Date
   name_EQ: String
   name_IN: [String!]
   name_NOTIN: [String!]
@@ -2863,6 +4362,7 @@ input AccountFilter {
 input ApplicationFilter {
   AND: [ApplicationFilter!]
   OR: [ApplicationFilter!]
+  AT: Date
   name_EQ: String
   name_IN: [String!]
   name_NOTIN: [String!]
@@ -2892,6 +4392,7 @@ input ApplicationFilter {
 input HostnameFilter {
   AND: [HostnameFilter!]
   OR: [HostnameFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -2915,6 +4416,7 @@ input HostnameFilter {
 input BusinessprocessFilter {
   AND: [BusinessprocessFilter!]
   OR: [BusinessprocessFilter!]
+  AT: Date
   name_EQ: String
   name_IN: [String!]
   name_NOTIN: [String!]
@@ -2944,6 +4446,7 @@ input BusinessprocessFilter {
 input DatabaseFilter {
   AND: [DatabaseFilter!]
   OR: [DatabaseFilter!]
+  AT: Date
   name_EQ: String
   name_IN: [String!]
   name_NOTIN: [String!]
@@ -2973,6 +4476,7 @@ input DatabaseFilter {
 input MacAddrFilter {
   AND: [MacAddrFilter!]
   OR: [MacAddrFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -2996,6 +4500,7 @@ input MacAddrFilter {
 input ReportFilter {
   AND: [ReportFilter!]
   OR: [ReportFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -3019,6 +4524,7 @@ input ReportFilter {
 input PortFilter {
   AND: [PortFilter!]
   OR: [PortFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -3045,6 +4551,7 @@ input PortFilter {
 input SourceFilter {
   AND: [SourceFilter!]
   OR: [SourceFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -3068,6 +4575,7 @@ input SourceFilter {
 input VulnerabilityFilter {
   AND: [VulnerabilityFilter!]
   OR: [VulnerabilityFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -3094,6 +4602,7 @@ input VulnerabilityFilter {
 input TagFilter {
   AND: [TagFilter!]
   OR: [TagFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -3117,6 +4626,7 @@ input TagFilter {
 input GeolocationFilter {
   AND: [GeolocationFilter!]
   OR: [GeolocationFilter!]
+  AT: Date
   _created_EQ: Date
   _created_GT: Date
   _created_GTE: Date
@@ -3143,6 +4653,7 @@ input GeolocationFilter {
 input AssetVulnerabilityEdgeFilter {
   AND: [AssetVulnerabilityEdgeFilter!]
   OR: [AssetVulnerabilityEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3166,11 +4677,13 @@ input AssetVulnerabilityEdgeFilter {
 input AssetVulnerabilityEdgePortFilter {
   AND: [AssetVulnerabilityEdgePortFilter!]
   OR: [AssetVulnerabilityEdgePortFilter!]
+  AT: Date
 }
 
 input AssetIpAddrEdgeFilter {
   AND: [AssetIpAddrEdgeFilter!]
   OR: [AssetIpAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3194,6 +4707,7 @@ input AssetIpAddrEdgeFilter {
 input AssetMacAddrEdgeFilter {
   AND: [AssetMacAddrEdgeFilter!]
   OR: [AssetMacAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3217,6 +4731,7 @@ input AssetMacAddrEdgeFilter {
 input AssetHostnameEdgeFilter {
   AND: [AssetHostnameEdgeFilter!]
   OR: [AssetHostnameEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3240,6 +4755,7 @@ input AssetHostnameEdgeFilter {
 input AssetAccountEdgeFilter {
   AND: [AssetAccountEdgeFilter!]
   OR: [AssetAccountEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3263,6 +4779,7 @@ input AssetAccountEdgeFilter {
 input AssetContainerEdgeFilter {
   AND: [AssetContainerEdgeFilter!]
   OR: [AssetContainerEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3286,6 +4803,7 @@ input AssetContainerEdgeFilter {
 input AssetApplicationEdgeFilter {
   AND: [AssetApplicationEdgeFilter!]
   OR: [AssetApplicationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3309,6 +4827,7 @@ input AssetApplicationEdgeFilter {
 input AssetDatabaseEdgeFilter {
   AND: [AssetDatabaseEdgeFilter!]
   OR: [AssetDatabaseEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3332,6 +4851,7 @@ input AssetDatabaseEdgeFilter {
 input AssetGeolocationEdgeFilter {
   AND: [AssetGeolocationEdgeFilter!]
   OR: [AssetGeolocationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3355,6 +4875,7 @@ input AssetGeolocationEdgeFilter {
 input ApplicationPortEdgeFilter {
   AND: [ApplicationPortEdgeFilter!]
   OR: [ApplicationPortEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3378,6 +4899,7 @@ input ApplicationPortEdgeFilter {
 input AccountApplicationEdgeFilter {
   AND: [AccountApplicationEdgeFilter!]
   OR: [AccountApplicationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3401,6 +4923,7 @@ input AccountApplicationEdgeFilter {
 input ApplicationIpAddrEdgeFilter {
   AND: [ApplicationIpAddrEdgeFilter!]
   OR: [ApplicationIpAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3424,6 +4947,7 @@ input ApplicationIpAddrEdgeFilter {
 input BusinessprocessApplicationEdgeFilter {
   AND: [BusinessprocessApplicationEdgeFilter!]
   OR: [BusinessprocessApplicationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3447,6 +4971,7 @@ input BusinessprocessApplicationEdgeFilter {
 input BusinessprocessAccountEdgeFilter {
   AND: [BusinessprocessAccountEdgeFilter!]
   OR: [BusinessprocessAccountEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3470,6 +4995,7 @@ input BusinessprocessAccountEdgeFilter {
 input ApplicationDatabaseEdgeFilter {
   AND: [ApplicationDatabaseEdgeFilter!]
   OR: [ApplicationDatabaseEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3493,6 +5019,7 @@ input ApplicationDatabaseEdgeFilter {
 input ApplicationVulnerabilityEdgeFilter {
   AND: [ApplicationVulnerabilityEdgeFilter!]
   OR: [ApplicationVulnerabilityEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3516,6 +5043,7 @@ input ApplicationVulnerabilityEdgeFilter {
 input DatabaseIpAddrEdgeFilter {
   AND: [DatabaseIpAddrEdgeFilter!]
   OR: [DatabaseIpAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3539,6 +5067,7 @@ input DatabaseIpAddrEdgeFilter {
 input DatabaseVulnerabilityEdgeFilter {
   AND: [DatabaseVulnerabilityEdgeFilter!]
   OR: [DatabaseVulnerabilityEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3562,6 +5091,7 @@ input DatabaseVulnerabilityEdgeFilter {
 input IpAddrContainerEdgeFilter {
   AND: [IpAddrContainerEdgeFilter!]
   OR: [IpAddrContainerEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3585,6 +5115,7 @@ input IpAddrContainerEdgeFilter {
 input IpAddrMacAddrEdgeFilter {
   AND: [IpAddrMacAddrEdgeFilter!]
   OR: [IpAddrMacAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3608,6 +5139,7 @@ input IpAddrMacAddrEdgeFilter {
 input IpAddrHostnameEdgeFilter {
   AND: [IpAddrHostnameEdgeFilter!]
   OR: [IpAddrHostnameEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3631,6 +5163,7 @@ input IpAddrHostnameEdgeFilter {
 input IpAddrVulnerabilityEdgeFilter {
   AND: [IpAddrVulnerabilityEdgeFilter!]
   OR: [IpAddrVulnerabilityEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3654,6 +5187,7 @@ input IpAddrVulnerabilityEdgeFilter {
 input IpAddrGeolocationEdgeFilter {
   AND: [IpAddrGeolocationEdgeFilter!]
   OR: [IpAddrGeolocationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3677,6 +5211,7 @@ input IpAddrGeolocationEdgeFilter {
 input IpAddrPortEdgeFilter {
   AND: [IpAddrPortEdgeFilter!]
   OR: [IpAddrPortEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3700,6 +5235,7 @@ input IpAddrPortEdgeFilter {
 input UserAccountEdgeFilter {
   AND: [UserAccountEdgeFilter!]
   OR: [UserAccountEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3723,6 +5259,7 @@ input UserAccountEdgeFilter {
 input AccountDatabaseEdgeFilter {
   AND: [AccountDatabaseEdgeFilter!]
   OR: [AccountDatabaseEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3746,6 +5283,7 @@ input AccountDatabaseEdgeFilter {
 input AccountHostnameEdgeFilter {
   AND: [AccountHostnameEdgeFilter!]
   OR: [AccountHostnameEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3769,6 +5307,7 @@ input AccountHostnameEdgeFilter {
 input AccountIpAddrEdgeFilter {
   AND: [AccountIpAddrEdgeFilter!]
   OR: [AccountIpAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3792,6 +5331,7 @@ input AccountIpAddrEdgeFilter {
 input UnifiedAccountAccountEdgeFilter {
   AND: [UnifiedAccountAccountEdgeFilter!]
   OR: [UnifiedAccountAccountEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3815,6 +5355,7 @@ input UnifiedAccountAccountEdgeFilter {
 input UnifiedUserUserEdgeFilter {
   AND: [UnifiedUserUserEdgeFilter!]
   OR: [UnifiedUserUserEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3838,6 +5379,7 @@ input UnifiedUserUserEdgeFilter {
 input PortVulnerabilityEdgeFilter {
   AND: [PortVulnerabilityEdgeFilter!]
   OR: [PortVulnerabilityEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3861,6 +5403,7 @@ input PortVulnerabilityEdgeFilter {
 input TagAssetEdgeFilter {
   AND: [TagAssetEdgeFilter!]
   OR: [TagAssetEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3884,6 +5427,7 @@ input TagAssetEdgeFilter {
 input TagContainerEdgeFilter {
   AND: [TagContainerEdgeFilter!]
   OR: [TagContainerEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3907,6 +5451,7 @@ input TagContainerEdgeFilter {
 input TagIpAddrEdgeFilter {
   AND: [TagIpAddrEdgeFilter!]
   OR: [TagIpAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3930,6 +5475,7 @@ input TagIpAddrEdgeFilter {
 input TagUnifiedUserEdgeFilter {
   AND: [TagUnifiedUserEdgeFilter!]
   OR: [TagUnifiedUserEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3953,6 +5499,7 @@ input TagUnifiedUserEdgeFilter {
 input TagUserEdgeFilter {
   AND: [TagUserEdgeFilter!]
   OR: [TagUserEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3976,6 +5523,7 @@ input TagUserEdgeFilter {
 input TagUnifiedAccountEdgeFilter {
   AND: [TagUnifiedAccountEdgeFilter!]
   OR: [TagUnifiedAccountEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -3999,6 +5547,7 @@ input TagUnifiedAccountEdgeFilter {
 input TagAccountEdgeFilter {
   AND: [TagAccountEdgeFilter!]
   OR: [TagAccountEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4022,6 +5571,7 @@ input TagAccountEdgeFilter {
 input TagApplicationEdgeFilter {
   AND: [TagApplicationEdgeFilter!]
   OR: [TagApplicationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4045,6 +5595,7 @@ input TagApplicationEdgeFilter {
 input TagHostnameEdgeFilter {
   AND: [TagHostnameEdgeFilter!]
   OR: [TagHostnameEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4068,6 +5619,7 @@ input TagHostnameEdgeFilter {
 input TagBusinessprocessEdgeFilter {
   AND: [TagBusinessprocessEdgeFilter!]
   OR: [TagBusinessprocessEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4091,6 +5643,7 @@ input TagBusinessprocessEdgeFilter {
 input TagDatabaseEdgeFilter {
   AND: [TagDatabaseEdgeFilter!]
   OR: [TagDatabaseEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4114,6 +5667,7 @@ input TagDatabaseEdgeFilter {
 input TagMacAddrEdgeFilter {
   AND: [TagMacAddrEdgeFilter!]
   OR: [TagMacAddrEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4137,6 +5691,7 @@ input TagMacAddrEdgeFilter {
 input TagPortEdgeFilter {
   AND: [TagPortEdgeFilter!]
   OR: [TagPortEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4160,6 +5715,7 @@ input TagPortEdgeFilter {
 input TagVulnerabilityEdgeFilter {
   AND: [TagVulnerabilityEdgeFilter!]
   OR: [TagVulnerabilityEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]
@@ -4183,6 +5739,7 @@ input TagVulnerabilityEdgeFilter {
 input TagGeolocationEdgeFilter {
   AND: [TagGeolocationEdgeFilter!]
   OR: [TagGeolocationEdgeFilter!]
+  AT: Date
   source_EQ: String
   source_IN: [String!]
   source_NOTIN: [String!]

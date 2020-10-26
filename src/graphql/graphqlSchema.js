@@ -120,7 +120,8 @@ class Field {
     let res = '';
     if (this.comment) res += `"${this.comment}"\n  `;
     const args =
-      (this.arguments.length && `(${this.arguments.map(arg => arg.toString()).join('  ')})`) || '';
+      (this.arguments.length && `(${this.arguments.map((arg) => arg.toString()).join('  ')})`) ||
+      '';
     res += `${this.name}${args}: `;
     if (this.isArray) res += `[${this.type}]`;
     else res += this.type;
@@ -252,7 +253,7 @@ class SortType {
 
   toString() {
     let result = `input ${this.typeName} {\n`;
-    this.sortFields.forEach(field => {
+    this.sortFields.forEach((field) => {
       result += field.toString();
     });
     return `${result}}\n`;
@@ -261,9 +262,9 @@ class SortType {
 
 /* eslint-disable no-new */
 class Type {
-  constructor(collectionName) {
+  constructor(collectionName, name) {
     this.collectionName = collectionName;
-    this.name = formatTypeName(collectionName);
+    this.name = name || formatTypeName(collectionName);
     this.searchFunctionName = makePlural(typeNametoFieldName(this.name));
     this.fields = {};
     this.filter = filterSchema.createFilterType(this.name);
@@ -271,7 +272,7 @@ class Type {
   }
 
   createFields(typeSchema, ids, supressStandardFields) {
-    ids.forEach(id => {
+    ids.forEach((id) => {
       if (['_key', 'external_id'].includes(id)) {
         // add support for virtual key field which resolves to _key or external_id depending on the collection
         new VirtualKeyField(id, this);
@@ -298,16 +299,17 @@ class Type {
     }
 
     if (typeSchema.required)
-      typeSchema.required.forEach(item => {
+      typeSchema.required.forEach((item) => {
         if (this.fields[item]) this.fields[item].required = true;
       });
 
-    arangDbHiddenFields.forEach(name => {
+    arangDbHiddenFields.forEach((name) => {
       if (!this.fields[name]) new HiddenField(name, this);
     });
   }
 
   createStandardFields() {
+    new IDField('_id', this);
     new CustomPropertiesField(this);
   }
 
@@ -398,7 +400,7 @@ class Type {
 
   mapFields(doc) {
     const keys = Array.from(Object.keys(doc));
-    keys.forEach(key => {
+    keys.forEach((key) => {
       for (const fieldName in this.fields) {
         const field = this.fields[fieldName];
         if (key === field.jsonSchemaName) {
@@ -414,7 +416,7 @@ class Type {
   customProperties(doc, ids, isInclude) {
     const res = {};
     doc = this.mapFields(doc);
-    Object.keys(doc).forEach(key => {
+    Object.keys(doc).forEach((key) => {
       let predefinedProperty = false;
       for (const fieldName in this.fields) {
         if (key === fieldName) {
@@ -486,7 +488,7 @@ class GraphQLSchema {
   }
 
   handleMultidirectionalEdge(edgeCollectionName, edgeSchema) {
-    edgeSchema.targets.forEach(target => {
+    edgeSchema.targets.forEach((target) => {
       this.createEdge(edgeSchema.source, target, edgeCollectionName, edgeSchema);
     });
   }
@@ -495,7 +497,7 @@ class GraphQLSchema {
     const typeName1 = formatTypeName(sourceVertex);
     const typeName2 = formatTypeName(targetVertex);
     const edgeName = `${typeName1}${typeName2}Edge`;
-    const edgeType = new EdgeType(edgeName, typeSchema);
+    const edgeType = new EdgeType(edgeCollectionName, edgeName);
     this.edgeTypes[edgeName] = edgeType;
     edgeType.createFields(typeSchema);
 
@@ -528,15 +530,16 @@ class GraphQLSchema {
     let res =
       'directive @cost(complexity: Int = 1, useMultipliers: Boolean, multipliers: [String]) on FIELD_DEFINITION\n';
     res += 'type Query {\n';
-    for (const typeName in this.types) {
-      const type = this.types[typeName];
+    const allTypes = Object.assign({}, this.types, this.edgeTypes);
+    for (const typeName in allTypes) {
+      const type = allTypes[typeName];
       if (type.searchFunctionName) {
         res += searchFunction(type.searchFunctionName, typeName, type.filter, type.sort) + '\n';
       }
     }
     res += '}\n\n';
 
-    scalarTypes.forEach(type => (res += `scalar ${type}\n`));
+    scalarTypes.forEach((type) => (res += `scalar ${type}\n`));
     res += 'enum SortDirection { asc, desc }\n';
 
     for (const typeName in this.types) res += this.types[typeName].toString() + '\n';

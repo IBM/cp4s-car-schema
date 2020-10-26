@@ -20,7 +20,7 @@ class MdNode {
 
   toString() {
     let mdString = this.wrapper.wrapToString(this);
-    this.children.forEach(node => {
+    this.children.forEach((node) => {
       if (node) mdString += node.toString();
     });
     return mdString;
