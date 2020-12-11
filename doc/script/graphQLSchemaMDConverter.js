@@ -49,9 +49,7 @@ class graphQLSchemaMDCoverter extends converter.MDConverter {
       new converter.MdWrapper(wrapper.wrapper)
     );
     endpontMD.children.push(this.createEndPointArgumentNode(type, wrapper.arguments));
-    endpontMD.children.push(
-      this.createTypeNode(type.name, { isArray: true }, wrapper.return)
-    );
+    endpontMD.children.push(this.createTypeNode(type.name, { isArray: true }, wrapper.return));
     return endpontMD;
   }
 
