@@ -2566,7 +2566,6 @@ type Hostname {
   key: ID! @cost
   _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
-  host_name: String @cost
   _created: Date @cost
   _modified: Date @cost
   _deleted: Date @cost
@@ -2599,7 +2598,6 @@ type Hostname {
 }
 input HostnameSort {
 key: SortDirection
-host_name: SortDirection
 _created: SortDirection
 _modified: SortDirection
 _deleted: SortDirection
@@ -2833,7 +2831,7 @@ type Vulnerability {
   key: ID! @cost
   _id: ID! @cost
   customProperties(filter: CustomPropertiesFilter): JSON! @cost
-  external_properties: Int @cost
+  external_properties: String @cost
   external_reference: String @cost
   name: String @cost
   base_score: Float @cost

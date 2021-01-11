@@ -779,7 +779,7 @@
                 "properties": {
                     "external_properties": {
                         "description": "external_properties",
-                        "type": "integer"
+                        "type": "string"
                     },
                     "external_reference": {
                         "description": "external_reference",

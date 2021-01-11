@@ -5644,10 +5644,6 @@
 
   * required: true 
 
-* host_name 
-
-  * type: [String](#type-String) 
-
 * _created 
 
   * type: [Date](#type-Date) 
@@ -7470,7 +7466,7 @@
 
 * external_properties 
 
-  * type: [Int](#type-Int) 
+  * type: [String](#type-String) 
 
 * external_reference 
 
@@ -22275,14 +22271,6 @@
 ### type HostnameSort 
 
 * key 
-
-  * type: [SortDirection](#type-SortDirection) 
-
-  * required: false 
-
-  * isArray: false 
-
-* host_name 
 
   * type: [SortDirection](#type-SortDirection) 
 
