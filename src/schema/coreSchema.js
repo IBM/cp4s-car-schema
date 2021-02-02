@@ -520,7 +520,7 @@ const SchemaTemplate = {
         host_name: {
           description: 'a unique key which should be hostname',
           type: 'string',
-          graphql_sort_attribute: true
+          graphql_hidden: true,
         }
       },
       indexes: [ index_host_name ],
@@ -713,7 +713,7 @@ const SchemaTemplate = {
         },
         external_properties: {
           description: 'external_properties',
-          type: 'integer',
+          type: 'string',
         },
         external_reference: {
           description: 'external_reference',

@@ -842,7 +842,7 @@
 
 * Description: external_properties 
 
-* Type: integer 
+* Type: string 
 
 ### external_reference 
 
