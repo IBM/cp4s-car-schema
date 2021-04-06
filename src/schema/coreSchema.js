@@ -1,154 +1,115 @@
-/* eslint-disable camelcase */
-const index__external_id__source = { type: 'persistent', unique: true, sparse: true, fields: ['external_id', 'source'] };
-const index__from__source__active = { type: 'persistent', fields: ['_from', 'source', 'active'] };  
-const index__source = { type: 'persistent', fields: ['source'] };  
-const index__from__to__source = { type: 'persistent', unique: false, sparse: true, deduplicate: false, fields: ['_from', '_to', 'source'] }; 
-const index_host_name = { fields: [ 'host_name' ], unique: true, type: 'persistent' };
+const _ = require('lodash');
 
-const defaultEdgeIndexes = [index__from__source__active, index__source];
+const commonProperties = {
+  source: {
+    type: 'string',
+    description: 'the source id',
+  },
 
-const defaultVertexIndexes = [index__external_id__source];
+  external_id: {
+    type: 'string',
+    description: 'external identifier',
+    required: true,
+  },
 
-const MANY = null;
+  id: {
+    type: 'string',
+    required: true,
+  },
 
-const commonVertexProperties = {
-  _created: {
-    // format: 'date-time',
-    type: 'number',
-    description: 'epoch in milliseconds, created time',
-    import_schema: false,
-    graphql_type: 'Date',
-    graphql_filter_attribute: true,
-    graphql_globalfilter_attribute: true,
-    graphql_sort_attribute: true,
+  name: {
+    description: 'searchable name',
+    type: 'string',
   },
-  _modified: {
-    // format: 'date-time',
-    type: 'number',
-    description:'epoch in milliseconds, updated time',
-    import_schema: false,
-    graphql_type: 'Date',
-    graphql_filter_attribute: true,
-    graphql_globalfilter_attribute: true,
-    graphql_sort_attribute: true,
+
+  connecting_id: {
+    type: 'string',
   },
-  _deleted: {
-    // format: 'date-time',
-    type: 'number',
-    description:'epoch in milliseconds, disabled time ',
-    graphql_filter_attribute: true,
-    graphql_sort_attribute: true,
-    import_schema: false,
-    graphql_type: 'Date',
+
+  reported_at: {
+    type: 'Date',
+    required: true,
   },
-  _number_of_active_edges: {
-    type: 'number',
-    import_schema: false,
-    graphql_hidden: true,
+
+  _verified: {
+    type: 'boolean',
   },
-  tag: {
-    type: 'array',
-    items: { type: 'string' },
-    description: 'Tags to add to the document. When tag array property is provided, tags that are in this array will be added. If tag is not provided or empty then no updates/inserts of tags will occur.'
+
+  _t1: {
+    type: 'Date',
+    required: true,
   },
-  untag: {
-    type: 'array',
-    items: { type: 'string' },
-    description: 'Tags to remove from the document. When untag array property is provided, tags that are in this array will be removed from the document. If untag property is empty or not provided then no removal of tags will occur.'
-  }
+
+  _t2: {
+    type: 'Date',
+    required: true,
+  },
+
+  _created_at: {
+    description: 'time when the record was created, epoch in milliseconds',
+    type: 'Date',
+    required: true,
+    default: "(now() at time zone 'utc')",
+  },
+
+  _modified_at: {
+    description:'last time when the record was updated, epoch in milliseconds',
+    type: 'Date',
+    required: true,
+    default: "(now() at time zone 'utc')",
+  },
+};
+
+let commonVertexProperties = {
+  exclude: []
 };
 
 const commonEdgeProperties = {
-  isActivatable: true, // this means that the edge has 'active' property which controls its enables/disabled state
-  properties: {
-    created: {
-      // format: 'date-time',
-      type: 'number',
-      description: 'epoch in milliseconds',
-      graphql_name: 'created',
-      graphql_type: 'Date',
-    },
-    modified: {
-      // format: 'date-time',
-      type: 'number',
-      description:
-        'this field should be missed when there is no update and should contain the last modified timestamp when there is an update ',
-      graphql_name: 'modified',
-      graphql_type: 'Date',
-    },
-    report: {
-      type: 'string',
-      description: 'the report _key',
-    },
-    source: {
-      type: 'string',
-      description: 'the source _key',
-      graphql_filter_attribute: true,
-      graphql_sort_attribute: true,
-    },
-    external_id: {
-      type: 'string',
-      description: 'external identifier if exists',
-    },
-    _created: {
-      // format: 'date-time',
-      type: 'number',
-      description: 'epoch in milliseconds, created time',
-      graphql_filter_attribute: true,
-      graphql_globalfilter_attribute: true,
-      graphql_sort_attribute: true,
-      import_schema: false,
-      graphql_type: 'Date',
-    },
-    _modified: {
-      // format: 'date-time',
-      type: 'number',
-      description:'epoch in milliseconds, updated time',
-      graphql_filter_attribute: true,
-      graphql_globalfilter_attribute: true,
-      graphql_sort_attribute: true,
-      import_schema: false,
-      graphql_type: 'Date',
-    },
-    _deleted: {
-      // format: 'date-time',
-      type: 'number',
-      description:'epoch in milliseconds, disabled time ',
-      graphql_filter_attribute: true,
-      graphql_sort_attribute: true,
-      import_schema: false,
-      graphql_type: 'Date',
-    },
+  exclude: [ 'id', 'connecting_id', 'name' ],
+  external_id: {
+    type: 'string',
+    description: 'external identifier',
   },
 };
 
 const SchemaTemplate = {
   vertices: {
-    asset: {
-      usesExternalId: true,
+    source: {
+      hasCommonProperties: false,
       properties: {
-        _key: {
-          description: 'auto generated key',
+        id: {
           type: 'string',
-          import_schema: false,
-          graphql_sort_attribute: true,
+          required: true,
+          unique: true,
         },
+        name: {
+          description: 'name of a source',
+          type: 'string',
+        },
+        description: {
+          description: 'source description',
+          type: 'string',
+        },
+        product_link: {
+          description: 'product link',
+          type: 'string',
+        },
+      },
+    },
+
+    asset: {
+      properties: {
         name: {
           description: 'name of an asset',
           type: 'string',
-          graphql_filter_attribute: true,
-          search_index: true,
-          graphql_sort_attribute: true,
         },
         business_value: {
           description: 'business value of the asset, should be a number of a scale 1 to 10',
-          type: ['number', 'null'],
-          graphql_sort_attribute: true,
+          type: 'numeric(18, 10)',
         },
         risk: {
           description: 'risk related to the asset should be a number (float) from 1 - 10',
-          type: ['number', 'null'],
-          graphql_sort_attribute: true,
+          type: 'numeric(18, 10)',
         },
         description: {
           description: 'description for asset',
@@ -162,14 +123,7 @@ const SchemaTemplate = {
     },
 
     container: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          import_schema: false,
-          graphql_sort_attribute: true,
-        },
         name: {
           description: 'name of the container',
           type: 'string',
@@ -182,44 +136,46 @@ const SchemaTemplate = {
     },
 
     ipaddress: {
-      usesExternalId: false,
-      graphql_name: 'IpAddr',
       properties: {
-        _key: {
-          description: 'ipv4 or ipv6 address',
+        name: {
+          type: 'INET',
+          required: true,
+        },
+        region_id: {
           type: 'string',
-          graphql_sort_attribute: true,
+          required: true,
         },
       },
     },
 
-    unifieduser: {
-      isInternal: true,
-      graphql_name: 'UnifiedUser',
+    ipregion: {
+      hasCommonProperties: false,
       properties: {
-        _key: {
-          description: 'auto generated key',
+        source: {
           type: 'string',
-          graphql_sort_attribute: true,
-        }
+          description: 'the source id',
+        },
+        external_id: {
+          type: 'string',
+          description: 'external identifier',
+          required: true,
+        },
+        id: {
+          type: 'string',
+          required: true,
+        },
+        connecting_id: {
+          type: 'string',
+        },
+        name: {
+          description: 'name of the IP address region',
+          type: 'string',
+        },
       },
-      import_schema: false,
     },
 
     user: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          import_schema: false,
-          graphql_sort_attribute: true,
-        },
-        external_id: {
-          description: 'the external identifier',
-          type: 'string',
-          graphql_sort_attribute: true,
-        },
         username: {
           description: 'username',
           type: 'string',
@@ -227,20 +183,14 @@ const SchemaTemplate = {
         fullname: {
           description: 'full name',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true,
         },
         job_title: {
           description: 'job_title',
           type: 'string',
-          graphql_sort_attribute: true,
         },
         email: {
           description: 'email',
           type: 'string',
-          graphql_filter_attribute: true,
-          search_index: true,
         },
         description: {
           description: 'user description',
@@ -273,9 +223,6 @@ const SchemaTemplate = {
         employee_id: {
           description: 'User Code - employee number',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true
         },
         active: {
           description: 'True if the person is active',
@@ -284,8 +231,6 @@ const SchemaTemplate = {
         department: {
           description: 'department name',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
         },
         modified: {
           description: 'Last time when data source definition was modified. epoch in milliseconds',
@@ -294,12 +239,10 @@ const SchemaTemplate = {
         cumulative_score: {
           description: 'Overall Risk score',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         current_score: {
           description: 'Risk score from recent risk analysis',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         critical: {
           description: 'number of critical severity violations',
@@ -328,41 +271,11 @@ const SchemaTemplate = {
       },
     },
 
-    unifiedaccount: {
-      isInternal: true,
-      graphql_name: 'UnifiedAccount',
-      properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-        },
-        name: {
-          description: 'name of account',
-          type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true
-        },
-      },
-      import_schema: false,
-    },
-
     account: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-          import_schema: false
-        },
         name: {
           description: 'name of account',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true
         },
         created: {
           description: 'creation date (ms since epoch)',
@@ -383,12 +296,10 @@ const SchemaTemplate = {
         cumulative_score: {
           description: 'Overall Risk score',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         current_score: {
           description: 'Risk score from recent risk analysis',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         critical: {
           description: 'number of critical severity violations',
@@ -418,20 +329,10 @@ const SchemaTemplate = {
     },
 
     application: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          import_schema: false,
-          graphql_sort_attribute: true,
-        },
         name: {
           description: 'name',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true
         },
         description: {
           description: 'application description',
@@ -456,12 +357,10 @@ const SchemaTemplate = {
         last_access_time: {
           description: 'time when application was last accessed (ms since epoch)',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         threat_score: {
           type: 'number',
           description: 'threat score for application from X-Force',
-          graphql_sort_attribute: true,
         },
         app_type: {
           description: 'application type',
@@ -470,12 +369,10 @@ const SchemaTemplate = {
         cumulative_score: {
           description: 'Overall Risk score',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         current_score: {
           description: 'Risk score from recent risk analysis',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         critical: {
           description: 'number of critical severity violations',
@@ -500,81 +397,42 @@ const SchemaTemplate = {
         last_occurrence: {
           description: 'Epoch Time when latest risk was seen',
           type: 'number',
-        },  
+        },
           status: {
           description: 'Application status',
           type: 'string',
         },
-        
       },
     },
 
     hostname: {
-      usesExternalId: false,
       properties: {
-        _key: {
-          description: 'a unique key which is auto generated',
+        name: {
+          description: 'searchable name',
           type: 'string',
-          graphql_sort_attribute: true,
+          required: true,
         },
-        host_name: {
-          description: 'a unique key which should be hostname',
-          type: 'string',
-          graphql_hidden: true,
-        }
       },
-      indexes: [ index_host_name ],
-      // key property allows for having a property other than _key as the unique key
-      // for naturally keyed collections. Arangodb has limitations on length and characters
-      // allowed in the _key attribute, hence using an input value from the connector 
-      // as _key may not be possible for all naturally keyed collections. In such a case
-      // define this key attribute and let arangodb auto generate _key attribute.
-      // Make sure the attribute which is selected as key is indexed.
-      key: 'host_name'
     },
 
-
-
     businessprocess: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-          import_schema: false
-        },
         name: {
           description: 'name of the business process',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true
         },
         description: {
           description: 'businsess process description',
           type: 'string',
         },
-      
       },
     },
 
-
     database: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-          import_schema: false
-        },
         name: {
           description: 'name of the database',
           type: 'string',
-          graphql_filter_attribute: true,
-          graphql_sort_attribute: true,
-          search_index: true
         },
         description: {
           description: 'database description',
@@ -604,15 +462,13 @@ const SchemaTemplate = {
     },
 
     macaddress: {
-      usesExternalId: false,
-      graphql_name: 'MacAddr',
       properties: {
-        _key: {
-          description:
-            'a unique key i.e. the macaddress of system with ‘:’ format (e.g. 01:23:45:67:89:AB)',
-          type: 'string',
-          graphql_sort_attribute: true,
+        name: {
+          description: 'searchable name',
+          type: 'MACADDR',
+          required: true,
         },
+
         interface: {
           description: 'interface',
           type: 'string',
@@ -620,49 +476,8 @@ const SchemaTemplate = {
       },
     },
 
-    report: {
-      usesExternalId: false,
-      properties: {
-        _key: {
-          description: 'a unique key of the report that needs to be provided',
-          type: 'string',
-          graphql_sort_attribute: true,
-        },
-        type: {
-          description: 'type of the report',
-          type: 'string',
-        },
-        parameters: {
-          description: 'parameters',
-          type: 'string',
-        },
-        value: {
-          description: 'value',
-          type: 'string',
-        },
-        created: {
-          // format: 'date-time',
-          type: 'number',
-          description: 'epoch in milliseconds',
-          graphql_name: 'modified',
-          graphql_type: 'Date',
-        },
-        description: {
-          description: 'report description',
-          type: 'string',
-        },
-      },
-    },
-
     port: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-          import_schema: false
-        },
         port_number: {
           description: 'port number',
           type: 'integer',
@@ -682,35 +497,8 @@ const SchemaTemplate = {
       },
     },
 
-    source: {
-      usesExternalId: false,
-      properties: {
-        _key: {
-          description:
-            'a unique key of the source that needs to be provided. This is an identifier of the source',
-          type: 'string',
-          graphql_sort_attribute: true,
-        },
-        description: {
-          description: 'source description',
-          type: 'string',
-        },
-        product_link: {
-          description: 'product link',
-          type: 'string',
-        },
-      },
-    },
-
     vulnerability: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-          import_schema: false
-        },
         external_properties: {
           description: 'external_properties',
           type: 'string',
@@ -722,13 +510,10 @@ const SchemaTemplate = {
         name: {
           description: 'name',
           type: 'string',
-          search_index: true,
-          graphql_sort_attribute: true,
         },
         base_score: {
           description: 'base_score',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         description: {
           description: 'vulnerability description',
@@ -736,56 +521,49 @@ const SchemaTemplate = {
         },
         disclosed_on: {
           description: 'disclosed_on: epoch in milliseconds',
-          type: 'number',
+          type: 'bigint',
         },
         published_on: {
           description: 'published_on: epoch in milliseconds',
-          type: 'number',
+          type: 'bigint',
         },
         updated_on: {
           description: 'updated_on: epoch in milliseconds',
-          type: 'number',
-        },
-      },
-    },
-
-    tag: {
-      isInternal: true,
-      import_schema: false,
-      usesExternalId: false,
-      properties: {
-        _key: {
-          description: 'a unique key of the source that needs to be provided. This is an identifier of the tag ',
-          type: 'string',
-          graphql_sort_attribute: true,
+          type: 'bigint',
         },
       },
     },
 
     geolocation: {
-      usesExternalId: true,
       properties: {
-        _key: {
-          description: 'auto generated key',
-          type: 'string',
-          graphql_sort_attribute: true,
-          import_schema: false
-        },
         region: {
           description: 'name of region the asset is located in',
           type: 'string',
         },
         longitude: {
+          type: 'Float',
           description: 'longitude',
-          type: 'number',
         },
         latitude: {
+          type: 'Float',
           description: 'latitude',
-          type: 'number',
         },
         description: {
           description: 'geolocation description',
           type: 'string',
+        },
+      },
+    },
+
+    tag: {
+      properties: {
+        name: {
+          description: 'searchable name',
+          type: 'string',
+          required: true,
+        },
+        _reference_count: {
+          type: 'bigint',
         },
       },
     },
@@ -794,293 +572,256 @@ const SchemaTemplate = {
   edges: {
     asset_vulnerability: {
       properties: {
-        port: {
-          type: 'object',
-          properties: {
-            port_number: {
-              description: 'port number',
-              type: 'number',
-            },
-            protocol: {
-              description: 'protocol',
-              type: 'string',
-            },
-            status: {
-              description: 'active if the port is in use, inactive otherwise',
-              type: 'string',
-            },
-          },
+        port_number: {
+          description: 'port number',
+          type: 'number',
+        },
+        port_protocol: {
+          description: 'protocol',
+          type: 'string',
+        },
+        port_status: {
+          description: 'active if the port is in use, inactive otherwise',
+          type: 'string',
         },
         risk_score: {
-          description:
-            'use risk score on the edge if you need to override the vulnerability base score value',
-          type: ['number', 'null'],
-          graphql_sort_attribute: true,
+          description: 'use risk score on the edge if you need to override the vulnerability base score value',
+          type: 'numeric(18, 10)',
         },
       },
-      indexes: [index__external_id__source].concat(defaultEdgeIndexes),
     },
-    // Cardinality is estimates of the cardinality of the edge in both direction used by GraphQL query cost estimation.
-    // If the *average case* is that there would be a one-to-one relationship, then set both in & out cardinality to 1.
-    // If the *average case* is many or quite variable, then do not set a cardinality (or set it MANY).
-    // cardinality.in refers to the source, cardinality.out refers to the target.
-    // e.g. for asset_ipaddress
-    // cardinality.in - would many assets have the same ip address?
-    // cardinality.out - would many ip addresses have the same asset?
-    // It is not necessary to specify cardinality, which implies many on both sides.
-    // MANY is the default and can be omitted, but should be specified for readability.
-    asset_ipaddress: { cardinality: { in: 1, out: 1 } },
-    asset_macaddress: { cardinality: { in: 1, out: 1 } },
-    asset_hostname: { cardinality: { in: 1, out: 1 } },
-    asset_account: { cardinality: { in: MANY, out: MANY } },
-    asset_container: { cardinality: { in: MANY, out: 1 } },
+
+    asset_ipaddress: {},
+    asset_macaddress: {},
+    asset_hostname: {},
+    asset_account: {},
+    asset_container: {},
     asset_application: {},
     asset_database: {},
-    asset_geolocation: { cardinality: { in: MANY, out: 1 } },
-
-    application_port: { cardinality: { in: MANY, out: 1 } },
+    asset_geolocation: {},
+    application_port: {},
     account_application: {
       properties: {
         user_id: {
-          description:
-            'user id of person who owns account',
+          description: 'user id of person who owns account',
           type: 'string',
         },
         last_access_time: {
-          description:
-            'time when application was last accessed (ms since epoch)',
+          description: 'time when application was last accessed (ms since epoch)',
           type: 'number',
         },
       },
     },
-
-    application_ipaddress: { 
-    	cardinality: { in: MANY, out: 1 }, 
+    application_ipaddress: {
     	 properties: {
     	    mappingtype: {
-          		description:     'Mapping Relationship between Ip address and Application ',
+         		description: 'Mapping Relationship between Ip address and Application',
 	          type: 'string',
-	          }
+	        }
         }
-	
     },
-    
-    
-    businessprocess_application: { cardinality: { in: MANY, out: 1 } },    
-    businessprocess_account: { cardinality: { in: MANY, out: 1 } },
-
-    application_database: { cardinality: { in: MANY, out: 1 } },
-    application_vulnerability: { cardinality: { in: 1, out: 1 } },
-
-    database_ipaddress: { cardinality: { in: 1, out: 1 } },
+    businessprocess_application: {},
+    businessprocess_account: {},
+    application_database: {},
+    application_vulnerability: {},
+    database_ipaddress: {},
     database_vulnerability: {
-      cardinality: { in: 1, out: 1 },
       properties: {
         version_level: {
-          description:
-            'Database version level',
+          description: 'Database version level',
           type: 'string',
         },
         patch_level: {
-          description:
-            'Database patch level',
+          description: 'Database patch level',
           type: 'string',
         },
         full_version_info: {
-          description:
-            'Database full version info',
+          description: 'Database full version info',
           type: 'string',
         },
         result_text: {
-          description:
-            'Test result text',
+          description: 'Test result text',
           type: 'string',
         },
         recommendation: {
-          description:
-            'Recommendation',
+          description: 'Recommendation',
           type: 'string',
         },
         severity: {
-          description:
-            'severity',
+          description: 'severity',
           type: 'string',
-          graphql_sort_attribute: true,
         },
         category: {
-          description:
-            'Test Category',
+          description: 'Test Category',
           type: 'string',
         },
         assessment_description: {
-          description:
-            'Vulnerability Assessment Description',
+          description: 'Vulnerability Assessment Description',
           type: 'string',
         },
         result_details: {
-          description:
-            'Test result details',
+          description: 'Test result details',
           type: 'string',
         },
       },
     },
-
-    ipaddress_container: { cardinality: { in: MANY, out: 1 } },
-    ipaddress_macaddress: { cardinality: { in: 1, out: 1 } },
-    ipaddress_hostname: { cardinality: { in: 1, out: 1 } },
-    ipaddress_vulnerability: { cardinality: { in: 1, out: 1 } },
-    ipaddress_geolocation: { cardinality: { in: MANY, out: 1 } },
-    ipaddress_port: { cardinality: { in: MANY, out: 1 } },
+    ipaddress_container: {},
+    ipaddress_macaddress: {},
+    ipaddress_hostname: {},
+    ipaddress_vulnerability: {},
+    ipaddress_geolocation: {},
+    ipaddress_port: {},
 
     user_account: {
-      cardinality: { in: MANY, out: 1 },
       properties: {
         last_access_time: {
-          description:
-            'time when account was last accessed (ms since epoch)',
+          description: 'time when account was last accessed (ms since epoch)',
           type: 'number',
-          graphql_sort_attribute: true,
         },
       },
     },
-    account_database: { cardinality: { in: MANY, out: MANY } },
-    account_hostname: { cardinality: { in: MANY, out: 1 } },
+    account_database: {},
+    account_hostname: {},
     account_ipaddress: {
-      cardinality: { in: MANY, out: MANY },
       properties: {
         total_risk_score: {
-          description:
-            'Total Risk Score',
+          description: 'Total Risk Score',
           type: 'number',
-          graphql_sort_attribute: true,
         },
         threat_analytics_score: {
-          description:
-            'Threat analytics Score',
+          description: 'Threat analytics Score',
           type: 'number',
         },
         violations_score: {
-          description:
-            'Violations Score',
+          description: 'Violations Score',
           type: 'number',
         },
         vulnerability_score: {
-          description:
-            'Vulnerability Score',
+          description: 'Vulnerability Score',
           type: 'number',
         },
         sensitive_objects_score: {
-          description:
-            'Sensitive Objects Score',
+          description: 'Sensitive Objects Score',
           type: 'number',
         },
         select_queries_score: {
-          description:
-            'Select Queries Score',
+          description: 'Select Queries Score',
           type: 'number',
         },
         ddl_queries_score: {
-          description:
-            'DDL Queries Score',
+          description: 'DDL Queries Score',
           type: 'number',
         },
         dml_queries_score: {
-          description:
-            'DML Queries Score',
+          description: 'DML Queries Score',
           type: 'number',
         },
         administrative_queries_score: {
-          description:
-            'Administrative Queries Score',
+          description: 'Administrative Queries Score',
           type: 'number',
         },
         high_volume_activity_score: {
-          description:
-            'High Volume Activity Score',
+          description: 'High Volume Activity Score',
           type: 'number',
         },
         off_work_activity_score: {
-          description:
-            'Off Work Activity Score',
+          description: 'Off Work Activity Score',
           type: 'number',
         },
         group_state_description: {
-          description:
-            'Group State Description',
+          description: 'Group State Description',
           type: 'string',
         },
       },
     },
 
-    unifiedaccount_account: { cardinality: { in: 1, out: 1 } },
+    port_vulnerability: {},
 
-    unifieduser_user: { cardinality: { in: 1, out: 1 } },
-
-    port_vulnerability: { cardinality: { in: 1, out: MANY } },
-
-    tag_edge: { import_schema: false, exclude: ['source', 'report'], indexes: [index__from__to__source] },
+    tag_asset: {},
+    tag_container: {},
+    tag_ipaddress: {},
+    tag_ipregion: {},
+    tag_user: {},
+    tag_account: {},
+    tag_application: {},
+    tag_hostname: {},
+    tag_businessprocess: {},
+    tag_database: {},
+    tag_macaddress: {},
+    tag_port: {},
+    tag_vulnerability: {},
+    tag_geolocation: {},
   },
 };
 
+class Entity {
+  isVertex() {
+    return this.name.indexOf('_') === -1;
+  }
+
+  isEdge() {
+    return !this.isVertex();
+  }
+}
+
+class Vertex extends Entity {
+}
+
+class Edge extends Entity {
+  ends() {
+    const end1 = this.name.split('_')[0];
+    const end2 = this.name.split('_')[1];
+    return [end1, end2];
+  }
+}
+
 class CoreSchema {
   constructor() {
-    this.version = '3';
-    this.vertices = SchemaTemplate.vertices;
-    this.edges = SchemaTemplate.edges;
+    this.version = '4';
+    this.vertices = {};
+    this.edges = {};
 
-    // Add common properties to vertices
-    Object.keys(SchemaTemplate.vertices).forEach(vertexName => {
-      const vertexDef = this.vertices[vertexName];
+    const exclude = commonVertexProperties.exclude;
+    commonVertexProperties = Object.assign({}, commonProperties);
+    for (const key of exclude) delete commonVertexProperties[key];
+
+    for (const [vertexName, template] of Object.entries(SchemaTemplate.vertices)) {
+      const vertexDef = new Vertex();
+      vertexDef.hasCommonProperties = (template.hasCommonProperties === undefined || template.hasCommonProperties === true);
       vertexDef.name = vertexName;
       vertexDef.edges = {};
       vertexDef.relatedVertices = {};
-      const props = vertexDef.properties || {};
-      Object.keys(commonVertexProperties).forEach(item => {
-        props[item] = commonVertexProperties[item];
-      });
-      vertexDef.properties = props;
-
-      if (vertexDef.usesExternalId) {
-        vertexDef.properties.external_id = {
-          description: 'a unique id of the object in the system source',
-          type: 'string',
-        };
-        vertexDef.properties.source = {
-          description: 'the source _key',
-          type: 'string',
-          import_schema: false,
-          graphql_filter_attribute: true,
-        };
+      const props = template.properties || {};
+      if (vertexDef.hasCommonProperties) {
+        Object.keys(commonVertexProperties).forEach(item => {
+          if (!props[item]) props[item] = commonVertexProperties[item];
+        });
       }
-      if (!vertexDef.indexes) vertexDef.indexes = defaultVertexIndexes;
-    });
+      vertexDef.properties = props;
+      this.vertices[vertexName] = vertexDef;
+    };
 
-    Object.keys(SchemaTemplate.edges).forEach(edgeName => {
-      const edgeDef = this.edges[edgeName];
+    let edgeProperties = _.assign({}, commonProperties);
+    edgeProperties = _.assign(edgeProperties, commonEdgeProperties);
+    for (const key of commonEdgeProperties.exclude) delete edgeProperties[key];
+    delete edgeProperties.exclude;
+
+    for (const [edgeName, template] of Object.entries(SchemaTemplate.edges)) {
+      const edgeDef = new Edge();
+      edgeDef.hasCommonProperties = (template.hasCommonProperties === undefined || template.hasCommonProperties === true);
       edgeDef.name = edgeName;
-      const props = edgeDef.properties || {};
+      const props = template.properties || {};
       const parts = edgeName.split('_');
       const source = parts[0];
       const target = parts[1];
-      Object.keys(commonEdgeProperties).forEach(item => {
-        if (edgeDef[item] === undefined) edgeDef[item] = commonEdgeProperties[item];
+      Object.keys(edgeProperties).forEach(item => {
+        if (!props[item]) props[item] = edgeProperties[item];
       });
-      Object.keys(commonEdgeProperties.properties).forEach(item => {
-        if (item !== source && item !== target) props[item] = commonEdgeProperties.properties[item];
-      });
-      if (edgeDef.isActivatable) {
-        props.active = {
-          type: 'boolean',
-          description: 'True if the edge is active, false if the edge is disabled',
-          graphql_hidden: true,
-        };
-      }
       edgeDef.properties = props;
-
-      if (!edgeDef.indexes) edgeDef.indexes = defaultEdgeIndexes;
+      this.edges[edgeName] = edgeDef;
 
       this.setRelations(edgeName, source, target, edgeDef);
-    });
+    };
 
     this.allVertexNames().forEach(vertexName => {
       const vertex = this.vertices[vertexName];
@@ -1101,8 +842,8 @@ class CoreSchema {
     return Object.keys(this.edges);
   }
 
-  activatableEdges() {
-    return Object.keys(this.edges).filter(edgeName => this.edges[edgeName].isActivatable);
+  allCollections() {
+    return Object.values(this.vertices).concat(Object.values(coreSchema.edges));
   }
 
   edgeDefinitions() {
@@ -1115,11 +856,6 @@ class CoreSchema {
   }
 
   setRelations(edgeName, source, target, edgeDef) {
-    if (target === 'edge') {
-      edgeDef.isMultidirectional = true;
-      return this.handleMultidirectionalEdge(edgeName, source, edgeDef);
-    }
-
     if (!edgeDef.targets) edgeDef.targets = {};
     edgeDef.source = source;
     edgeDef.targets[target] = null;
@@ -1133,14 +869,6 @@ class CoreSchema {
     this.vertices[target].relatedVertices[source] = null;
   }
 
-  handleMultidirectionalEdge(edgeName, source, edgeDef) {
-    Object.keys(this.vertices).forEach(target => {
-      if (source === target) return;
-      if (edgeDef.exclude && edgeDef.exclude.includes(target)) return;
-      this.setRelations(edgeName, source, target, edgeDef);
-    });
-  }
-
   isVertex(collectionName) {
     return collectionName.indexOf('_') === -1;
   }
@@ -1152,13 +880,17 @@ class CoreSchema {
   isCompatibleDataVersion(dataVersion) {
     return this.version === dataVersion;
   }
+
+  entities() {
+    return Object.assign({}, this.vertices, this.edges);
+  }
 }
 
 if (!global.coreSchema) global.coreSchema = new CoreSchema();
 const coreSchema = global.coreSchema;
 
-// Uncomment to see the generated schema
+// Uncomment to see the generated schema in the log
 // const stdutil = require('util')
 // console.log('res: ' + stdutil.inspect(coreSchema, true, 6));
 
-module.exports = { coreSchema };
+module.exports = coreSchema;

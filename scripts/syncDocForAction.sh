@@ -5,8 +5,8 @@ echo "TARGET_REPO_USER is : ${TARGET_REPO_USER}"
 echo "TARGET_REPO_REVIEWER is : ${TARGET_REPO_REVIEWER}"
 echo "TARGET_GITHUB_HOST is : ${TARGET_GITHUB_HOST}"
 echo "COMMIT_ID is : ${COMMIT_ID}"
-git show --name-only| grep -e graphqlSchema.js -e coreSchema.js -e filterSchema.js -e importSchema.js -e doc/script -e doc/wrapper -e README.md
-result=( $(git show --name-only | grep -e graphqlSchema.js -e coreSchema.js -e filterSchema.js -e importSchema.js -e doc/script -e doc/wrapper  -e README.md) )
+git show --name-only| grep -e coreSchema.js 
+result=( $(git show --name-only | grep -e coreSchema.js ) )
 echo "${result}"
 hub clone --branch=${TARGET_REPO_BRANCH} https://${TARGET_REPO_TOKEN}:x-oauth-basic@${TARGET_GITHUB_HOST}/${TARGET_REPO_URL} target
 if [ -d ./target ]
