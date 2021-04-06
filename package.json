@@ -5,6 +5,17 @@
     "doc": "bash -c \"node ./doc/script/docSchemaHelper.js && dot -Tpng -o doc/generated/assetModel.png doc/generated/assetModel.dot || (echo 'Unable to generate assetModel.png as part of schema documentation, you should install dot from https://graphviz.org or you may skip the pre-commit hook with:\nSKIP=doc git commit' && false)\"",
     "hook-install": "pip install pre-commit --user && pre-commit install -f --install-hooks"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "apollo-datasource": "^0.7.2",
+    "apollo-server-express": "^2.17.0",
+    "arangojs": "^7.1.0",
+    "express": "^4.17.1",
+    "express-openapi": "^7.0.1",
+    "graphql": "^15.3.0",
+    "graphql-cost-analysis": "^1.0.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "yarn": "use npm!"
+  }
 }

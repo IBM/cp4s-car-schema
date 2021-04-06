@@ -2,13 +2,13 @@
 
 ## APIType: Query 
 
-### Asset 
+### assets 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -28,13 +28,13 @@
 
 * Return: ![[Asset]](#type-Asset) 
 
-### Container 
+### containers 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -54,13 +54,13 @@
 
 * Return: ![[Container]](#type-Container) 
 
-### IpAddr 
+### ipAddrs 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -80,13 +80,13 @@
 
 * Return: ![[IpAddr]](#type-IpAddr) 
 
-### UnifiedUser 
+### unifiedUsers 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -106,13 +106,13 @@
 
 * Return: ![[UnifiedUser]](#type-UnifiedUser) 
 
-### User 
+### users 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -132,13 +132,13 @@
 
 * Return: ![[User]](#type-User) 
 
-### UnifiedAccount 
+### unifiedAccounts 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -158,13 +158,13 @@
 
 * Return: ![[UnifiedAccount]](#type-UnifiedAccount) 
 
-### Account 
+### accounts 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -184,13 +184,13 @@
 
 * Return: ![[Account]](#type-Account) 
 
-### Application 
+### applications 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -210,13 +210,13 @@
 
 * Return: ![[Application]](#type-Application) 
 
-### Hostname 
+### hostnames 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -236,13 +236,39 @@
 
 * Return: ![[Hostname]](#type-Hostname) 
 
-### Database 
+### businessprocesses 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[Businessprocess]](#type-Businessprocess) 
+
+### databases 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -262,13 +288,13 @@
 
 * Return: ![[Database]](#type-Database) 
 
-### MacAddr 
+### macAddrs 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -288,13 +314,13 @@
 
 * Return: ![[MacAddr]](#type-MacAddr) 
 
-### Report 
+### reports 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -314,13 +340,13 @@
 
 * Return: ![[Report]](#type-Report) 
 
-### Port 
+### ports 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -340,13 +366,13 @@
 
 * Return: ![[Port]](#type-Port) 
 
-### Source 
+### sources 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -366,13 +392,13 @@
 
 * Return: ![[Source]](#type-Source) 
 
-### Vulnerability 
+### vulnerabilities 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -392,13 +418,13 @@
 
 * Return: ![[Vulnerability]](#type-Vulnerability) 
 
-### Tag 
+### tags 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -418,13 +444,13 @@
 
 * Return: ![[Tag]](#type-Tag) 
 
-### Geolocation 
+### geolocations 
 
 * Arguments 
 
    * limit: [Int](#type-Int) 
 
-     > Specifies how many elements should be at most included in the result.    If no limit or filters are specified, limit defaults to 100. 
+     > Specifies how many elements should be at most included in the result. 
 
   * offset: [Int](#type-Int) 
 
@@ -444,9 +470,1211 @@
 
 * Return: ![[Geolocation]](#type-Geolocation) 
 
+### assetVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetVulnerabilityEdgeSort]](#type-AssetVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetVulnerabilityEdgeFilter](#type-AssetVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetVulnerabilityEdge]](#type-AssetVulnerabilityEdge) 
+
+### assetIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetIpAddrEdgeSort]](#type-AssetIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetIpAddrEdgeFilter](#type-AssetIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetIpAddrEdge]](#type-AssetIpAddrEdge) 
+
+### assetMacAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetMacAddrEdgeSort]](#type-AssetMacAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetMacAddrEdgeFilter](#type-AssetMacAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetMacAddrEdge]](#type-AssetMacAddrEdge) 
+
+### assetHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetHostnameEdgeSort]](#type-AssetHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetHostnameEdgeFilter](#type-AssetHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetHostnameEdge]](#type-AssetHostnameEdge) 
+
+### assetAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetAccountEdgeSort]](#type-AssetAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetAccountEdgeFilter](#type-AssetAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetAccountEdge]](#type-AssetAccountEdge) 
+
+### assetContainerEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetContainerEdgeSort]](#type-AssetContainerEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetContainerEdgeFilter](#type-AssetContainerEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetContainerEdge]](#type-AssetContainerEdge) 
+
+### assetApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetApplicationEdgeSort]](#type-AssetApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetApplicationEdgeFilter](#type-AssetApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetApplicationEdge]](#type-AssetApplicationEdge) 
+
+### assetDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetDatabaseEdgeSort]](#type-AssetDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetDatabaseEdgeFilter](#type-AssetDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetDatabaseEdge]](#type-AssetDatabaseEdge) 
+
+### assetGeolocationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AssetGeolocationEdgeSort]](#type-AssetGeolocationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AssetGeolocationEdgeFilter](#type-AssetGeolocationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AssetGeolocationEdge]](#type-AssetGeolocationEdge) 
+
+### applicationPortEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationPortEdgeSort]](#type-ApplicationPortEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationPortEdgeFilter](#type-ApplicationPortEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationPortEdge]](#type-ApplicationPortEdge) 
+
+### accountApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountApplicationEdgeSort]](#type-AccountApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountApplicationEdgeFilter](#type-AccountApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountApplicationEdge]](#type-AccountApplicationEdge) 
+
+### applicationIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationIpAddrEdgeSort]](#type-ApplicationIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationIpAddrEdgeFilter](#type-ApplicationIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationIpAddrEdge]](#type-ApplicationIpAddrEdge) 
+
+### businessprocessApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[BusinessprocessApplicationEdgeSort]](#type-BusinessprocessApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [BusinessprocessApplicationEdgeFilter](#type-BusinessprocessApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[BusinessprocessApplicationEdge]](#type-BusinessprocessApplicationEdge) 
+
+### businessprocessAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[BusinessprocessAccountEdgeSort]](#type-BusinessprocessAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [BusinessprocessAccountEdgeFilter](#type-BusinessprocessAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[BusinessprocessAccountEdge]](#type-BusinessprocessAccountEdge) 
+
+### applicationDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationDatabaseEdgeSort]](#type-ApplicationDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationDatabaseEdgeFilter](#type-ApplicationDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationDatabaseEdge]](#type-ApplicationDatabaseEdge) 
+
+### applicationVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[ApplicationVulnerabilityEdgeSort]](#type-ApplicationVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [ApplicationVulnerabilityEdgeFilter](#type-ApplicationVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[ApplicationVulnerabilityEdge]](#type-ApplicationVulnerabilityEdge) 
+
+### databaseIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[DatabaseIpAddrEdgeSort]](#type-DatabaseIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [DatabaseIpAddrEdgeFilter](#type-DatabaseIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[DatabaseIpAddrEdge]](#type-DatabaseIpAddrEdge) 
+
+### databaseVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[DatabaseVulnerabilityEdgeSort]](#type-DatabaseVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [DatabaseVulnerabilityEdgeFilter](#type-DatabaseVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[DatabaseVulnerabilityEdge]](#type-DatabaseVulnerabilityEdge) 
+
+### ipAddrContainerEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrContainerEdgeSort]](#type-IpAddrContainerEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrContainerEdgeFilter](#type-IpAddrContainerEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrContainerEdge]](#type-IpAddrContainerEdge) 
+
+### ipAddrMacAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrMacAddrEdgeSort]](#type-IpAddrMacAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrMacAddrEdgeFilter](#type-IpAddrMacAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrMacAddrEdge]](#type-IpAddrMacAddrEdge) 
+
+### ipAddrHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrHostnameEdgeSort]](#type-IpAddrHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrHostnameEdgeFilter](#type-IpAddrHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrHostnameEdge]](#type-IpAddrHostnameEdge) 
+
+### ipAddrVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrVulnerabilityEdgeSort]](#type-IpAddrVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrVulnerabilityEdgeFilter](#type-IpAddrVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrVulnerabilityEdge]](#type-IpAddrVulnerabilityEdge) 
+
+### ipAddrGeolocationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrGeolocationEdgeSort]](#type-IpAddrGeolocationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrGeolocationEdgeFilter](#type-IpAddrGeolocationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrGeolocationEdge]](#type-IpAddrGeolocationEdge) 
+
+### ipAddrPortEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[IpAddrPortEdgeSort]](#type-IpAddrPortEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [IpAddrPortEdgeFilter](#type-IpAddrPortEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[IpAddrPortEdge]](#type-IpAddrPortEdge) 
+
+### userAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[UserAccountEdgeSort]](#type-UserAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [UserAccountEdgeFilter](#type-UserAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[UserAccountEdge]](#type-UserAccountEdge) 
+
+### accountDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountDatabaseEdgeSort]](#type-AccountDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountDatabaseEdgeFilter](#type-AccountDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountDatabaseEdge]](#type-AccountDatabaseEdge) 
+
+### accountHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountHostnameEdgeSort]](#type-AccountHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountHostnameEdgeFilter](#type-AccountHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountHostnameEdge]](#type-AccountHostnameEdge) 
+
+### accountIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[AccountIpAddrEdgeSort]](#type-AccountIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [AccountIpAddrEdgeFilter](#type-AccountIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[AccountIpAddrEdge]](#type-AccountIpAddrEdge) 
+
+### unifiedAccountAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[UnifiedAccountAccountEdgeSort]](#type-UnifiedAccountAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [UnifiedAccountAccountEdgeFilter](#type-UnifiedAccountAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[UnifiedAccountAccountEdge]](#type-UnifiedAccountAccountEdge) 
+
+### unifiedUserUserEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[UnifiedUserUserEdgeSort]](#type-UnifiedUserUserEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [UnifiedUserUserEdgeFilter](#type-UnifiedUserUserEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[UnifiedUserUserEdge]](#type-UnifiedUserUserEdge) 
+
+### portVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[PortVulnerabilityEdgeSort]](#type-PortVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [PortVulnerabilityEdgeFilter](#type-PortVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[PortVulnerabilityEdge]](#type-PortVulnerabilityEdge) 
+
+### tagAssetEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagAssetEdgeSort]](#type-TagAssetEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagAssetEdgeFilter](#type-TagAssetEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagAssetEdge]](#type-TagAssetEdge) 
+
+### tagContainerEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagContainerEdgeSort]](#type-TagContainerEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagContainerEdgeFilter](#type-TagContainerEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagContainerEdge]](#type-TagContainerEdge) 
+
+### tagIpAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagIpAddrEdgeSort]](#type-TagIpAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagIpAddrEdgeFilter](#type-TagIpAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagIpAddrEdge]](#type-TagIpAddrEdge) 
+
+### tagUnifiedUserEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagUnifiedUserEdgeSort]](#type-TagUnifiedUserEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagUnifiedUserEdgeFilter](#type-TagUnifiedUserEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagUnifiedUserEdge]](#type-TagUnifiedUserEdge) 
+
+### tagUserEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagUserEdgeSort]](#type-TagUserEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagUserEdgeFilter](#type-TagUserEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagUserEdge]](#type-TagUserEdge) 
+
+### tagUnifiedAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagUnifiedAccountEdgeSort]](#type-TagUnifiedAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagUnifiedAccountEdgeFilter](#type-TagUnifiedAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagUnifiedAccountEdge]](#type-TagUnifiedAccountEdge) 
+
+### tagAccountEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagAccountEdgeSort]](#type-TagAccountEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagAccountEdgeFilter](#type-TagAccountEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagAccountEdge]](#type-TagAccountEdge) 
+
+### tagApplicationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagApplicationEdgeSort]](#type-TagApplicationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagApplicationEdgeFilter](#type-TagApplicationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagApplicationEdge]](#type-TagApplicationEdge) 
+
+### tagHostnameEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagHostnameEdgeSort]](#type-TagHostnameEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagHostnameEdgeFilter](#type-TagHostnameEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagHostnameEdge]](#type-TagHostnameEdge) 
+
+### tagBusinessprocessEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagBusinessprocessEdgeSort]](#type-TagBusinessprocessEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagBusinessprocessEdgeFilter](#type-TagBusinessprocessEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagBusinessprocessEdge]](#type-TagBusinessprocessEdge) 
+
+### tagDatabaseEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagDatabaseEdgeSort]](#type-TagDatabaseEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagDatabaseEdgeFilter](#type-TagDatabaseEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagDatabaseEdge]](#type-TagDatabaseEdge) 
+
+### tagMacAddrEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagMacAddrEdgeSort]](#type-TagMacAddrEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagMacAddrEdgeFilter](#type-TagMacAddrEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagMacAddrEdge]](#type-TagMacAddrEdge) 
+
+### tagPortEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagPortEdgeSort]](#type-TagPortEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagPortEdgeFilter](#type-TagPortEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagPortEdge]](#type-TagPortEdge) 
+
+### tagVulnerabilityEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagVulnerabilityEdgeSort]](#type-TagVulnerabilityEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagVulnerabilityEdgeFilter](#type-TagVulnerabilityEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagVulnerabilityEdge]](#type-TagVulnerabilityEdge) 
+
+### tagGeolocationEdges 
+
+* Arguments 
+
+   * limit: [Int](#type-Int) 
+
+     > Specifies how many elements should be at most included in the result. 
+
+  * offset: [Int](#type-Int) 
+
+     > Specifies how many elements from the result shall be skipped.    If limit is not specified, this argument is ignored. 
+
+  * orderBy: [[TagGeolocationEdgeSort]](#type-TagGeolocationEdgeSort) 
+
+     > Specifies the field names to sort the results by in ascending or descending order. 
+
+  * globalFilter: [GlobalFilter](#type-GlobalFilter) 
+
+     > Global filter is applied to each collection in all of the search range.    It is automatically joined with other arguments in each search level by 'AND' conjunction. 
+
+  * filter: [TagGeolocationEdgeFilter](#type-TagGeolocationEdgeFilter) 
+
+     > Provides advanced search via multiple operators in a single search level.    It is automatically joined with other arguments in the same search level by 'AND' conjunction. 
+
+* Return: ![[TagGeolocationEdge]](#type-TagGeolocationEdge) 
+
 ## GraphQL Types 
 
 ### type Asset 
+
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
 
 * _id 
 
@@ -467,10 +1695,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * name 
 
@@ -500,9 +1724,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -516,15 +1740,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * vulnerabilityEdges 
 
@@ -1208,6 +2426,12 @@
 
 ### type Container 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -1228,10 +2452,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * name 
 
   * type: [String](#type-String) 
@@ -1248,9 +2468,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -1264,15 +2484,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -1480,6 +2694,12 @@
 
 ### type IpAddr 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -1500,10 +2720,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * _created 
 
   * type: [Date](#type-Date) 
@@ -1512,9 +2728,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -1527,8 +2743,6 @@
   * isArray: true 
 
   * type: [[String]](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -1593,6 +2807,74 @@
          > isArray: true 
 
   * type: [[Asset]!](#type-Asset) 
+
+  * isArray: true 
+
+  * required: true 
+
+* applicationEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationIpAddrEdgeFilter](#type-ApplicationIpAddrEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationIpAddrEdgeSort]](#type-ApplicationIpAddrEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[ApplicationIpAddrEdge]!](#type-ApplicationIpAddrEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* applications 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationFilter](#type-ApplicationFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationSort]](#type-ApplicationSort) 
+
+         > isArray: true 
+
+  * type: [[Application]!](#type-Application) 
 
   * isArray: true 
 
@@ -2212,6 +3494,12 @@
 
 ### type UnifiedUser 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -2232,10 +3520,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * _created 
 
   * type: [Date](#type-Date) 
@@ -2244,9 +3528,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -2259,8 +3543,6 @@
   * isArray: true 
 
   * type: [[String]](#type-String) 
-
-* _rev 
 
 * userEdges 
 
@@ -2400,6 +3682,12 @@
 
 ### type User 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -2419,14 +3707,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
-
-* external_id 
-
-  * type: [String](#type-String) 
 
 * username 
 
@@ -2528,9 +3808,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -2547,8 +3827,6 @@
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * accountEdges 
 
@@ -2756,6 +4034,12 @@
 
 ### type UnifiedAccount 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -2776,10 +4060,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * name 
 
   * type: [String](#type-String) 
@@ -2792,9 +4072,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -2807,8 +4087,6 @@
   * isArray: true 
 
   * type: [[String]](#type-String) 
-
-* _rev 
 
 * accountEdges 
 
@@ -2948,6 +4226,12 @@
 
 ### type Account 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -2967,10 +4251,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * name 
 
@@ -3032,9 +4312,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -3048,15 +4328,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -3189,6 +4463,74 @@
          > isArray: true 
 
   * type: [[Application]!](#type-Application) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocessEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessAccountEdgeFilter](#type-BusinessprocessAccountEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessAccountEdgeSort]](#type-BusinessprocessAccountEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessAccountEdge]!](#type-BusinessprocessAccountEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocesses 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+         > isArray: true 
+
+  * type: [[Businessprocess]!](#type-Businessprocess) 
 
   * isArray: true 
 
@@ -3604,6 +4946,12 @@
 
 ### type Application 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -3623,10 +4971,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * name 
 
@@ -3696,6 +5040,10 @@
 
   * type: [Float](#type-Float) 
 
+* status 
+
+  * type: [String](#type-String) 
+
 * _created 
 
   * type: [Date](#type-Date) 
@@ -3704,9 +5052,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -3720,15 +5068,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -3929,6 +5271,142 @@
          > isArray: true 
 
   * type: [[Account]!](#type-Account) 
+
+  * isArray: true 
+
+  * required: true 
+
+* ipAddrEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationIpAddrEdgeFilter](#type-ApplicationIpAddrEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationIpAddrEdgeSort]](#type-ApplicationIpAddrEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[ApplicationIpAddrEdge]!](#type-ApplicationIpAddrEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* ipAddrs 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [IpAddrFilter](#type-IpAddrFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[IpAddrSort]](#type-IpAddrSort) 
+
+         > isArray: true 
+
+  * type: [[IpAddr]!](#type-IpAddr) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocessEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessApplicationEdgeFilter](#type-BusinessprocessApplicationEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessApplicationEdgeSort]](#type-BusinessprocessApplicationEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessApplicationEdge]!](#type-BusinessprocessApplicationEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocesses 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+         > isArray: true 
+
+  * type: [[Businessprocess]!](#type-Businessprocess) 
 
   * isArray: true 
 
@@ -4140,6 +5618,12 @@
 
 ### type Hostname 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -4160,10 +5644,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * _created 
 
   * type: [Date](#type-Date) 
@@ -4172,9 +5652,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -4187,8 +5667,6 @@
   * isArray: true 
 
   * type: [[String]](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -4462,7 +5940,13 @@
 
   * required: true 
 
-### type Database 
+### type Businessprocess 
+
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
 
 * _id 
 
@@ -4484,9 +5968,273 @@
 
   * required: true 
 
-* _key 
+* name 
 
   * type: [String](#type-String) 
+
+* description 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* tag 
+
+  * isArray: true 
+
+  * type: [[String]](#type-String) 
+
+* untag 
+
+  * isArray: true 
+
+  * type: [[String]](#type-String) 
+
+* source 
+
+  * type: [String](#type-String) 
+
+* applicationEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessApplicationEdgeFilter](#type-BusinessprocessApplicationEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessApplicationEdgeSort]](#type-BusinessprocessApplicationEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessApplicationEdge]!](#type-BusinessprocessApplicationEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* applications 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [ApplicationFilter](#type-ApplicationFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[ApplicationSort]](#type-ApplicationSort) 
+
+         > isArray: true 
+
+  * type: [[Application]!](#type-Application) 
+
+  * isArray: true 
+
+  * required: true 
+
+* accountEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessAccountEdgeFilter](#type-BusinessprocessAccountEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessAccountEdgeSort]](#type-BusinessprocessAccountEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[BusinessprocessAccountEdge]!](#type-BusinessprocessAccountEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* accounts 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [AccountFilter](#type-AccountFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[AccountSort]](#type-AccountSort) 
+
+         > isArray: true 
+
+  * type: [[Account]!](#type-Account) 
+
+  * isArray: true 
+
+  * required: true 
+
+* tagEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [TagBusinessprocessEdgeFilter](#type-TagBusinessprocessEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[TagBusinessprocessEdgeSort]](#type-TagBusinessprocessEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[TagBusinessprocessEdge]!](#type-TagBusinessprocessEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* tags 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [TagFilter](#type-TagFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[TagSort]](#type-TagSort) 
+
+         > isArray: true 
+
+  * type: [[Tag]!](#type-Tag) 
+
+  * isArray: true 
+
+  * required: true 
+
+### type Database 
+
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
 
 * name 
 
@@ -4524,9 +6272,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -4540,15 +6288,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -4960,6 +6702,12 @@
 
 ### type MacAddr 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -4980,10 +6728,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * interface 
 
   * type: [String](#type-String) 
@@ -4996,9 +6740,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -5011,8 +6755,6 @@
   * isArray: true 
 
   * type: [[String]](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -5220,6 +6962,12 @@
 
 ### type Report 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -5239,10 +6987,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * type 
 
@@ -5272,9 +7016,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -5288,9 +7032,13 @@
 
   * type: [[String]](#type-String) 
 
-* _rev 
-
 ### type Port 
+
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
 
 * _id 
 
@@ -5311,10 +7059,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * port_number 
 
@@ -5340,9 +7084,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -5356,15 +7100,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * applicationEdges 
 
@@ -5640,6 +7378,12 @@
 
 ### type Source 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -5659,10 +7403,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * description 
 
@@ -5680,9 +7420,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -5696,9 +7436,13 @@
 
   * type: [[String]](#type-String) 
 
-* _rev 
-
 ### type Vulnerability 
+
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
 
 * _id 
 
@@ -5720,13 +7464,9 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * external_properties 
 
-  * type: [Int](#type-Int) 
+  * type: [String](#type-String) 
 
 * external_reference 
 
@@ -5764,9 +7504,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -5780,15 +7520,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -6200,6 +7934,12 @@
 
 ### type Tag 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -6220,10 +7960,6 @@
 
   * required: true 
 
-* _key 
-
-  * type: [String](#type-String) 
-
 * _created 
 
   * type: [Date](#type-Date) 
@@ -6232,9 +7968,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -6247,8 +7983,6 @@
   * isArray: true 
 
   * type: [[String]](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -6862,6 +8596,74 @@
 
   * required: true 
 
+* businessprocessEdges 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [TagBusinessprocessEdgeFilter](#type-TagBusinessprocessEdgeFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[TagBusinessprocessEdgeSort]](#type-TagBusinessprocessEdgeSort) 
+
+         > isArray: true 
+
+  * type: [[TagBusinessprocessEdge]!](#type-TagBusinessprocessEdge) 
+
+  * isArray: true 
+
+  * required: true 
+
+* businessprocesses 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [BusinessprocessFilter](#type-BusinessprocessFilter) 
+
+         > isArray: false 
+
+      * limit 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * offset 
+
+         > type: [Int](#type-Int) 
+
+         > isArray: false 
+
+      * orderBy 
+
+         > type: [[BusinessprocessSort]](#type-BusinessprocessSort) 
+
+         > isArray: true 
+
+  * type: [[Businessprocess]!](#type-Businessprocess) 
+
+  * isArray: true 
+
+  * required: true 
+
 * databaseEdges 
 
   * Arguments 
@@ -7204,6 +9006,12 @@
 
 ### type Geolocation 
 
+* key 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
 * _id 
 
   * type: [ID!](#type-ID) 
@@ -7223,10 +9031,6 @@
   * type: [JSON!](#type-JSON) 
 
   * required: true 
-
-* _key 
-
-  * type: [String](#type-String) 
 
 * region 
 
@@ -7252,9 +9056,9 @@
 
   * type: [Date](#type-Date) 
 
-* _number_of_active_edges 
+* _deleted 
 
-  * type: [Float](#type-Float) 
+  * type: [Date](#type-Date) 
 
 * tag 
 
@@ -7268,15 +9072,9 @@
 
   * type: [[String]](#type-String) 
 
-* external_id 
-
-  * type: [String](#type-String) 
-
 * source 
 
   * type: [String](#type-String) 
-
-* _rev 
 
 * assetEdges 
 
@@ -7496,10 +9294,6 @@
 
   * type: [String](#type-String) 
 
-* _key 
-
-* _rev 
-
 ### type AssetVulnerabilityEdge 
 
 * _id 
@@ -7577,14 +9371,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * asset 
 
@@ -7668,14 +9454,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * asset 
 
   * type: [Asset!](#type-Asset) 
@@ -7757,14 +9535,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * asset 
 
@@ -7848,14 +9618,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * asset 
 
   * type: [Asset!](#type-Asset) 
@@ -7937,14 +9699,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * asset 
 
@@ -8028,14 +9782,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * asset 
 
   * type: [Asset!](#type-Asset) 
@@ -8117,14 +9863,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * asset 
 
@@ -8208,14 +9946,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * asset 
 
   * type: [Asset!](#type-Asset) 
@@ -8298,14 +10028,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * asset 
 
   * type: [Asset!](#type-Asset) 
@@ -8387,14 +10109,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * application 
 
@@ -8486,14 +10200,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * account 
 
   * type: [Account!](#type-Account) 
@@ -8503,6 +10209,256 @@
 * application 
 
   * type: [Application!](#type-Application) 
+
+  * required: true 
+
+### type ApplicationIpAddrEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* mappingtype 
+
+  * type: [String](#type-String) 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* application 
+
+  * type: [Application!](#type-Application) 
+
+  * required: true 
+
+* ipAddr 
+
+  * type: [IpAddr!](#type-IpAddr) 
+
+  * required: true 
+
+### type BusinessprocessApplicationEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* businessprocess 
+
+  * type: [Businessprocess!](#type-Businessprocess) 
+
+  * required: true 
+
+* application 
+
+  * type: [Application!](#type-Application) 
+
+  * required: true 
+
+### type BusinessprocessAccountEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* businessprocess 
+
+  * type: [Businessprocess!](#type-Businessprocess) 
+
+  * required: true 
+
+* account 
+
+  * type: [Account!](#type-Account) 
 
   * required: true 
 
@@ -8575,14 +10531,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * application 
 
@@ -8666,14 +10614,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * application 
 
   * type: [Application!](#type-Application) 
@@ -8755,14 +10695,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * database 
 
@@ -8882,14 +10814,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * database 
 
   * type: [Database!](#type-Database) 
@@ -8971,14 +10895,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * ipAddr 
 
@@ -9062,14 +10978,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * ipAddr 
 
   * type: [IpAddr!](#type-IpAddr) 
@@ -9151,14 +11059,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * ipAddr 
 
@@ -9242,14 +11142,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * ipAddr 
 
   * type: [IpAddr!](#type-IpAddr) 
@@ -9332,14 +11224,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * ipAddr 
 
   * type: [IpAddr!](#type-IpAddr) 
@@ -9421,14 +11305,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * ipAddr 
 
@@ -9516,14 +11392,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * user 
 
   * type: [User!](#type-User) 
@@ -9606,14 +11474,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * account 
 
   * type: [Account!](#type-Account) 
@@ -9695,14 +11555,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * account 
 
@@ -9834,14 +11686,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * account 
 
   * type: [Account!](#type-Account) 
@@ -9923,14 +11767,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * unifiedAccount 
 
@@ -10014,14 +11850,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * unifiedUser 
 
   * type: [UnifiedUser!](#type-UnifiedUser) 
@@ -10103,14 +11931,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * port 
 
@@ -10194,14 +12014,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -10283,14 +12095,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * tag 
 
@@ -10374,14 +12178,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -10463,14 +12259,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * tag 
 
@@ -10554,14 +12342,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -10643,14 +12423,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * tag 
 
@@ -10734,14 +12506,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -10823,14 +12587,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * tag 
 
@@ -10914,14 +12670,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -10931,6 +12679,88 @@
 * hostname 
 
   * type: [Hostname!](#type-Hostname) 
+
+  * required: true 
+
+### type TagBusinessprocessEdge 
+
+* _id 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _from 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* _to 
+
+  * type: [ID!](#type-ID) 
+
+  * required: true 
+
+* source 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* report 
+
+  * type: [String!](#type-String) 
+
+  * required: true 
+
+* customProperties 
+
+  * Arguments 
+
+      * filter 
+
+         > type: [CustomPropertiesFilter](#type-CustomPropertiesFilter) 
+
+         > isArray: false 
+
+  * type: [JSON!](#type-JSON) 
+
+  * required: true 
+
+* created 
+
+  * type: [Date](#type-Date) 
+
+* modified 
+
+  * type: [Date](#type-Date) 
+
+* external_id 
+
+  * type: [String](#type-String) 
+
+* _created 
+
+  * type: [Date](#type-Date) 
+
+* _modified 
+
+  * type: [Date](#type-Date) 
+
+* _deleted 
+
+  * type: [Date](#type-Date) 
+
+* tag 
+
+  * type: [Tag!](#type-Tag) 
+
+  * required: true 
+
+* businessprocess 
+
+  * type: [Businessprocess!](#type-Businessprocess) 
 
   * required: true 
 
@@ -11003,14 +12833,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * tag 
 
@@ -11094,14 +12916,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -11183,14 +12997,6 @@
 * _deleted 
 
   * type: [Date](#type-Date) 
-
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
 
 * tag 
 
@@ -11274,14 +13080,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -11364,14 +13162,6 @@
 
   * type: [Date](#type-Date) 
 
-* active 
-
-  * type: [Boolean](#type-Boolean) 
-
-* _key 
-
-* _rev 
-
 * tag 
 
   * type: [Tag!](#type-Tag) 
@@ -11397,6 +13187,12 @@
   * type: [[GlobalFilter]](#type-GlobalFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * _created_EQ 
 
@@ -11460,6 +13256,12 @@
 
 ### type CustomPropertiesFilter 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * id_EQ 
 
   * type: [String](#type-String) 
@@ -11491,6 +13293,12 @@
   * type: [[AssetFilter]](#type-AssetFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * name_EQ 
 
@@ -11570,6 +13378,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -11619,6 +13457,12 @@
   * type: [[ContainerFilter]](#type-ContainerFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * _created_EQ 
 
@@ -11675,6 +13519,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -11730,6 +13604,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -11785,6 +13665,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -11822,6 +13732,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -11882,6 +13798,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -11914,6 +13860,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * fullname_EQ 
 
   * type: [String](#type-String) 
@@ -11927,6 +13879,24 @@
   * isArray: true 
 
 * fullname_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* email_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* email_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* email_NOTIN 
 
   * type: [[String]](#type-String) 
 
@@ -12028,6 +13998,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -12078,6 +14078,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * name_EQ 
 
   * type: [String](#type-String) 
@@ -12151,6 +14157,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12188,6 +14224,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * name_EQ 
 
   * type: [String](#type-String) 
@@ -12261,6 +14303,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12316,6 +14388,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * name_EQ 
 
   * type: [String](#type-String) 
@@ -12389,6 +14467,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12444,6 +14552,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12504,6 +14618,36 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * key_EQ 
 
   * type: [ID](#type-ID) 
@@ -12522,19 +14666,25 @@
 
   * isArray: true 
 
-### type DatabaseFilter 
+### type BusinessprocessFilter 
 
 * AND 
 
-  * type: [[DatabaseFilter]](#type-DatabaseFilter) 
+  * type: [[BusinessprocessFilter]](#type-BusinessprocessFilter) 
 
   * isArray: true 
 
 * OR 
 
-  * type: [[DatabaseFilter]](#type-DatabaseFilter) 
+  * type: [[BusinessprocessFilter]](#type-BusinessprocessFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * name_EQ 
 
@@ -12614,6 +14764,200 @@
 
   * isArray: false 
 
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* key_EQ 
+
+  * type: [ID](#type-ID) 
+
+  * isArray: false 
+
+* key_IN 
+
+  * type: [[ID]](#type-ID) 
+
+  * isArray: true 
+
+* key_NOTIN 
+
+  * type: [[ID]](#type-ID) 
+
+  * isArray: true 
+
+### type DatabaseFilter 
+
+* AND 
+
+  * type: [[DatabaseFilter]](#type-DatabaseFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[DatabaseFilter]](#type-DatabaseFilter) 
+
+  * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* name_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* name_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* name_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -12664,6 +15008,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12719,6 +15069,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12756,6 +15136,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12811,6 +15197,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12848,6 +15264,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -12903,6 +15325,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -12958,6 +15410,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13013,6 +15471,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -13050,6 +15538,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13105,6 +15599,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -13160,6 +15684,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13215,6 +15745,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -13252,6 +15812,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * _created_EQ 
 
   * type: [Date](#type-Date) 
@@ -13307,6 +15873,36 @@
   * isArray: false 
 
 * _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
 
   * type: [Date](#type-Date) 
 
@@ -13361,6 +15957,12 @@
   * type: [[AssetVulnerabilityEdgeFilter]](#type-AssetVulnerabilityEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -13484,6 +16086,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 ### type AssetIpAddrEdgeFilter 
 
 * AND 
@@ -13497,6 +16105,12 @@
   * type: [[AssetIpAddrEdgeFilter]](#type-AssetIpAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -13620,6 +16234,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -13741,6 +16361,12 @@
   * type: [[AssetHostnameEdgeFilter]](#type-AssetHostnameEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -13864,6 +16490,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -13985,6 +16617,12 @@
   * type: [[AssetContainerEdgeFilter]](#type-AssetContainerEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -14108,6 +16746,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -14229,6 +16873,12 @@
   * type: [[AssetDatabaseEdgeFilter]](#type-AssetDatabaseEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -14352,6 +17002,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -14473,6 +17129,12 @@
   * type: [[ApplicationPortEdgeFilter]](#type-ApplicationPortEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -14596,6 +17258,396 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type ApplicationIpAddrEdgeFilter 
+
+* AND 
+
+  * type: [[ApplicationIpAddrEdgeFilter]](#type-ApplicationIpAddrEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[ApplicationIpAddrEdgeFilter]](#type-ApplicationIpAddrEdgeFilter) 
+
+  * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type BusinessprocessApplicationEdgeFilter 
+
+* AND 
+
+  * type: [[BusinessprocessApplicationEdgeFilter]](#type-BusinessprocessApplicationEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[BusinessprocessApplicationEdgeFilter]](#type-BusinessprocessApplicationEdgeFilter) 
+
+  * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type BusinessprocessAccountEdgeFilter 
+
+* AND 
+
+  * type: [[BusinessprocessAccountEdgeFilter]](#type-BusinessprocessAccountEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[BusinessprocessAccountEdgeFilter]](#type-BusinessprocessAccountEdgeFilter) 
+
+  * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -14717,6 +17769,12 @@
   * type: [[ApplicationDatabaseEdgeFilter]](#type-ApplicationDatabaseEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -14840,6 +17898,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -14961,6 +18025,12 @@
   * type: [[DatabaseIpAddrEdgeFilter]](#type-DatabaseIpAddrEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15084,6 +18154,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15205,6 +18281,12 @@
   * type: [[IpAddrContainerEdgeFilter]](#type-IpAddrContainerEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15328,6 +18410,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15449,6 +18537,12 @@
   * type: [[IpAddrHostnameEdgeFilter]](#type-IpAddrHostnameEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15572,6 +18666,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15693,6 +18793,12 @@
   * type: [[IpAddrGeolocationEdgeFilter]](#type-IpAddrGeolocationEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -15816,6 +18922,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -15937,6 +19049,12 @@
   * type: [[UserAccountEdgeFilter]](#type-UserAccountEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16060,6 +19178,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16181,6 +19305,12 @@
   * type: [[AccountHostnameEdgeFilter]](#type-AccountHostnameEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16304,6 +19434,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16425,6 +19561,12 @@
   * type: [[UnifiedAccountAccountEdgeFilter]](#type-UnifiedAccountAccountEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16548,6 +19690,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16669,6 +19817,12 @@
   * type: [[PortVulnerabilityEdgeFilter]](#type-PortVulnerabilityEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -16792,6 +19946,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -16913,6 +20073,12 @@
   * type: [[TagContainerEdgeFilter]](#type-TagContainerEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17036,6 +20202,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17157,6 +20329,12 @@
   * type: [[TagUnifiedUserEdgeFilter]](#type-TagUnifiedUserEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17280,6 +20458,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17401,6 +20585,12 @@
   * type: [[TagUnifiedAccountEdgeFilter]](#type-TagUnifiedAccountEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17524,6 +20714,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17645,6 +20841,12 @@
   * type: [[TagApplicationEdgeFilter]](#type-TagApplicationEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -17768,6 +20970,140 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* source_EQ 
+
+  * type: [String](#type-String) 
+
+  * isArray: false 
+
+* source_IN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* source_NOTIN 
+
+  * type: [[String]](#type-String) 
+
+  * isArray: true 
+
+* _created_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _created_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _modified_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_EQ 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_GTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+* _deleted_LTE 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
+### type TagBusinessprocessEdgeFilter 
+
+* AND 
+
+  * type: [[TagBusinessprocessEdgeFilter]](#type-TagBusinessprocessEdgeFilter) 
+
+  * isArray: true 
+
+* OR 
+
+  * type: [[TagBusinessprocessEdgeFilter]](#type-TagBusinessprocessEdgeFilter) 
+
+  * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -17889,6 +21225,12 @@
   * type: [[TagDatabaseEdgeFilter]](#type-TagDatabaseEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -18012,6 +21354,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18133,6 +21481,12 @@
   * type: [[TagPortEdgeFilter]](#type-TagPortEdgeFilter) 
 
   * isArray: true 
+
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
 
 * source_EQ 
 
@@ -18256,6 +21610,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18378,6 +21738,12 @@
 
   * isArray: true 
 
+* AT 
+
+  * type: [Date](#type-Date) 
+
+  * isArray: false 
+
 * source_EQ 
 
   * type: [String](#type-String) 
@@ -18488,7 +21854,7 @@
 
 ### type AssetSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18536,9 +21902,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type ContainerSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18555,6 +21929,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18564,7 +21946,7 @@
 
 ### type IpAddrSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18581,6 +21963,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18590,7 +21980,7 @@
 
 ### type UnifiedUserSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18614,9 +22004,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type UserSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18688,9 +22086,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type UnifiedAccountSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18722,9 +22128,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type AccountSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18772,9 +22186,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type ApplicationSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18838,9 +22260,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type HostnameSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18864,9 +22294,17 @@
 
   * isArray: false 
 
-### type DatabaseSort 
+* _deleted 
 
-* _key 
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type BusinessprocessSort 
+
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18898,9 +22336,25 @@
 
   * isArray: false 
 
-### type MacAddrSort 
+* _deleted 
 
-* _key 
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type DatabaseSort 
+
+* key 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* name 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18917,6 +22371,48 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type MacAddrSort 
+
+* key 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18926,7 +22422,7 @@
 
 ### type ReportSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18943,6 +22439,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18952,7 +22456,7 @@
 
 ### type PortSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18969,6 +22473,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -18978,7 +22490,7 @@
 
 ### type SourceSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -19002,9 +22514,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type VulnerabilitySort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -19044,9 +22564,17 @@
 
   * isArray: false 
 
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
 ### type TagSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -19063,6 +22591,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -19072,7 +22608,7 @@
 
 ### type GeolocationSort 
 
-* _key 
+* key 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -19089,6 +22625,14 @@
   * isArray: false 
 
 * _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
 
   * type: [SortDirection](#type-SortDirection) 
 
@@ -19445,6 +22989,108 @@
   * isArray: false 
 
 ### type AccountApplicationEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type ApplicationIpAddrEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type BusinessprocessApplicationEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type BusinessprocessAccountEdgeSort 
 
 * source 
 
@@ -20353,6 +23999,40 @@
   * isArray: false 
 
 ### type TagHostnameEdgeSort 
+
+* source 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _created 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _modified 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+* _deleted 
+
+  * type: [SortDirection](#type-SortDirection) 
+
+  * required: false 
+
+  * isArray: false 
+
+### type TagBusinessprocessEdgeSort 
 
 * source 
 

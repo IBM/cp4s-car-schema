@@ -16,6 +16,7 @@ env:
   TARGET_REPO_REVIEWER: ${{ secrets.TARGET_REPO_REVIEWER }}
   TARGET_REPO_USER: ${{ secrets.TARGET_REPO_USER }}
   TARGET_REPO_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }}
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "sync-doces"

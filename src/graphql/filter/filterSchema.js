@@ -20,6 +20,7 @@ const operators = {
   },
   INCLUDE: { IN: 'IN', NOTIN: 'NOT IN' },
   MATCH: { LIKE: 'LIKE', NOTLIKE: 'NOT LIKE' },
+  INCLUSIVE: { AT: 'AT' },
 };
 
 class Filter {
@@ -30,6 +31,7 @@ class Filter {
     this.hasUnifiedFilterItem = hasUnifiedFilterItem;
     if (this.hasUnifiedFilterItem)
       this.filterItems.unfifiedFilterItem = new UnifiedFilterItem(this);
+    this.filterItems.inclusiveFilterItem = new InclusiveFilterItem(this);
   }
 
   addFilterItem(itemName, type) {
@@ -60,7 +62,7 @@ class Filter {
 
   toString() {
     let res = `input ${this.typeName} {\n`;
-    Object.keys(this.filterItems).forEach(key => (res += this.filterItems[key].toString()));
+    Object.keys(this.filterItems).forEach((key) => (res += this.filterItems[key].toString()));
     return (this.filterItems && `${res}}\n`) || '';
   }
 }
@@ -80,7 +82,7 @@ class FilterItem {
   }
 
   addOperator(operatorCategory, type, isArray = false) {
-    Object.keys(operatorCategory).forEach(operator => {
+    Object.keys(operatorCategory).forEach((operator) => {
       this.operators.push(new Oprator(operator, type, isArray));
     });
   }
@@ -88,9 +90,10 @@ class FilterItem {
   toString() {
     let res = '';
     this.operators.forEach(
-      operator =>
-        (res += `  ${(this.name.length && this.name + defaultSeperator) ||
-          ''}${operator.toString()}\n`)
+      (operator) =>
+        (res += `  ${
+          (this.name.length && this.name + defaultSeperator) || ''
+        }${operator.toString()}\n`)
     );
     return res;
   }
@@ -100,6 +103,13 @@ class UnifiedFilterItem extends FilterItem {
   constructor(filter) {
     super('', null, filter);
     this.addOperator(operators.LOGICIAL, filter.typeName, true);
+  }
+}
+
+class InclusiveFilterItem extends FilterItem {
+  constructor(filter) {
+    super('', 'Date', filter);
+    this.addOperator(operators.INCLUSIVE, 'Date', false);
   }
 }
 
@@ -175,7 +185,7 @@ class FilterSchema {
   }
 
   createDefaultFilterItem(collectionName) {
-    Object.keys(defaultFilterItems).forEach(key => {
+    Object.keys(defaultFilterItems).forEach((key) => {
       this.filterTypes[collectionName].addFilterItem(key, defaultFilterItems[key]);
     });
   }

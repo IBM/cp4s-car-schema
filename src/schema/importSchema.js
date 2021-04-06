@@ -21,6 +21,9 @@ var importSchemaTemplate = {
           // regex for IPV4 and IPV6
           // pattern:
           //   '(^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$)|(?:[A-Fa-f0-9]{1,4}:){6}(?:[A-Fa-f0-9]{1,4}:[A-Fa-f0-9]{1,4}|(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))',
+          pattern: '^[a-fA-F0-9:\\.]+$',
+          minLength: 1,
+          maxLength: 254,
         },
       },
       required: ['_key'],
@@ -47,7 +50,19 @@ var importSchemaTemplate = {
     },
 
     hostname: {
-      required: ['_key'],
+      properties: {
+        host_name: {
+          description: 'hostname',
+          type: 'string',
+          format: 'car-host',
+          minLength: 1,
+          maxLength: 254,
+          errorMessage: {
+            format: "Should match pattern ^[A-Za-z0-9_:@=;!'%-.()+,$*s]+$",
+          },
+        },
+      },
+      required: ['host_name'],
     },
 
     database: {
@@ -69,6 +84,14 @@ var importSchemaTemplate = {
 
     report: {
       notArray: true,
+      properties: {
+        _key: {
+          description: 'a unique identifier for report',
+          pattern: "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
+          minLength: 1,
+          maxLength: 254,
+        },
+      },
       required: ['_key', 'type', 'created'],
     },
 
@@ -78,6 +101,14 @@ var importSchemaTemplate = {
 
     source: {
       notArray: true,
+      properties: {
+        _key: {
+          description: 'a unique identifier for source',
+          pattern: "^[a-zA-Z0-9_:@=;!'%\\-\\.\\(\\)\\+\\,\\$\\*]+$",
+          minLength: 1,
+          maxLength: 254,
+        },
+      },
       required: ['_key'],
     },
 
@@ -96,6 +127,9 @@ var importSchemaTemplate = {
       ],
       required: [],
     },
+    businessprocess: {
+      required: ['name'],
+    },
   },
 };
 
@@ -103,7 +137,7 @@ class ImportSchema {
   load() {
     this.schema = {};
     this.schema.properties = {};
-    Object.keys(importSchemaTemplate).forEach(item => {
+    Object.keys(importSchemaTemplate).forEach((item) => {
       if (item !== 'collections') this.schema[item] = importSchemaTemplate[item];
     });
     this.generateVertices();
@@ -136,13 +170,13 @@ class ImportSchema {
           .forEach(prop => {
             props[prop] = coreSchema.vertices[vertexName].properties[prop];
           });
-        Object.keys(importSchemaTemplate.collections[vertexName]).forEach(item => {
+        Object.keys(importSchemaTemplate.collections[vertexName]).forEach((item) => {
           if (item !== 'properties')
             propsParent[item] = importSchemaTemplate.collections[vertexName][item];
         });
 
         if (importSchemaTemplate.collections[vertexName].properties)
-          Object.keys(importSchemaTemplate.collections[vertexName].properties).forEach(prop => {
+          Object.keys(importSchemaTemplate.collections[vertexName].properties).forEach((prop) => {
             props[prop] = importSchemaTemplate.collections[vertexName].properties[prop];
           });
 
@@ -200,7 +234,7 @@ class ImportSchema {
         const props = def.items.properties;
         const propsParent = def.items;
         this.schema.properties[edgeName] = def;
-        Object.keys(edge.properties).forEach(prop => {
+        Object.keys(edge.properties).forEach((prop) => {
           props[prop] = edge.properties[prop];
         });
 
@@ -236,7 +270,7 @@ class ImportSchema {
           }
         }
 
-        required = required.filter(item => item !== source && item !== target);
+        required = required.filter((item) => item !== source && item !== target);
         propsParent.required = required;
       });
   }

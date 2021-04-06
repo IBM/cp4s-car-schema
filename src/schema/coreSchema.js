@@ -3,10 +3,13 @@ const index__external_id__source = { type: 'persistent', unique: true, sparse: t
 const index__from__source__active = { type: 'persistent', fields: ['_from', 'source', 'active'] };  
 const index__source = { type: 'persistent', fields: ['source'] };  
 const index__from__to__source = { type: 'persistent', unique: false, sparse: true, deduplicate: false, fields: ['_from', '_to', 'source'] }; 
+const index_host_name = { fields: [ 'host_name' ], unique: true, type: 'persistent' };
 
 const defaultEdgeIndexes = [index__from__source__active, index__source];
 
 const defaultVertexIndexes = [index__external_id__source];
+
+const MANY = null;
 
 const commonVertexProperties = {
   _created: {
@@ -28,6 +31,15 @@ const commonVertexProperties = {
     graphql_filter_attribute: true,
     graphql_globalfilter_attribute: true,
     graphql_sort_attribute: true,
+  },
+  _deleted: {
+    // format: 'date-time',
+    type: 'number',
+    description:'epoch in milliseconds, disabled time ',
+    graphql_filter_attribute: true,
+    graphql_sort_attribute: true,
+    import_schema: false,
+    graphql_type: 'Date',
   },
   _number_of_active_edges: {
     type: 'number',
@@ -227,6 +239,8 @@ const SchemaTemplate = {
         email: {
           description: 'email',
           type: 'string',
+          graphql_filter_attribute: true,
+          search_index: true,
         },
         description: {
           description: 'user description',
@@ -486,7 +500,12 @@ const SchemaTemplate = {
         last_occurrence: {
           description: 'Epoch Time when latest risk was seen',
           type: 'number',
+        },  
+          status: {
+          description: 'Application status',
+          type: 'string',
         },
+        
       },
     },
 
@@ -494,12 +513,52 @@ const SchemaTemplate = {
       usesExternalId: false,
       properties: {
         _key: {
-          description: 'a unique key which should be the hostname',
+          description: 'a unique key which is auto generated',
           type: 'string',
           graphql_sort_attribute: true,
         },
+        host_name: {
+          description: 'a unique key which should be hostname',
+          type: 'string',
+          graphql_hidden: true,
+        }
+      },
+      indexes: [ index_host_name ],
+      // key property allows for having a property other than _key as the unique key
+      // for naturally keyed collections. Arangodb has limitations on length and characters
+      // allowed in the _key attribute, hence using an input value from the connector 
+      // as _key may not be possible for all naturally keyed collections. In such a case
+      // define this key attribute and let arangodb auto generate _key attribute.
+      // Make sure the attribute which is selected as key is indexed.
+      key: 'host_name'
+    },
+
+
+
+    businessprocess: {
+      usesExternalId: true,
+      properties: {
+        _key: {
+          description: 'auto generated key',
+          type: 'string',
+          graphql_sort_attribute: true,
+          import_schema: false
+        },
+        name: {
+          description: 'name of the business process',
+          type: 'string',
+          graphql_filter_attribute: true,
+          graphql_sort_attribute: true,
+          search_index: true
+        },
+        description: {
+          description: 'businsess process description',
+          type: 'string',
+        },
+      
       },
     },
+
 
     database: {
       usesExternalId: true,
@@ -654,7 +713,7 @@ const SchemaTemplate = {
         },
         external_properties: {
           description: 'external_properties',
-          type: 'integer',
+          type: 'string',
         },
         external_reference: {
           description: 'external_reference',
@@ -761,17 +820,25 @@ const SchemaTemplate = {
       },
       indexes: [index__external_id__source].concat(defaultEdgeIndexes),
     },
-
-    asset_ipaddress: {},
-    asset_macaddress: {},
-    asset_hostname: {},
-    asset_account: {},
-    asset_container: {},
+    // Cardinality is estimates of the cardinality of the edge in both direction used by GraphQL query cost estimation.
+    // If the *average case* is that there would be a one-to-one relationship, then set both in & out cardinality to 1.
+    // If the *average case* is many or quite variable, then do not set a cardinality (or set it MANY).
+    // cardinality.in refers to the source, cardinality.out refers to the target.
+    // e.g. for asset_ipaddress
+    // cardinality.in - would many assets have the same ip address?
+    // cardinality.out - would many ip addresses have the same asset?
+    // It is not necessary to specify cardinality, which implies many on both sides.
+    // MANY is the default and can be omitted, but should be specified for readability.
+    asset_ipaddress: { cardinality: { in: 1, out: 1 } },
+    asset_macaddress: { cardinality: { in: 1, out: 1 } },
+    asset_hostname: { cardinality: { in: 1, out: 1 } },
+    asset_account: { cardinality: { in: MANY, out: MANY } },
+    asset_container: { cardinality: { in: MANY, out: 1 } },
     asset_application: {},
     asset_database: {},
-    asset_geolocation: {},
+    asset_geolocation: { cardinality: { in: MANY, out: 1 } },
 
-    application_port: {},
+    application_port: { cardinality: { in: MANY, out: 1 } },
     account_application: {
       properties: {
         user_id: {
@@ -786,11 +853,28 @@ const SchemaTemplate = {
         },
       },
     },
-    application_database: {},
-    application_vulnerability: {},
 
-    database_ipaddress: {},
+    application_ipaddress: { 
+    	cardinality: { in: MANY, out: 1 }, 
+    	 properties: {
+    	    mappingtype: {
+          		description:     'Mapping Relationship between Ip address and Application ',
+	          type: 'string',
+	          }
+        }
+	
+    },
+    
+    
+    businessprocess_application: { cardinality: { in: MANY, out: 1 } },    
+    businessprocess_account: { cardinality: { in: MANY, out: 1 } },
+
+    application_database: { cardinality: { in: MANY, out: 1 } },
+    application_vulnerability: { cardinality: { in: 1, out: 1 } },
+
+    database_ipaddress: { cardinality: { in: 1, out: 1 } },
     database_vulnerability: {
+      cardinality: { in: 1, out: 1 },
       properties: {
         version_level: {
           description:
@@ -841,14 +925,15 @@ const SchemaTemplate = {
       },
     },
 
-    ipaddress_container: {},
-    ipaddress_macaddress: {},
-    ipaddress_hostname: {},
-    ipaddress_vulnerability: {},
-    ipaddress_geolocation: {},
-    ipaddress_port: {},
+    ipaddress_container: { cardinality: { in: MANY, out: 1 } },
+    ipaddress_macaddress: { cardinality: { in: 1, out: 1 } },
+    ipaddress_hostname: { cardinality: { in: 1, out: 1 } },
+    ipaddress_vulnerability: { cardinality: { in: 1, out: 1 } },
+    ipaddress_geolocation: { cardinality: { in: MANY, out: 1 } },
+    ipaddress_port: { cardinality: { in: MANY, out: 1 } },
 
     user_account: {
+      cardinality: { in: MANY, out: 1 },
       properties: {
         last_access_time: {
           description:
@@ -858,9 +943,10 @@ const SchemaTemplate = {
         },
       },
     },
-    account_database: {},
-    account_hostname: {},
+    account_database: { cardinality: { in: MANY, out: MANY } },
+    account_hostname: { cardinality: { in: MANY, out: 1 } },
     account_ipaddress: {
+      cardinality: { in: MANY, out: MANY },
       properties: {
         total_risk_score: {
           description:
@@ -926,11 +1012,11 @@ const SchemaTemplate = {
       },
     },
 
-    unifiedaccount_account: {},
+    unifiedaccount_account: { cardinality: { in: 1, out: 1 } },
 
-    unifieduser_user: {},
+    unifieduser_user: { cardinality: { in: 1, out: 1 } },
 
-    port_vulnerability: {},
+    port_vulnerability: { cardinality: { in: 1, out: MANY } },
 
     tag_edge: { import_schema: false, exclude: ['source', 'report'], indexes: [index__from__to__source] },
   },
@@ -938,7 +1024,7 @@ const SchemaTemplate = {
 
 class CoreSchema {
   constructor() {
-    this.version = '2';
+    this.version = '3';
     this.vertices = SchemaTemplate.vertices;
     this.edges = SchemaTemplate.edges;
 
