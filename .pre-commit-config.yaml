@@ -28,6 +28,6 @@ repos:
         name: doc
         language: system
         # adjust as needed: regex should match schema changes or changes to doc-generating scripts
-        files: ^(src/graphql/.*)|(src/schema/.*)|(doc/script/.*)|(doc/wrapper/.*)
+        files: ^(src/schema/.*)
         entry: bash -c "npm run doc && git add -u"
         pass_filenames: false
