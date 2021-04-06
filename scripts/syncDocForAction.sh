@@ -19,7 +19,7 @@ then
     cp -f ../$file ./$file
   done 
   npm install
-  node ./doc/script/docSchemaHelper.js
+  node ./doc/scripts/docSchemaHelper.js
   if ! git diff --exit-code --quiet; then
     git config  user.email "iscstg@ie.ibm.com"
     git config  user.name "scstg"
