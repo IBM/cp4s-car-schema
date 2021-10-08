@@ -1,0 +1,1009 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "CAR API.",
+        "version": "3.0.0",
+        "description": ""
+    },
+    "tags": [
+        {
+            "name": "assets"
+        },
+        {
+            "description": "qradar assets",
+            "name": "qradar"
+        }
+    ],
+    "paths": {
+        "/v2/health": {
+            "get": {
+                "tags": [],
+                "description": "",
+                "operationId": "health_v2",
+                "responses": {
+                    "200": {
+                        "description": "Return if car service is running ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/health"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/source/{source}/{collection}": {
+            "delete": {
+                "tags": [],
+                "summary": "Disable all the edges belongs to the source",
+                "description": "disable edges",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "collection",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The edges has been disabled successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/commonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/databases": {
+            "get": {
+                "tags": [],
+                "summary": "Get information about the database",
+                "description": "check if database is ready for this tenant",
+                "operationId": "databases",
+                "responses": {
+                    "200": {
+                        "description": "object contains the metadata of the database",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/databases"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/{collection}/{externalId}/graph": {
+            "get": {
+                "tags": [],
+                "summary": "Get node and edge related to given node",
+                "description": "get graph with center as given node",
+                "operationId": "getGraph",
+                "parameters": [
+                    {
+                        "name": "collection",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "externalId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list all graph related with the collection",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/queryResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/{collection}": {
+            "get": {
+                "tags": [],
+                "summary": "GET for filtered node",
+                "description": "GET for filtered node",
+                "operationId": "getCollection",
+                "parameters": [
+                    {
+                        "name": "collection",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "GET for filtered node object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/queryResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/source/{source}": {
+            "get": {
+                "tags": [],
+                "summary": "get specific source object",
+                "description": "get source objiect ",
+                "operationId": "getSource",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get the specific source object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/queryResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [],
+                "summary": "modeify specific source object",
+                "description": "modify source objiect ",
+                "operationId": "modifySource",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/source"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Get the specific source object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/commonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/source": {
+            "patch": {
+                "tags": [],
+                "summary": "modeify specific source object",
+                "description": "modify source objiect ",
+                "operationId": "modifySourcebyKey",
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/source"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Get the specific source object",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/commonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/imports": {
+            "post": {
+                "tags": [],
+                "summary": "Import assets ...",
+                "description": "Import assets ...",
+                "operationId": "importData",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/data"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "object contains the id of the import and its initial status",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/importResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/source/{source}/full-import-in-progress": {
+            "post": {
+                "tags": [],
+                "summary": "Start Full Import",
+                "description": "Start Full Import",
+                "operationId": "startFullImport",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Use this endpoint GET /jobstatus/{job_id} to check if the job is completed.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/status"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [],
+                "summary": "Complete Full Import",
+                "description": "Complete Full Import",
+                "operationId": "completeFullImport",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Use this endpoint GET /jobstatus/{job_id} to check if the job is completed.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/status"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/importstatus": {
+            "get": {
+                "tags": [],
+                "summary": " status of an multiple imports",
+                "description": "a status of multiple imports",
+                "operationId": "getMulitpleImportStatus",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list all multiple imports status",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/status"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/jobstatus": {
+            "get": {
+                "tags": [],
+                "summary": " status of an multiple jobs",
+                "description": "a status of multiple jobs",
+                "operationId": "getMulitpleJobsStatus",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the status of multiple jobs",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/status"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/importstatus/{statusId}": {
+            "get": {
+                "tags": [],
+                "summary": "a status of an import",
+                "description": "a status of an import",
+                "operationId": "getImportStatus",
+                "parameters": [
+                    {
+                        "name": "statusId",
+                        "in": "path",
+                        "required": true,
+                        "description": "status id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the status of an import",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/status"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/jobstatus/{statusId}": {
+            "get": {
+                "tags": [],
+                "summary": "a status of a job",
+                "description": "a status of a job",
+                "operationId": "getJobStatus",
+                "parameters": [
+                    {
+                        "name": "statusId",
+                        "in": "path",
+                        "required": true,
+                        "description": "status id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "the status of a job",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/status"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/health": {
+            "get": {
+                "tags": [],
+                "description": "",
+                "operationId": "health",
+                "responses": {
+                    "200": {
+                        "description": "Return if car service is health",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/health"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/health/all": {
+            "get": {
+                "tags": [],
+                "description": "",
+                "operationId": "healthAll",
+                "responses": {
+                    "200": {
+                        "description": "Return if car service and all dependencies are health",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/health_all"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/query": {
+            "post": {
+                "tags": [],
+                "summary": "run the grapqhQL search and mutation",
+                "description": "run the grapqhQL search and mutation",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/querybody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "return search object ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/queryResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "servers": [
+        {
+            "description": "SaaS tenant",
+            "url": "https://{tenant}.cp4s.cloud.ibm.com/api/car",
+            "variables": {
+                "tenant": {
+                    "description": "tenant name",
+                    "default": "example"
+                }
+            }
+        },
+        {
+            "description": "SaaS dev tenant",
+            "url": "https://{tenant}.cp4s.dev.cloud.ibm.com/api/car",
+            "variables": {
+                "tenant": {
+                    "description": "tenant name",
+                    "default": "example"
+                }
+            }
+        },
+        {
+            "description": "custom host",
+            "url": "https://{host}/api/car",
+            "variables": {
+                "host": {
+                    "description": "fully qualified hostname",
+                    "default": "example.com"
+                }
+            }
+        }
+    ],
+    "components": {
+        "requestBodies": {
+            "source": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/source"
+                        }
+                    }
+                },
+                "required": true
+            }
+        },
+        "securitySchemes": {
+            "apiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "Authorization",
+                "description": "JWT"
+            }
+        },
+        "schemas": {
+            "status": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "complete_imports": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "COMPLETE"
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "example": "7d3a8e0c-e2ca-4a40-9625-58f327bbffd7-dev-account1-asset"
+                                }
+                            }
+                        }
+                    },
+                    "incomplete_imports": {
+                        "type": "array",
+                        "example": [],
+                        "items": {}
+                    },
+                    "notfound_imports": {
+                        "type": "array",
+                        "example": [],
+                        "items": {}
+                    },
+                    "error_imports": {
+                        "type": "array",
+                        "example": [],
+                        "items": {}
+                    }
+                }
+            },
+            "data": {
+                "type": "object",
+                "properties": {
+                    "report": {
+                        "type": "object",
+                        "properties": {
+                            "_key": {
+                                "type": "string",
+                                "example": "Report1"
+                            },
+                            "timestamp": {
+                                "type": "number",
+                                "example": 1568405137326.274
+                            },
+                            "type": {
+                                "type": "string",
+                                "example": "Qradar API"
+                            },
+                            "description": {
+                                "type": "string",
+                                "example": "Qradar imports"
+                            }
+                        }
+                    },
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "_key": {
+                                "type": "string",
+                                "example": "Source1"
+                            },
+                            "name": {
+                                "type": "string",
+                                "example": "stable-tor01-vm-sa-dataexplorer.qradar.ibmcloud-dev.com"
+                            },
+                            "description": {
+                                "type": "string",
+                                "example": "reports coming from source Source1"
+                            }
+                        }
+                    },
+                    "asset": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "external_id": {
+                                    "type": "string",
+                                    "example": "Asset1"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Asset1"
+                                },
+                                "customProp1": {
+                                    "type": "string",
+                                    "example": "value1"
+                                },
+                                "customProp2": {
+                                    "type": "string",
+                                    "example": "value2"
+                                }
+                            }
+                        }
+                    },
+                    "ipaddress": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "_key": {
+                                    "type": "string",
+                                    "example": "1.1.1.3"
+                                }
+                            }
+                        }
+                    },
+                    "vulnerability": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "published_on": {
+                                    "type": "number",
+                                    "example": 927676800000
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Microsoft IIS ExAir sample site denial of service"
+                                },
+                                "disclosed_on": {
+                                    "type": "number",
+                                    "example": 917308800000
+                                },
+                                "vcvssbmid": {
+                                    "type": "string",
+                                    "example": "71882"
+                                },
+                                "base_score": {
+                                    "type": "number",
+                                    "example": 7.8
+                                },
+                                "xref_properties": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "extref_typename": {
+                                                "type": "string",
+                                                "example": "OSVDB"
+                                            },
+                                            "extref_value": {
+                                                "type": "string",
+                                                "example": "4"
+                                            },
+                                            "q_extref_typeid": {
+                                                "type": "string",
+                                                "example": "120000"
+                                            }
+                                        }
+                                    }
+                                },
+                                "updated_on": {
+                                    "type": "number",
+                                    "example": 1369754036047
+                                },
+                                "external_id": {
+                                    "type": "string",
+                                    "example": "92"
+                                }
+                            }
+                        }
+                    },
+                    "asset_ipaddress": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "source": {
+                                    "type": "string",
+                                    "example": "Source1"
+                                },
+                                "external_id": {
+                                    "type": "string",
+                                    "example": "Asset1-1.1.1.3"
+                                },
+                                "timestamp": {
+                                    "type": "number",
+                                    "example": 1568405137326.274
+                                },
+                                "_from_external_id": {
+                                    "type": "string",
+                                    "example": "Asset1"
+                                },
+                                "report": {
+                                    "type": "string",
+                                    "example": "Report1"
+                                },
+                                "_to": {
+                                    "type": "string",
+                                    "example": "ipaddress/1.1.1.3"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "example": true
+                                }
+                            }
+                        }
+                    },
+                    "asset_vulnerability": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "_from_external_id": {
+                                    "type": "string",
+                                    "example": "Asset1"
+                                },
+                                "_to_external_id": {
+                                    "type": "string",
+                                    "example": "92"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "timestamp": {
+                                    "type": "number",
+                                    "example": 1568405137326.274
+                                },
+                                "report": {
+                                    "type": "string",
+                                    "example": "Report1"
+                                },
+                                "source": {
+                                    "type": "string",
+                                    "example": "Source1"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "source": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "_key": {
+                                "type": "string",
+                                "example": "Source1"
+                            },
+                            "name": {
+                                "type": "string",
+                                "example": "stable-tor01-vm-sa-dataexplorer.qradar.ibmcloud-dev.com"
+                            },
+                            "description": {
+                                "type": "string",
+                                "example": "reports coming from source Source1"
+                            }
+                        }
+                    }
+                }
+            },
+            "databases": {
+                "type": "object",
+                "properties": {
+                    "databases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "is_ready": {
+                                    "type": "boolean",
+                                    "example": true
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "importResult": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "7d3a8e0c-e2ca-4a40-9625-58f327bbffd7-dev-account1-asset"
+                    },
+                    "job_id": {
+                        "type": "string",
+                        "example": "7d3a8e0c-e2ca-4a40-9625-58f327bbffd7-dev-account1-asset"
+                    },
+                    "status": {
+                        "type": "string",
+                        "example": "INPROGRESS"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Check the status of the import by calling the endpoint GET {api}/importstatus/{status_id} or GET {api}/importstatus?ids={status_id1},{status_id2}, etc"
+                    }
+                }
+            },
+            "queryResult": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "string",
+                        "example": "{ asset: [ { name: 'Daniel Laptop', source: 'e26afaa8b54048bea87b4ac09b536bbf' }],}"
+                    }
+                }
+            },
+            "querybody": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "example": "{ asset (where: {name: {_eq: \"Daniel Laptop\"}}) { name source } }"
+                    }
+                }
+            },
+            "DataRetentionPolicy": {
+                "type": "object",
+                "properties": {
+                    "policy_name": {
+                        "type": "string",
+                        "example": "DiskUsage"
+                    },
+                    "policy_value": {
+                        "type": "number",
+                        "example": 3000000
+                    }
+                }
+            },
+            "mutationResult": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "update_xxx": {
+                                "type": "object",
+                                "properties": {
+                                    "affected_rows": {
+                                        "type": "number",
+                                        "example": 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "health": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "ok"
+                    }
+                }
+            },
+            "health_all": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "number",
+                        "example": 200
+                    },
+                    "hasura": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "number",
+                                "example": 200
+                            },
+                            "message": {
+                                "type": "string",
+                                "example": "OK"
+                            }
+                        }
+                    },
+                    "postgres": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "example": "OK"
+                            }
+                        }
+                    },
+                    "redis": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "number",
+                                "example": 200
+                            },
+                            "message": {
+                                "type": "string",
+                                "example": "OK"
+                            }
+                        }
+                    }
+                }
+            },
+            "commonResult": {
+                "type": "object",
+                "properties": {
+                    "result": {
+                        "type": "string",
+                        "example": "OK"
+                    }
+                }
+            },
+            "collection": {
+                "type": "string",
+                "example": "asset"
+            }
+        }
+    }
+}
