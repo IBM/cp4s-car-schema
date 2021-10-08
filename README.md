@@ -216,7 +216,9 @@ node /opt/app-root/app/build/app.js -c diskUsage car_905dde6d_9728_4fd0_baa1_e15
 
 For more info on how to use CLI when adopting new development build of CAR service refer to [support/upgrading_CAR_dev_image.md](support/upgrading_CAR_dev_image.md)
 
+# Extensibility
 
+CAR schema extensibility is documented separately [here](doc/extensibility.md).
 
 
 
