@@ -14,7 +14,7 @@ CAR Consumers are CP4S services that include CAR data (or data derived from CAR 
 
 # Data graph
 
-![Asset Schema](doc/generated/assetModel.png)
+![Asset Schema](generated/assetModel.png)
 
 The following is the list of data collections representing graph vertices (nodes):
 
@@ -43,8 +43,8 @@ Normalized properties:
 - Can be indexed
 
 The normalized properties of a specific collection can be found in:
-- [core schema](src/schema/coreSchema.ts)
-- [Postgresql schema](src/generated/schema-version-7/pgSchema.sql)
+- [core schema](../src/schema/coreSchema.ts)
+- [Postgresql schema](../src/generated/schema-version-7/pgSchema.sql)
 
 Custom properties:
 - Defined by the client
@@ -172,11 +172,11 @@ The detailed documentation for version v2 of CAR REST API can be found [here](ht
 - POST /api/car/v3/carSchema: create or update a car schema extension
 - DELETE /api/car/v3/carSchema/{key}: delete a car schema extension
 - GET /api/car/v3/extensionSchema: display the extension JsonSchema. When adding an extension, it should be validated against the JsonSchema. 
-The detailed documentation for version v3 of CAR REST API can be found [here](doc/rest_api_v3.md).
+The detailed documentation for version v3 of CAR REST API can be found [here](rest_api_v3.md).
 
 # GraphQL API
 
-The CAR service GraphQL schema is available [here](doc/schema.json)
+The CAR service GraphQL schema is available [here](schema.json)
 
 An example GraphQL query request:
 
@@ -218,7 +218,7 @@ For more info on how to use CLI when adopting new development build of CAR servi
 
 # Extensibility
 
-CAR schema extensibility is documented separately [here](doc/extensibility.md).
+CAR schema extensibility is documented separately [here](extensibility.md).
 
 
 
