@@ -1,0 +1,18 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ibm-qradar-car-docs
+  description: Documentation for the Connected Assets and Risks (CAR) APIs and schemas
+  tags:
+    - ibm
+    - qradar
+    - car
+  annotations:
+    github.com/project-slug: IBM/cp4s-car-schema
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: website
+  lifecycle: production
+  owner: car
+---
